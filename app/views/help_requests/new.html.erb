@@ -1,0 +1,7 @@
+<%= simple_form_for(@help_request) do |f| %>
+  <%= f.association :task %>
+  <%= f.input :start_time %>
+  <%= f.input :duration %>
+  <%= f.input :location %>
+  <%= f.submit %>
+<% end %>
