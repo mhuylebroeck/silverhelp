@@ -1,0 +1,111 @@
+.container-navbar-home {
+  display: flex;
+  justify-content: space-between;
+}
+
+.homepage-container-img {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+
+.homepage-container {
+  background-color: #FFF2CE;
+  position: absolute;
+  width: 1304px;
+  height: 685px;
+  left: 67px;
+  top: 54px;
+  border-radius: 30px;
+}
+
+.master-container {
+  position: absolute;
+  width: 1440px;
+  height: 631px;
+  left: 0px;
+  top: -1px;
+  background: #FCC010;
+}
+
+.container-navbar-home {
+  font-family: 'Montserrat', sans-serif;
+  color: #20124D;
+  margin: 20px 66px 0 66px;
+}
+
+.title-home-banner {
+  font-family: 'Montserrat', sans-serif;
+  color: #20124D;
+  margin-top: 70px;
+  margin-left: 66px;
+
+  h1 {
+    font-size: 54px;
+    line-height: 59px;
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  h6 {
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 32px;
+    line-height: 29px;
+    margin-top: 18px;
+  }
+}
+
+.img-home-banner {
+  width: 650px;
+  height: 470px;
+  position: center;
+
+}
+
+.searchbar-home {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  margin-top: 80px;
+  margin-left: 66px;
+  background-color: white;
+  padding: 4px;
+  width: 580px;
+  height: 64px;
+  border-radius: 4px;
+}
+
+.search-form-home {
+  border-color: rgb(226, 226, 226);
+  width: 420px;
+  height: 56px;
+  border-color: white;
+  box-decoration-break: none;
+  border-radius: 4px;
+  border: 0;
+
+
+}
+
+.search-btn-home {
+  background: #FCC010;
+  border: 1px solid #FCC010;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 154.29px;
+  height: 56px;
+  padding: 20px
+}
+
+.search-btn {
+  color: white;
+  text-align: center;
+  font-family: Work Sans;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
