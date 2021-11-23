@@ -1,0 +1,16 @@
+<h1>Hello, my name is <%= @user.name %>!</h1>
+<h2>*photo placeholder*</h2>
+
+<p><strong>Address: <%= @user.location %> </strong></p>
+<p><strong>Phone number: <%= @user.phone_number %> </strong></p>
+<p><strong>Description: <%= @user.description %> </strong></p>
+<p><strong>Vehicle?</strong><% if !@user.vehicle %>
+<p>Yes</p>
+<% else %>
+<p>No</p>
+<% end %>
+</p>
+
+
+<h3> <%=@user.name%>'s reviews </h3>
+<h5>*reviews placeholder*</h5>
