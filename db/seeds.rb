@@ -9,6 +9,11 @@
 p "Destroying the database"
 User.destroy_all
 HelpRequest.destroy_all
+Coupon.destroy_all
+Review.destroy_all
+Task.destroy_all
+UserCoupon.destroy_all
+UserTask.destroy_all
 p "Destroyed!"
 
 def random_address
@@ -33,6 +38,7 @@ def concordance(adjective)
   end
 end
 
+# CREATING THE USERS
 
 
 p "Creating the helpers"
@@ -141,14 +147,97 @@ p "Creating generic elders"
   p "Created #{user.name}, an #{user.user_type}"
 end
 
-p "Creating grocery help between John and Maria"
+p "Finished creating all the users!"
+
+# CREATING THE COUPONS
+
+p "Creating coupons"
+
+c = 0
+5.times do
+  c += 1
+  name = Faker::Restaurant.name
+  discount = Faker::Number.between(from: 0, to: 25)
+  Coupon.create!(
+    name: "Coupon for #{name}",
+    description: "Gives you a discount of #{discount} euro at #{name}, at any of their locations in Barcelona.",
+    price: Faker::Number.between(from: 0, to: 250)
+  )
+  p "Created #{c} coupon(s)!"
+end
+
+p "Finished creating coupons."
+
+# CREATING THE TASKS
+
+p "Creating tasks..."
+
+ALL_TASKS = ["Groceries", "Home repairs", "Furniture assembly", "Cleaning", "Wheelchair assistance",
+             "Company for excursion", "Cooking", "Activities" ]
+# THE ABOVE WE SHOULD HOPEFULLY GET FROM THE MODEL IN THE FUTURE! with something like TASKS::names
+# Feel free to copy and paste it!
+
+ALL_TASKS.each do |task|
+  Task.create(name: task)
+  p "Created #{task}"
+end
+
+p "Finished creating tasks"
+
+# CREATING THE TASKS REQUESTS
+
+p "Creating a pending grocery request between John and Maria"
 
 HelpRequest.create!(
   start_time: Time.new,
   duration: 1,
   task_description: "Help me go to Mercadona get the best local products (NOT a sponsored task)",
-  status: 1,
-  task_category: "Groceries",
+  status: 0,
   senior_id: User.where(name: "Maria Silva")[0].id,
-  helper_id: User.where(name: "John Silver")[0].id
+  helper_id: User.where(name: "John Silver")[0].id,
+  task_id: Task.where(name: "Groceries")[0].id
 )
+
+p "Creating already accepted request between Jane and Maria"
+# enum status: {
+#     pending: 0,
+#     accepted: 1,
+#     declined: 2
+#   }
+
+HelpRequest.create!(
+  start_time: Time.new,
+  duration: 1,
+  task_description: "Help me go to move my furniture around.",
+  status: 1,
+  senior_id: User.where(name: "Maria Silva")[0].id,
+  helper_id: User.where(name: "Jane Bronze")[0].id,
+  task_id: Task.where(name: "Home repairs")[0].id
+)
+
+
+
+
+p "Creating reviews for Jane"
+
+Review.create!(
+  description: "A wonderful soul that really helped me. She let me teach her catalan and she taught me english.",
+  friendliness_rating: 5,
+  efficiency_rating: 4,
+  punctuality_rating: 5,
+  recommend: true,
+  help_request_id: HelpRequest.where(task_description: "Help me go to move my furniture around.")[0].id
+)
+p "Finished creating review for Jane"
+
+p "Assigning coupons to different users"
+
+10.times do
+  user = User.all.sample
+  coupon = Coupon.all.sample
+  UserCoupon.create!(
+    user_id: user.id,
+    coupon_id: coupon.id
+  )
+  p "Created coupon from #{coupon.name} for user #{user.name}"
+end
