@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2021_11_23_160530) do
 
   # These are extensions that must be enabled in order to support this database
@@ -41,6 +42,7 @@ ActiveRecord::Schema.define(version: 2021_11_23_160530) do
     t.bigint "senior_id"
     t.bigint "helper_id"
     t.bigint "task_id", null: false
+    t.string "location"
     t.index ["helper_id"], name: "index_help_requests_on_helper_id"
     t.index ["senior_id"], name: "index_help_requests_on_senior_id"
     t.index ["task_id"], name: "index_help_requests_on_task_id"
