@@ -1,12 +1,24 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #FFF2CE;
+  height: 100px;
+  padding-left: 148px;
+  padding-right: 70px;
+
+
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  padding-left: 148px;
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-light .navbar-nav .nav-link  {
+  font-family: "Montserrat", sans-serif;
+  color: #20124D;
+  padding-right: 100px ;
 }

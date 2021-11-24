@@ -1,1 +1,60 @@
 // Specific CSS for your home-page
+body {
+  background-color: #fffcf4;
+}
+
+.info-homepage {
+  color: #20124D;
+  padding-left: 80px;
+  padding-right: 80px;
+
+
+  h2 {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 59px;
+  }
+
+  p {
+    font-style: normal;
+    font-weight: lighter;
+    line-height: 29px;
+    margin-top: 18px;
+    line-height: 29px;
+  }
+}
+
+.container-categories-home {
+  //background: linear-gradient(180deg, rgba(255,242,206,1) 0%, rgba(255,252,244,1) 90%);
+  padding-right: 420px;
+  padding-left: 420px;
+  text-align: center;
+  color: #20124D;
+
+    h2 {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 59px;
+
+  }
+}
+
+.container-how-it-works {
+  padding-top: 50px;
+  padding-left: 220px;
+  padding-right: 80px;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+
+
+}
+
+.img-info-home {
+  height: 400px;
+  width: 400px;
+}
