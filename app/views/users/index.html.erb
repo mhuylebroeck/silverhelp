@@ -1,0 +1,31 @@
+<div class="header-toppage center">
+  <h1>You are looking at all available helpers</h1>
+</div>
+<%# We will have to add a conditional to change what is written based on what was searched,
+kinda like for the leave your shit website %>
+
+<p><% @helpers.each do |helper| %></p>
+  <%= helper.name %>
+  <%= helper.age %>
+  <% unless helper.help_requests.empty? %>
+  <% allfriend = []
+     allefficiency = []
+     allpunctual = []
+     allrecommend = [] %>
+    <%helper.help_requests.each do |requests| %>
+      <% unless requests.review.nil? %>
+        <% allfriend << requests.review.friendliness_rating %>
+        <% allefficiency << requests.review.efficiency_rating %>
+        <% allpunctual << requests.review.punctuality_rating %>
+        <% allrecommend << requests.review.recommend %>
+      <% end %>
+    <% end %>
+    <% unless allfriend.empty? %>
+      <%= allfriend.inject{ |sum, el| sum + el }.to_f / allfriend.size/ 5 * 100 %>
+      <%= (allefficiency.inject{ |sum, el| sum + el }.to_f / allefficiency.size) / 5 * 100%>
+      <%= allpunctual.inject{ |sum, el| sum + el }.to_f / allpunctual.size/ 5 * 100 %>
+      <% trecommend = allrecommend.select { |recommendation| recommendation == true} %>
+      <%= trecommend.size/allrecommend.size.to_f * 100 %>
+    <% end %>
+  <% end %>
+<% end %>
