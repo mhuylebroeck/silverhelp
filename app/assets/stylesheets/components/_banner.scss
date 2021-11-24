@@ -12,40 +12,36 @@
 
 .homepage-container {
   background-color: #FFF2CE;
-  position: absolute;
-  width: 1304px;
-  height: 685px;
-  left: 67px;
-  top: 54px;
-  border-radius: 30px;
+  height: 655px;
+  // border-bottom-left-radius: 30px;
+  // border-bottom-right-radius: 30px;
+  padding-left: 80px;
+  padding-right: 80px;
 }
 
-.master-container {
-  position: absolute;
-  width: 1440px;
-  height: 631px;
-  left: 0px;
-  top: -1px;
-  background: #FCC010;
-}
+.master-banner-container {
+ display:flex;
+ justify-content: center;
+//   position: absolute;
+//   width: 1440px;
+//   height: 631px;
+//   left: 0px;
+//   top: -1px;
+//   background: #FCC010;
+ }
 
-.container-navbar-home {
-  font-family: 'Montserrat', sans-serif;
-  color: #20124D;
-  margin: 20px 66px 0 66px;
-}
 
 .title-home-banner {
-  font-family: 'Montserrat', sans-serif;
   color: #20124D;
   margin-top: 70px;
   margin-left: 66px;
 
   h1 {
-    font-size: 54px;
-    line-height: 59px;
-    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 59px;
   }
 
   h6 {
@@ -53,7 +49,7 @@
     font-weight: lighter;
     line-height: 29px;
     margin-top: 18px;
-    font-size: 24px;
+    font-size: 22px;
     line-height: 29px;
     }
 }
@@ -71,7 +67,7 @@
   position: absolute;
   margin-top: 80px;
   margin-left: 66px;
-  background-color: white;
+  background-color: #fffcf4;
   padding: 4px;
   width: 580px;
   height: 64px;
@@ -79,15 +75,13 @@
 }
 
 .search-form-home {
-  border-color: rgb(226, 226, 226);
+  border-color: #fffcf4;
   width: 420px;
   height: 56px;
-  border-color: white;
+  border-color: #fffcf4;
   box-decoration-break: none;
   border-radius: 4px;
   border: 0;
-
-
 }
 
 .search-btn-home {
@@ -101,9 +95,8 @@
 }
 
 .search-btn {
-  color: white;
+  color: #fffcf4;
   text-align: center;
-  font-family: Work Sans;
   font-style: normal;
   font-weight: 200;
   font-size: 20px;

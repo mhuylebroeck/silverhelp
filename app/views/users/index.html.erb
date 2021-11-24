@@ -1,0 +1,16 @@
+
+<ul>
+  <% @helpers.each do |helper| %>
+    <li>
+      <%= helper.name %>
+
+      <%= simple_form_for [helper, HelpRequest.new(params[:help_request].permit!)] do |f| %>
+        <%= f.input :start_time, as: :hidden %>
+        <%= f.input :duration, as: :hidden %>
+        <%= f.input :task_id, as: :hidden %>
+        <%= f.input :task_description, as: :hidden %>
+        <%= f.submit %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

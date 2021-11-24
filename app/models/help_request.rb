@@ -5,6 +5,7 @@ class HelpRequest < ApplicationRecord
   has_one :review, dependent: :destroy
   validates :start_time, presence: true, allow_blank: false
   validates :duration, presence: true
+  validates :task_id, presence: true
   enum status: {
     pending: 0,
     accepted: 1,
