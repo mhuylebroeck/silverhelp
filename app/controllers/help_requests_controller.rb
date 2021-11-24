@@ -5,6 +5,7 @@ class HelpRequestsController < ApplicationController
   end
 
   def create
+    raise
     @help_request = HelpRequest.new(helper_params)
     @help_request.senior_id = current_user.id
     # if @help_request.save!

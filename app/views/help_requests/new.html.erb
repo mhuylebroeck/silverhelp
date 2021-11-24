@@ -1,55 +1,11 @@
 <div class="form-container-home">
       <div class="form-home">
-      <%= form_tag users_path, method: :get do %>
-        <div style="display: flex;">
-          <div>
-            <%= text_field_tag :task,
-              params[:task],
-              class: "form-control",
-              placeholder: "Select the task",
-              class: "form-home-banner",
-              style: "text-align: center"
-            %>
-          </div>
-          <div>
-            <%= text_field_tag :date,
-              params[:date],
-              class: "form-control",
-              placeholder: "Select a date",
-              class: "form-home-banner",
-              style: "text-align: center"
-            %>
-          </div>
-          <div>
-            <%= text_field_tag :time,
-              params[:time],
-              class: "form-control",
-              placeholder: "Select a time",
-              class: "form-home-banner",
-              style: "text-align: center"
-            %>
-          </div>
-          <div>
-            <%= text_field_tag :duration,
-              params[:duration],
-              class: "form-control",
-              placeholder: "Select a time",
-              class: "form-home-banner",
-              style: "text-align: center"
-            %>
-          </div>
-          <div>
-            <%= text_field_tag :location,
-              params[:location],
-              class: "form-control",
-              placeholder: "Select a location",
-              class: "form-home-banner",
-              style: "text-align: center"
-            %>
-          </div>
-          <div>
-            <%= submit_tag "Search helper", class: "btn-home btn-primary" %>
-          </div>
-        </div>
-      </div>
-    <% end %>
+
+      <%= simple_form_for HelpRequest.new, url: users_path, method: :get do |f| %>
+        <%= f.input :task_id, collection: Task.all%>
+        <%= f.input :start_time, as: :date, html5: true %>
+        <%= f.input :start_time, html5: true %>
+        <%= f.input :duration, collection: [['Small (0-1 hour)', '1'], ['Medium (1-2 hours)', '2'], ["Large (2-4 hours)", 3 ]] %>
+        <%= f.input :task_description %>
+        <%= f.submit "Search" %>
+      <% end %>

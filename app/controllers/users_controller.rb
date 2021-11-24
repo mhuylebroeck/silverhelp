@@ -5,8 +5,8 @@ class UsersController < ApplicationController
   end
 
   def index #the index page for the helper
-    @helpers = User.where(user_type: "helper" && params[:location] == :location && :tasks.include(params[:task]))
     raise
+    @helpers = User.where(user_type: "helper")
   end
 
 end
