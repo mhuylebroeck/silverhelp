@@ -4,6 +4,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+  <%# THIS IS INCOMPLETE, FINISH THIS LATER AS WE NEED TO MAKE A FORM DIFFERENT DEPENDING ON THE USER TYPE! %>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
@@ -15,6 +16,27 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :name,
+                required: true,
+                hint: ("Give us your name."),
+                input_html: { autocomplete: "name" } %>
+    <%= f.input :phone_number,
+                required: true,
+                hint: ("Give us your phone number."),
+                input_html: { autocomplete: "phone-number" } %>
+    <%= f.input :gender,
+                required: false,
+                hint: ("Give us your gender."),
+                input_html: { autocomplete: "gender" },
+                collection: ["F", "M", "NA"] %>
+    <%= f.input :location,
+                required: true,
+                hint: ("Give us your location."),
+                input_html: { autocomplete: "location" } %>
+    <%= f.input :avatar, as: :file,
+                required: true,
+                input_html: {autocomplete: "Your-profile-picture"} %>
+    <%= f.input :user_type, required: true, collection: ["helper", "senior"] %>
   </div>
 
   <div class="form-actions">
