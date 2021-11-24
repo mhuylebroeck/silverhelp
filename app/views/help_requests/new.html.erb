@@ -1,8 +1,55 @@
-<%= simple_form_for(@help_request) do |f| %>
-  <%= f.association :task %>
-  <%= f.input :helper, collection: User.where(user_type: "helper") %>
-  <%= f.input :start_time %>
-  <%= f.input :duration %>
-  <%= f.input :location %>
-  <%= f.submit %>
-<% end %>
+<div class="form-container-home">
+      <div class="form-home">
+      <%= form_tag users_path, method: :get do %>
+        <div style="display: flex;">
+          <div>
+            <%= text_field_tag :task,
+              params[:task],
+              class: "form-control",
+              placeholder: "Select the task",
+              class: "form-home-banner",
+              style: "text-align: center"
+            %>
+          </div>
+          <div>
+            <%= text_field_tag :date,
+              params[:date],
+              class: "form-control",
+              placeholder: "Select a date",
+              class: "form-home-banner",
+              style: "text-align: center"
+            %>
+          </div>
+          <div>
+            <%= text_field_tag :time,
+              params[:time],
+              class: "form-control",
+              placeholder: "Select a time",
+              class: "form-home-banner",
+              style: "text-align: center"
+            %>
+          </div>
+          <div>
+            <%= text_field_tag :duration,
+              params[:duration],
+              class: "form-control",
+              placeholder: "Select a time",
+              class: "form-home-banner",
+              style: "text-align: center"
+            %>
+          </div>
+          <div>
+            <%= text_field_tag :location,
+              params[:location],
+              class: "form-control",
+              placeholder: "Select a location",
+              class: "form-home-banner",
+              style: "text-align: center"
+            %>
+          </div>
+          <div>
+            <%= submit_tag "Search helper", class: "btn-home btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
