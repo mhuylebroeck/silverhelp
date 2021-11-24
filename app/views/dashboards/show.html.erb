@@ -6,35 +6,35 @@
 <div class="dashboard-elements-container">
   <div class="dashboard-element">
     <h3>Your Pending Help Requests</h3>
-      <% if !@help_requests.empty? %>
+    <% if !@help_requests.empty? %>
       <% @help_requests.each do |request| %>
-        <% if request.accepted? %>
+        <% if request.pending? %>
           <div class="dashboard-element-item">
             <p><strong>Senior: </strong><%= request.senior.name %></p>
             <p><strong>Task description: </strong><%= request.task_description  %></p>
             <p><strong>Start time: </strong><%= request.start_time %></p>
             <p><strong>Duration: </strong><%= request.duration %> </p>
             <p><strong>Status: </strong><%= request.status %></p>
-            <%= link_to "Accept", edit_help_request_path(help_request,{status: "accepted"}), method: :patch, class: "btn-accept"  %>
+             <%= link_to "Accept", help_request_path(help_request,{status: "accepted"}), method: :patch, class: "btn-accept"  %>
           </div>
         <% end %>
       <% end %>
     <% else %>
-      <p>You have no recent bookings.</p>
+      <p>You have no pending requests.</p>
     <% end %>
   </div>
 
   <div class="dashboard-element">
-    <h3>Your Recent Bookings</h3>
+    <h3>Your Completed Help Requests</h3>
     <% if !@help_requests.empty? %>
       <% @help_requests.each do |request| %>
-        <% if request.accepted? %>
+        <% if request.completed? %>
           <div class="dashboard-element-item">
             <p><strong>Senior: </strong><%= request.senior.name %></p>
             <p><strong>Task description: </strong><%= request.task_description  %></p>
-            <p><strong>Start time: </strong><%= request.start_time %></p>
             <p><strong>Duration: </strong><%= request.duration %> </p>
             <p><strong>Status: </strong><%= request.status %></p>
+          </div>
           </div>
         <% end %>
       <% end %>
@@ -64,7 +64,7 @@
     </div>
 </div>
 
-<% else %> ###############################################################
+<% else %>
 
 <div class="dashboard-elements-container">
   <div class="dashboard-element">
@@ -78,6 +78,7 @@
             <p><strong>Start time: </strong><%= request.start_time %></p>
             <p><strong>Duration: </strong><%= request.duration %> </p>
             <p><strong>Status: </strong><%= request.status %></p>
+            <%= link_to "Mark as completed", help_request_path(request,{status: "completed"}), method: :patch, class: "btn-accept"  %>
           </div>
         <% end %>
       <% end %>
@@ -90,11 +91,10 @@
     <h3>Your Recent Bookings</h3>
     <% if !@help_requests.empty? %>
       <% @help_requests.each do |request| %>
-        <% if request.accepted? %>
+        <% if request.completed? %>
           <div class="dashboard-element-item">
             <p><strong>Helper: </strong><%= request.helper.name %></p>
             <p><strong>Task description: </strong><%= request.task_description  %></p>
-            <p><strong>Start time: </strong><%= request.start_time %></p>
             <p><strong>Duration: </strong><%= request.duration %> </p>
             <p><strong>Status: </strong><%= request.status %></p>
           </div>

@@ -14,6 +14,13 @@ class HelpRequestsController < ApplicationController
     # end
   end
 
+   def update
+  @help_request = HelpRequest.find(params[:id])
+  if @help_request.update(status: params[:status])
+    redirect_to dashboard_path
+  end
+  end
+
   private
 
   def helper_params
