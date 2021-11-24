@@ -3,11 +3,23 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :help_requests, dependent: :destroy, foreign_key: :senior
+
+
+         # THIS
+  has_many :owned_help_requests, class_name: "HelpRequest", foreign_key: "senior_id", dependent: :destroy
+  has_many :assigned_help_requests, class_name: "HelpRequests", foreign_key: "helper_id"
+
+
+
   has_many :availabilities, dependent: :destroy
   has_many :user_coupons, dependent: :destroy
   has_many :user_tasks, dependent: :destroy
   has_many :tasks, through: :user_tasks
   has_one_attached :avatar
   has_many :reviews, through: :help_requests
+
+  def help_requests
+    # This is so that we can get all of the tasks someone has, no matter if they're a helper or a senior.
+    HelpRequest.where("senior_id = ? OR helper_id = ?", self.id, self.id)
+  end
 end
