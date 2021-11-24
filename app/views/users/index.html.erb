@@ -1,13 +1,19 @@
-
+<h4>Searching for helpers in <%= params[:help_request][:location]%> for <%= params[:help_request][:start_time] %> during <%= params[:help_request][:duration]%> hours,  to help me with <%= Task.find(params[:help_request][:task_id]).name%></h4>
 <ul>
   <% @helpers.each do |helper| %>
     <li>
-      <%= helper.name %>
+      <%= helper.name %> -
+      <%= helper.location %> -
+      <% helper.tasks.each do |task| %>
+        <%= task.name %> |
+      <% end %>
+
 
       <%= simple_form_for [helper, HelpRequest.new(params[:help_request].permit!)] do |f| %>
         <%= f.input :start_time, as: :hidden %>
         <%= f.input :duration, as: :hidden %>
         <%= f.input :task_id, as: :hidden %>
+        <%= f.input :location, as: :hidden %>
         <%= f.input :task_description, as: :hidden %>
         <%= f.submit %>
       <% end %>
