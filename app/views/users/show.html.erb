@@ -1,5 +1,5 @@
 <h1>Hello, my name is <%= @user.name %>!</h1>
-<h2>*photo placeholder*</h2>
+<h2><%= cl_image_tag @user.avatar.key, height: 300, width: 400, crop: :fill %></h2>
 
 <p><strong>Address: <%= @user.location %> </strong></p>
 <p><strong>Phone number: <%= @user.phone_number %> </strong></p>
