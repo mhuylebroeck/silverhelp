@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   end
 
   def index #the index page for the helper
-    raise
     @helpers = User.where(user_type: "helper")
   end
 

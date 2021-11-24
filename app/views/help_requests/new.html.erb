@@ -3,7 +3,6 @@
 
       <%= simple_form_for HelpRequest.new, url: users_path, method: :get do |f| %>
         <%= f.input :task_id, collection: Task.all%>
-        <%= f.input :start_time, as: :date, html5: true %>
         <%= f.input :start_time, html5: true %>
         <%= f.input :duration, collection: [['Small (0-1 hour)', '1'], ['Medium (1-2 hours)', '2'], ["Large (2-4 hours)", 3 ]] %>
         <%= f.input :task_description %>
