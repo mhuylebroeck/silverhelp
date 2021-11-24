@@ -9,6 +9,7 @@ class HelpRequest < ApplicationRecord
   enum status: {
     pending: 0,
     accepted: 1,
-    declined: 2
+    declined: 2,
+    completed: 3
   }
 end
