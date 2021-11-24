@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_24_105927) do
+ActiveRecord::Schema.define(version: 2021_11_24_153607) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,16 +53,16 @@ ActiveRecord::Schema.define(version: 2021_11_24_105927) do
   end
 
   create_table "help_requests", force: :cascade do |t|
-    t.time "start_time"
     t.integer "duration"
     t.text "task_description"
-    t.integer "status"
+    t.integer "status", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "senior_id"
     t.bigint "helper_id"
     t.bigint "task_id", null: false
     t.string "location"
+    t.datetime "start_time"
     t.index ["helper_id"], name: "index_help_requests_on_helper_id"
     t.index ["senior_id"], name: "index_help_requests_on_senior_id"
     t.index ["task_id"], name: "index_help_requests_on_task_id"
