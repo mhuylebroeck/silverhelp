@@ -7,13 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 p "Destroying the database"
-User.destroy_all
 HelpRequest.destroy_all
-Coupon.destroy_all
-Review.destroy_all
-Task.destroy_all
 UserCoupon.destroy_all
 UserTask.destroy_all
+Task.destroy_all
+Coupon.destroy_all
+Review.destroy_all
+User.destroy_all
 p "Destroyed!"
 
 def random_address
@@ -241,3 +241,53 @@ p "Assigning coupons to different users"
   )
   p "Created coupon from #{coupon.name} for user #{user.name}"
 end
+
+p "Creating availabilities"
+
+Availability.create!(
+  user: User.where(name: "Jane Bronze")[0],
+  weekday: "monday"
+)
+
+Availability.create!(
+  user: User.where(name: "Jane Bronze")[0],
+  weekday: "tuesday"
+)
+
+Availability.create!(
+  user: User.where(name: "Jane Bronze")[0],
+  weekday: "friday"
+)
+
+Availability.create!(
+  user: User.where(name: "Jane Bronze")[0],
+  weekday: "monday"
+)
+
+Availability.create!(
+  user: User.where(name: "John Silver")[0],
+  weekday: "monday"
+)
+Availability.create!(
+  user: User.where(name: "John Silver")[0],
+  weekday: "wednesday"
+)
+Availability.create!(
+  user: User.where(name: "John Silver")[0],
+  weekday: "thursday"
+)
+Availability.create!(
+  user: User.where(name: "John Silver")[0],
+  weekday: "saturday"
+)
+
+p "Availabilities created for the custom users!"
+
+10.times do
+  Availability.create!(
+    user: User.all.sample,
+    weekday: Availability::WEEKDAYS.sample
+  )
+end
+
+p "Availabilities created for generic users!"
