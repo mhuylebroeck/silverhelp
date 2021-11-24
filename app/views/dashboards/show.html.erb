@@ -6,22 +6,41 @@
 <div class="dashboard-elements-container">
   <div class="dashboard-element">
     <h3>Your Pending Help Requests</h3>
-      <% if @help_requests.pending %>
-        <% @help_requests.each do |request| %>
-          <p>Senior name: <%= request.senior_id %></p>
-          <p>Task description: <%= request.task_description  %></p>
-          <p>Start time: <%= request.start_time %></p>
-          <p>Duration: <%= request.duration %> </p>
-          <p>Status: <%= request.status %></p>
-           <%= link_to "Accept", help_request_path(help_request,{status: "accepted"}), method: :patch, class: "btn-accept"  %>
+      <% if !@help_requests.empty? %>
+      <% @help_requests.each do |request| %>
+        <% if request.accepted? %>
+          <div class="dashboard-element-item">
+            <p><strong>Senior: </strong><%= request.senior.name %></p>
+            <p><strong>Task description: </strong><%= request.task_description  %></p>
+            <p><strong>Start time: </strong><%= request.start_time %></p>
+            <p><strong>Duration: </strong><%= request.duration %> </p>
+            <p><strong>Status: </strong><%= request.status %></p>
+            <%= link_to "Accept", edit_help_request_path(help_request,{status: "accepted"}), method: :patch, class: "btn-accept"  %>
+          </div>
         <% end %>
-      <% else %>
-      <p>You have no pending requests.</p>
       <% end %>
+    <% else %>
+      <p>You have no recent bookings.</p>
+    <% end %>
   </div>
 
   <div class="dashboard-element">
     <h3>Your Recent Bookings</h3>
+    <% if !@help_requests.empty? %>
+      <% @help_requests.each do |request| %>
+        <% if request.accepted? %>
+          <div class="dashboard-element-item">
+            <p><strong>Senior: </strong><%= request.senior.name %></p>
+            <p><strong>Task description: </strong><%= request.task_description  %></p>
+            <p><strong>Start time: </strong><%= request.start_time %></p>
+            <p><strong>Duration: </strong><%= request.duration %> </p>
+            <p><strong>Status: </strong><%= request.status %></p>
+          </div>
+        <% end %>
+      <% end %>
+    <% else %>
+      <p>You have no recent bookings.</p>
+    <% end %>
   </div>
 
   <div class="dashboard-element">
