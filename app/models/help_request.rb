@@ -1,5 +1,5 @@
 class HelpRequest < ApplicationRecord
-  belongs_to :senior, class_name: "User" #, optional: true
+  belongs_to :senior, class_name: "User", optional: true
   belongs_to :helper, class_name: "User", optional: true
   belongs_to :task
   has_one :review, dependent: :destroy

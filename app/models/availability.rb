@@ -1,5 +1,5 @@
 class Availability < ApplicationRecord
-  weekdays = %w[monday tuesday wednesday thursday friday saturday sunday]
+  WEEKDAYS = %w[monday tuesday wednesday thursday friday saturday sunday]
   belongs_to :user
-  validates :weekday, inclusion: { in: weekdays }, presence: true
+  validates :weekday, inclusion: { in: WEEKDAYS }, presence: true
 end
