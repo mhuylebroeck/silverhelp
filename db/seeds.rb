@@ -1,3 +1,4 @@
+require "open-uri"
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -45,7 +46,7 @@ p "Creating the helpers"
 
 p "Creating custom user 'John Silver', john@gmail.com."
 
-User.create!(
+john = User.new(
   email: "john@gmail.com",
   password: "123456",
   name: "John Silver",
@@ -57,6 +58,9 @@ User.create!(
   vehicle: true,
   points_balance: 250
 )
+file = URI.open("https://res.cloudinary.com/dbzm7zcr1/image/upload/v1637751221/john.jpg")
+john.avatar.attach(io: file, filename: 'john.png', content_type: 'image/png')
+john.save!
 
 p "Creating generic users."
 
@@ -75,13 +79,15 @@ p "Creating generic users."
   )
   user.description = "Hi! I'm #{user.name}. I'm #{concordance(adjective)} person who wants
   to help the elderly in my area. Let me be your silver helper!"
+  file = URI.open("https://source.unsplash.com/collection/9767985")
+  user.avatar.attach(io: file, filename: 'john.png', content_type: 'image/png')
   user.save!
   p "Created #{user.name}, a #{user.user_type}"
 end
 
 p "Creating custom user 'Jane Bronze', jane@gmail.com."
 
-User.create!(
+jane = User.new(
   email: "jane@gmail.com",
   password: "123456",
   name: "Jane Bronze",
@@ -93,6 +99,10 @@ User.create!(
   vehicle: true,
   points_balance: 100
 )
+
+file = URI.open("https://res.cloudinary.com/dbzm7zcr1/image/upload/v1637751226/jane.jpg")
+jane.avatar.attach(io: file, filename: 'jane.png', content_type: 'image/png')
+jane.save!
 
 p "Creating generic users."
 
@@ -110,6 +120,8 @@ p "Creating generic users."
     points_balance: Faker::Number.between(from: 0, to: 1000)
   )
   user.description = "Hi! I'm #{user.name}. I'm #{concordance(adjective)} person who wants to help the elderly in my area."
+  file = URI.open("https://source.unsplash.com/collection/9767985")
+  user.avatar.attach(io: file, filename: 'john.png', content_type: 'image/png')
   user.save!
   p "Created #{user.name}, a #{user.user_type}"
 end
@@ -118,7 +130,7 @@ p "Creating the elderly"
 
 p "Creating custom user 'Maria Silva', maria@gmail.com."
 
-User.create!(
+maria = User.new(
   email: "maria@gmail.com",
   password: "123456",
   name: "Maria Silva",
@@ -128,6 +140,10 @@ User.create!(
   location: "Carrer de Prats de Molló, 08021 Barcelona",
   user_type: "elder"
 )
+
+file = URI.open("https://res.cloudinary.com/dbzm7zcr1/image/upload/v1637751302/maria.jpg")
+maria.avatar.attach(io: file, filename: 'maria.png', content_type: 'image/png')
+maria.save!
 
 p "Creating generic elders"
 
@@ -143,6 +159,8 @@ p "Creating generic elders"
     user_type: "elder"
   )
   user.description = "Hello. I am #{user.name}. I am #{concordance(adjective)} person who needs help with some tasks."
+  file = URI.open("https://source.unsplash.com/collection/98364774")
+  user.avatar.attach(io: file, filename: 'john.png', content_type: 'image/png')
   user.save!
   p "Created #{user.name}, an #{user.user_type}"
 end
@@ -171,18 +189,74 @@ p "Finished creating coupons."
 # CREATING THE TASKS
 
 p "Creating tasks..."
-
-ALL_TASKS = ["Groceries", "Home repairs", "Furniture assembly", "Cleaning", "Wheelchair assistance",
-             "Company for excursion", "Cooking", "Activities" ]
 # THE ABOVE WE SHOULD HOPEFULLY GET FROM THE MODEL IN THE FUTURE! with something like TASKS::names
 # Feel free to copy and paste it!
 
-ALL_TASKS.each do |task|
+UserTask::ALL_TASKS.each do |task|
   Task.create(name: task)
   p "Created #{task}"
 end
 
 p "Finished creating tasks"
+
+# CREATING USER TASKS
+
+p "Creating user tasks"
+
+p "Creating user tasks for John"
+
+UserTask.create!(
+  user: User.where(name: "John Silver")[0],
+  task: Task.where(name: "Groceries")[0]
+)
+
+UserTask.create!(
+  user: User.where(name: "John Silver")[0],
+  task: Task.where(name: "Home repairs")[0]
+)
+
+UserTask.create!(
+  user: User.where(name: "John Silver")[0],
+  task: Task.where(name: "Cleaning")[0]
+)
+
+UserTask.create!(
+  user: User.where(name: "John Silver")[0],
+  task: Task.where(name: "Wheelchair assistance")[0]
+)
+
+p "Creating user tasks for Jane"
+
+UserTask.create!(
+  user: User.where(name: "Jane Bronze")[0],
+  task: Task.where(name: "Wheelchair assistance")[0]
+)
+
+UserTask.create!(
+  user: User.where(name: "Jane Bronze")[0],
+  task: Task.where(name: "Home repairs")[0]
+)
+
+UserTask.create!(
+  user: User.where(name: "Jane Bronze")[0],
+  task: Task.where(name: "Cooking")[0]
+)
+
+UserTask.create!(
+  user: User.where(name: "Jane Bronze")[0],
+  task: Task.where(name: "Company for excursion")[0]
+)
+
+p "Creating generic user tasks"
+
+25.times do
+  UserTask.create!(
+    user: User.all.sample,
+    task: Task.all.sample
+  )
+end
+
+p "Created user tasks!"
 
 # CREATING THE TASKS REQUESTS
 
@@ -214,9 +288,6 @@ HelpRequest.create!(
   helper_id: User.where(name: "Jane Bronze")[0].id,
   task_id: Task.where(name: "Home repairs")[0].id
 )
-
-
-
 
 p "Creating reviews for Jane"
 

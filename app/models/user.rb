@@ -7,6 +7,6 @@ class User < ApplicationRecord
   has_many :availabilities, dependent: :destroy
   has_many :user_coupons, dependent: :destroy
   has_many :user_tasks, dependent: :destroy
-  # has_one_attached :photo #
+  has_one_attached :avatar
   has_many :reviews, through: :help_requests
 end
