@@ -1,0 +1,7 @@
+<div class="dashboard-element-item">
+  <p><strong>Helper: </strong><%= request.helper.name %></p>
+  <p><strong>Task description: </strong><%= request.task_description  %></p>
+  <p><strong>Duration: </strong><%= request.duration %>hr </p>
+  <p><strong>Status: </strong><%= request.status %></p>
+  <%= link_to "Delete booking", help_request_path(request), method: :delete, data: { confirm: "Are you sure you want to withdraw this request? This cannot be undone." }, class: "btn-accept"  %>
+</div>
