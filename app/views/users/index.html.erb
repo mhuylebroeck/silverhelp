@@ -159,8 +159,8 @@ kinda like for the leave your shit website %>
                 <%= f.input :duration, as: :hidden %>
                 <%= f.input :task_id, as: :hidden %>
                 <%= f.input :location, as: :hidden %>
-                <%= f.input :task_description, as: :hidden, class: "btn-rounded btn-brownishghost" %>
-                <%= f.submit %>
+                <%= f.input :task_description, as: :hidden%>
+                <%= f.submit, class: "btn-rounded btn-brownishghost"  %>
               <% end %>
               <% else %>
                 <%= link_to "Request help", users_path(), class: "btn-rounded btn-brownishghost"  %>
@@ -181,7 +181,6 @@ kinda like for the leave your shit website %>
       <%# <% helper.tasks.each do |task| %>
         <%# <%= task.name %>
       <%# <% end %>
-
     <%# </li> %>
   <%# <% end %>
 <%# </ul> %>

@@ -5,17 +5,13 @@ class UsersController < ApplicationController
   end
 
   def index #the index page for the helper
-    if params[:location].present? && params[:task].present?
-      # @helpers = User.where(user_type: "helper" && params[:location] == :location && params[:tasks].include(params[:task]))
-      # You can use the "near" for the location, as we used in the "leave your shit", to find every person near the address
-    elsif params[:task].present?
-      @helpers = User.where(user_type: "helper" && params[:tasks].include(params[:task]))
-    elsif params[:location].present?
-      # @helpers = User.where(user_type: "helper" && params[:location] == :location))
-      # See comments above
-    else
-      @helpers = User.where(user_type: "helper")
-    end
+    query = params[:help_request]
+    @helpers = User.where(user_type: "helper")
+    @helpers = @helpers.joins(:user_tasks).where(user_tasks: { task_id: query[:task_id] })
+    @helpers = @helpers.near(query["location"], 10) #none will work because :locations are complete address and params_location are just barcelona normaly.
+    selected_weekday = Date.parse(query["start_time"]).strftime('%A').downcase #"thursday"
+    @helpers = @helpers.joins(:availabilities).where(availabilities: {weekday: selected_weekday})
+
   end
 
 end

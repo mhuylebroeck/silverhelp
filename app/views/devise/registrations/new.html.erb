@@ -32,7 +32,8 @@
     <%= f.input :location,
                 required: true,
                 hint: ("Give us your location."),
-                input_html: { autocomplete: "location" } %>
+                input_html: { autocomplete: "location" },
+                input_html: { class: "location-autocomplete" }%>
     <%= f.input :avatar, as: :file,
                 required: true,
                 input_html: {autocomplete: "Your-profile-picture"} %>
