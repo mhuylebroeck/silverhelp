@@ -2,6 +2,7 @@ class HelpRequestsController < ApplicationController
 
   def new
     @help_request = HelpRequest.new
+    @tasks = Task.all
   end
 
   def create

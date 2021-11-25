@@ -1,11 +1,20 @@
 <div class="form-container-home">
       <div class="form-home">
 
-      <%= simple_form_for HelpRequest.new, url: users_path, method: :get do |f| %>
-        <%= f.input :task_id, collection: Task.all%>
-        <%= f.input :start_time, html5: true %>
-        <%= f.input :duration, collection: [['Small (0-1 hour)', '1'], ['Medium (1-2 hours)', '2'], ["Large (2-4 hours)", 3 ]] %>
-        <%= f.input :location, input_html: { class: "location-autocomplete" } %>
+      <%= simple_form_for @help_request, url: users_path, method: :get do |f| %>
+        <%= f.input :task_id,
+            collection: @tasks%>
+        <%= f.input :start_time,
+            html5: true %>
+        <%= f.input :duration,
+            as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'},
+            collection: HelpRequest::CATEGORIES %>
+        <%= f.input :location,
+            input_html: { class: "location-autocomplete" } %>
         <%= f.input :task_description %>
         <%= f.submit "Search" %>
       <% end %>
