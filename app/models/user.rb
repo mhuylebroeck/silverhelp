@@ -3,7 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
 
          # THIS
   has_many :owned_help_requests, class_name: "HelpRequest", foreign_key: "senior_id", dependent: :destroy

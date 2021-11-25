@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_24_153607) do
+ActiveRecord::Schema.define(version: 2021_11_25_104852) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,8 @@ ActiveRecord::Schema.define(version: 2021_11_24_153607) do
     t.bigint "task_id", null: false
     t.string "location"
     t.datetime "start_time"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["helper_id"], name: "index_help_requests_on_helper_id"
     t.index ["senior_id"], name: "index_help_requests_on_senior_id"
     t.index ["task_id"], name: "index_help_requests_on_task_id"
@@ -121,6 +123,8 @@ ActiveRecord::Schema.define(version: 2021_11_24_153607) do
     t.boolean "vehicle"
     t.integer "points_balance"
     t.integer "age"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

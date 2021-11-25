@@ -4,8 +4,10 @@
   height: 100px;
   padding-left: 148px;
   padding-right: 70px;
-
-
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,12 +15,30 @@
   padding-left: 148px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
-
 .navbar-light .navbar-nav .nav-link  {
   font-family: "Montserrat", sans-serif;
   color: #20124D;
   padding-right: 100px ;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
+
+.navbar-options {
+  display: inline-block;
+
+}
+
+.nav-item {
+   font-weight: 500;
+   font-size: 18px;
+
+  li{
+    &:hover {
+      border: #FCC010;
+
+    }
+  }
 }
