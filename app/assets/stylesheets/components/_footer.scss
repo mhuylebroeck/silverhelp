@@ -4,9 +4,20 @@
   align-items: center;
   justify-content: space-between;
   height: 100px;
-  padding: 0px 16px;
+  padding: 0px 16px 0 16px;
   left: 0;
   bottom: 0;
   width: 100%;
   z-index: 10;
+}
+
+.fab {
+  color: #20124D;
+
+}
+
+.page-container {
+display: grid;
+min-height: 100vh;
+grid-template-rows: auto 1fr auto;
 }
