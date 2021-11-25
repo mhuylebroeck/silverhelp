@@ -15,7 +15,7 @@
             <p><strong>Start time: </strong><%= request.start_time %></p>
             <p><strong>Duration: </strong><%= request.duration %> </p>
             <p><strong>Status: </strong><%= request.status %></p>
-             <%= link_to "Accept", help_request_path(help_request,{status: "accepted"}), method: :patch, class: "btn-accept"  %>
+             <%= link_to "Accept", help_request_path(request,{status: "accepted"}), method: :patch, class: "btn-accept"  %>
           </div>
         <% end %>
       <% end %>
