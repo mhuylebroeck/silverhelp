@@ -18,4 +18,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    @user = current_user
+    if @user.update
+    redirect_to dashboard_path
+  end
+  end
+
 end

@@ -15,7 +15,8 @@
             <p><strong>Start time: </strong><%= request.start_time %></p>
             <p><strong>Duration: </strong><%= request.duration %> </p>
             <p><strong>Status: </strong><%= request.status %></p>
-             <%= link_to "Accept", help_request_path(help_request,{status: "accepted"}), method: :patch, class: "btn-accept"  %>
+            <%= link_to "Accept", help_request_path(help_request,{status: "accepted"}), method: :patch, class: "btn-accept"  %>
+            <%= link_to "Decline", help_request_path(help_request,{status: "declined"}), method: :patch, class: "btn-accept"  %>
           </div>
         <% end %>
       <% end %>
@@ -60,8 +61,10 @@
     <% else %>
     <p>No</p>
     <% end %>
+    <%= link_to "Edit profile", user_path(@user,{status: "accepted"}), method: :patch, class: "btn-edit-profile"  %>
     </p>
-    </div>
+  </div>
+
 </div>
 
 <% else %>

@@ -8,7 +8,8 @@ background-color: #FFF2CE;
 .dashboard-elements-container{
   display: grid;
   grid-template-columns: 75% 25%;
-  grid-template-rows: 3fr 3fr 3fr;
+  grid-template-rows: fit-content;
+  row-gap: 20px;
 }
 
 .dashboard-element{
@@ -63,4 +64,18 @@ padding: 20px;
   border-radius: 20px;
   padding: 20px;
   margin: 20px;
+}
+
+.btn-edit-profile{
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-edit-profile:hover{
+  opacity: 1;
 }
