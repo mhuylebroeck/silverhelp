@@ -160,7 +160,7 @@ kinda like for the leave your shit website %>
                 <%= f.input :task_id, as: :hidden %>
                 <%= f.input :location, as: :hidden %>
                 <%= f.input :task_description, as: :hidden%>
-                <%= f.submit, class: "btn-rounded btn-brownishghost"  %>
+                <%= f.submit :html=> { class: "btn-rounded btn-brownishghost" }   %>
               <% end %>
               <% else %>
                 <%= link_to "Request help", users_path(), class: "btn-rounded btn-brownishghost"  %>
