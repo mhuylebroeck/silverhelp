@@ -331,11 +331,6 @@ Availability.create!(
 )
 
 Availability.create!(
-  user: User.where(name: "Jane Bronze")[0],
-  weekday: "monday"
-)
-
-Availability.create!(
   user: User.where(name: "John Silver")[0],
   weekday: "monday"
 )
