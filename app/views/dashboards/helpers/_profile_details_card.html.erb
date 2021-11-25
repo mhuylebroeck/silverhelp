@@ -1,0 +1,16 @@
+    <p><strong><%= @user.name %></strong></p>
+    <p><strong><%= @user.email %></strong></p>
+    <p><strong>Phone: </strong><%= @user.phone_number %></p>
+    <p><strong>My location: </strong><%= @user.location %></p>
+    <p><strong>About me: </strong><%= @user.description %></p>
+    <p><strong>Availability: </strong>
+    <% @user.availabilities.each do |availability| %>
+      <%= availability.weekday %>
+      <% end %>
+    </p>
+    <p><strong>Vehicle?</strong>
+    <% if !@user.vehicle %>
+      <p>Yes</p>
+    <% else %>
+      <p>No</p>
+    <% end %>

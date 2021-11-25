@@ -9,7 +9,7 @@ background-color: #FFF2CE;
   display: grid;
   grid-template-columns: 75% 25%;
   grid-template-rows: fit-content;
-  row-gap: 20px;
+  grid
 }
 
 .dashboard-element{
@@ -23,13 +23,11 @@ padding: 20px;
   h3{
     padding: 20px;
   }
-  line-height: 5px;
-
 }
 
 .dashboard-element-profile{
 background-color: #FCC010;
-height: 600px;
+height: fit-content;
 border-radius: 30px;
 margin: 20px;
 grid-column-start: 2;
@@ -39,7 +37,6 @@ grid-row-end: 3;
 padding: 20px;
   h3{
     padding: 20px;
-    text-align: left;
   }
   text-align: center;
 }
@@ -47,7 +44,7 @@ padding: 20px;
 .btn-accept{
   color: white;
   padding: 8px 24px;
-  margin: 20px;
+  margin-left: 20px;
   text-align: center;
   border-radius: 4px;
   background: #1EDD88;
@@ -60,18 +57,21 @@ padding: 20px;
 }
 
 .dashboard-element-item{
+  display: flex;
+  flex-wrap: wrap;
   background-color: #FFF2CE;
   border-radius: 20px;
   padding: 20px;
   margin: 20px;
+  line-height: 15px;
 }
 
 .btn-edit-profile{
-  color: #4A4A4A;
-  border: 1px solid #4A4A4A;
-  padding: 8px 24px;
-  border-radius: 50px;
-  font-weight: lighter;
+  color: black;
+  background-color: #695004;
+  padding: 10px;
+  border-radius: 20px;
+  font-weight: bold;
   opacity: 0.6;
   transition: opacity 0.3s ease;
   margin: 20px;
@@ -79,4 +79,8 @@ padding: 20px;
 
 .btn-edit-profile:hover{
   opacity: 1;
+}
+
+.empty-message{
+  padding-left: 20px;
 }

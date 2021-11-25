@@ -22,4 +22,12 @@ class User < ApplicationRecord
     # This is so that we can get all of the tasks someone has, no matter if they're a helper or a senior.
     HelpRequest.where("senior_id = ? OR helper_id = ?", self.id, self.id)
   end
+
+  def helper?
+    user_type == "helper"
+  end
+
+  def senior?
+    user_type == "senior"
+  end
 end
