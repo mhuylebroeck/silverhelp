@@ -3,8 +3,13 @@ class HelpRequest < ApplicationRecord
   belongs_to :senior, class_name: "User", optional: true, foreign_key: "senior_id"
   belongs_to :helper, class_name: "User", optional: true, foreign_key: "helper_id"
 
+  scope :active, -> { where(status: [:pending, :accepted]) }
+  scope :done, -> { where(status: [:completed]) }
+
+
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
+
 
   belongs_to :task
   has_one :review, dependent: :destroy
