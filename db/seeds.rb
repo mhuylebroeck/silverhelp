@@ -126,6 +126,31 @@ p "Creating generic users."
   p "Created #{user.name}, a #{user.user_type}"
 end
 
+##########################
+# WARNING: BELOW IS THE BIG RESEED! ONLY TO MAKE IT PRETTIER TO THE PRESENTATION!
+# ONLY UNCOMMENT TO RUN FOR HEROKU AND FOR THE PRESENTATION! ALLOW PLENTY OF TIME!
+###########################
+
+# 20.times do
+#   adjective = Faker::Adjective.positive
+#   user = User.new(
+#     email: Faker::Internet.email,
+#     password: "123456",
+#     name: Faker::FunnyName.name,
+#     phone_number: Faker::PhoneNumber.phone_number,
+#     gender: ["F", "M", "NA"].sample,
+#     location: random_address,
+#     user_type: "helper",
+#     vehicle: false,
+#     points_balance: Faker::Number.between(from: 0, to: 1000)
+#   )
+#   user.description = "Hi! I'm #{user.name}. I'm #{concordance(adjective)} person who wants to help the elderly in my area."
+#   file = URI.open("https://source.unsplash.com/collection/9767985")
+#   user.avatar.attach(io: file, filename: 'john.png', content_type: 'image/png')
+#   user.save!
+#   p "Created #{user.name}, a #{user.user_type}"
+# end
+
 p "Creating the elderly"
 
 p "Creating custom user 'Maria Silva', maria@gmail.com."
