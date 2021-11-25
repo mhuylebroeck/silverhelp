@@ -24,19 +24,8 @@ kinda like for the leave your shit website %>
             <%= helper.age %>
           </div>
           <div class="helperindex-middlebutton">
-            <% if params[:help_request].present? %>
-              <%= simple_form_for [helper, HelpRequest.new(params[:help_request].permit!)] do |f| %>
-                <%= f.input :start_time, as: :hidden %>
-                <%= f.input :duration, as: :hidden %>
-                <%= f.input :task_id, as: :hidden %>
-                <%= f.input :location, as: :hidden %>
-                <%= f.input :task_description, as: :hidden, class: "btn-rounded btn-brownish" %>
-                <%= f.submit %>
-              <% end %>
-              <% else %>
-                <%= link_to "Get help", users_path(), class: "btn-rounded btn-brownish"  %>
-                <%# Above is just a placeholder! It would be the form! %>
-            <% end %>
+            <%= link_to "See more", user_path(helper), class: "btn-rounded btn-brownish"  %>
+            <%# PUT THE SEE MORE BUTTON HERE %>
           </div>
         <div class="card-helperinfo">
           <% unless helper.help_requests.empty? %>
@@ -163,7 +152,20 @@ kinda like for the leave your shit website %>
               </div>
             <% end %>
           <div class="helperindex-bottombtn">
-            <%= link_to "See more", user_path(helper), class: "btn-rounded btn-brownishghost"  %>
+          <%# PUT GET HELP HERE %>
+            <% if params[:help_request].present? %>
+              <%= simple_form_for [helper, HelpRequest.new(params[:help_request].permit!)] do |f| %>
+                <%= f.input :start_time, as: :hidden %>
+                <%= f.input :duration, as: :hidden %>
+                <%= f.input :task_id, as: :hidden %>
+                <%= f.input :location, as: :hidden %>
+                <%= f.input :task_description, as: :hidden, class: "btn-rounded btn-brownishghost" %>
+                <%= f.submit %>
+              <% end %>
+              <% else %>
+                <%= link_to "Request help", users_path(), class: "btn-rounded btn-brownishghost"  %>
+                <%# Above is just a placeholder! It would be the form! %>
+            <% end %>
           </div>
         </div>
       </div>
@@ -171,15 +173,15 @@ kinda like for the leave your shit website %>
   </div>
 
 
-<ul>
-  <% @helpers.each do |helper| %>
-    <li>
-      <%= helper.name %> -
-      <%= helper.location %> -
-      <% helper.tasks.each do |task| %>
-        <%= task.name %> |
-      <% end %>
+<%# <ul> %>
+  <%# <% @helpers.each do |helper| %>
+    <%# <li> %>
+      <%# <%= helper.name %>
+      <%# <%= helper.location %>
+      <%# <% helper.tasks.each do |task| %>
+        <%# <%= task.name %>
+      <%# <% end %>
 
-    </li>
-  <% end %>
-</ul>
+    <%# </li> %>
+  <%# <% end %>
+<%# </ul> %>

@@ -1,7 +1,7 @@
 .btn-rounded{
   text-decoration: none;
   color: white;
-  padding: 8px 24px;
+  font-size: 32px;
   margin: 20px;
   text-align: center;
   border-radius: 16px;
@@ -16,7 +16,7 @@
 
 .btn-brownish{
   background-color: #CE8703;
-  font-weight: bold;
+  padding: 8px 24px;
   &:hover{
     background-color: #8f5e03;
   }
@@ -24,6 +24,8 @@
 
 .btn-brownishghost{
   border: 1px solid #CE8703;
+  padding: 8px 16px;
+  font-weight: bold;
   &:hover{
     background-color: #CE8703;
   }
