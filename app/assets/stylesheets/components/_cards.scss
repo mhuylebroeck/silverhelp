@@ -9,7 +9,14 @@
   padding: 20px;
   text-align: center;
   margin: 15px;
+  transition: 0.5s;
+  background: #FFF2CE;
 
+  &:hover {
+  background-color: #FFF2CE;
+  box-shadow:  0 0 15px rgba(0,0,0,0.4);
+  transform: translate(10px, -10px);
+  }
 }
 
 .task-icon-home {
