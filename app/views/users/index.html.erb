@@ -1,0 +1,82 @@
+
+<div class="header-toppage center">
+  <h1>You are looking at all available helpers</h1>
+</div>
+<%# We will have to add a conditional to change what is written based on what was searched,
+kinda like for the leave your shit website %>
+
+
+  <div class="grid-helperindex">
+    <% @helpers.each do |helper| %>
+      <div class="card-helperindex">
+        <div class="helperavatar">
+          <%= cl_image_tag helper.avatar.key, class: "avatar-mediumroundindex", crop: :fill %>
+        </div>
+        <div class="helpertitle">
+          <%= helper.name %>
+          <%= helper.age %>
+        </div>
+        <% unless helper.help_requests.empty? %>
+        <% allfriend = []
+          allefficiency = []
+          allpunctual = []
+          allrecommend = [] %>
+          <%helper.help_requests.each do |requests| %>
+            <% unless requests.review.nil? %>
+              <% allfriend << requests.review.friendliness_rating %>
+              <% allefficiency << requests.review.efficiency_rating %>
+              <% allpunctual << requests.review.punctuality_rating %>
+              <% allrecommend << requests.review.recommend %>
+            <% end %>
+          <% end %>
+            <% unless allfriend.empty? %>
+              <div class="helperscores">
+                <%= allfriend.inject{ |sum, el| sum + el }.to_f / allfriend.size/ 5 * 100 %>
+                <%= (allefficiency.inject{ |sum, el| sum + el }.to_f / allefficiency.size) / 5 * 100%>
+                <%= allpunctual.inject{ |sum, el| sum + el }.to_f / allpunctual.size/ 5 * 100 %>
+                <% trecommend = allrecommend.select { |recommendation| recommendation == true} %>
+                <%= trecommend.size/allrecommend.size.to_f * 100 %>
+              </div>
+            <% else %>
+              <div class="helperscores">
+                NA
+                NA
+                NA
+                NA
+              </div>
+            <% end %>
+          <% else %>
+            <div class="helperscores">
+              NA
+              NA
+              NA
+              NA
+            </div>
+          <% end %>
+      </div>
+    <% end %>
+  </div>
+
+<h4>Searching for helpers in <%= params[:help_request][:location]%> for <%= params[:help_request][:start_time] %> during <%= params[:help_request][:duration]%> hours,  to help me with <%= Task.find(params[:help_request][:task_id]).name%></h4>
+<ul>
+  <% @helpers.each do |helper| %>
+    <li>
+      <%= helper.name %> -
+      <%= helper.location %> -
+      <% helper.tasks.each do |task| %>
+        <%= task.name %> |
+      <% end %>
+
+
+      <%= simple_form_for [helper, HelpRequest.new(params[:help_request].permit!)] do |f| %>
+        <%= f.input :start_time, as: :hidden %>
+        <%= f.input :duration, as: :hidden %>
+        <%= f.input :task_id, as: :hidden %>
+        <%= f.input :location, as: :hidden %>
+        <%= f.input :task_description, as: :hidden %>
+        <%= f.submit %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
