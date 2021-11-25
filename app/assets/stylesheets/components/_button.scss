@@ -1,0 +1,30 @@
+.btn-rounded{
+  text-decoration: none;
+  color: white;
+  padding: 8px 24px;
+  margin: 20px;
+  text-align: center;
+  border-radius: 16px;
+  transition: background 0.3s ease;
+  position: relative;
+  top: 16px;
+  &:hover{
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.btn-brownish{
+  background-color: #CE8703;
+  font-weight: bold;
+  &:hover{
+    background-color: #8f5e03;
+  }
+}
+
+.btn-brownishghost{
+  border: 1px solid #CE8703;
+  &:hover{
+    background-color: #CE8703;
+  }
+}

@@ -30,11 +30,11 @@ kinda like for the leave your shit website %>
                 <%= f.input :duration, as: :hidden %>
                 <%= f.input :task_id, as: :hidden %>
                 <%= f.input :location, as: :hidden %>
-                <%= f.input :task_description, as: :hidden %>
+                <%= f.input :task_description, as: :hidden, class: "btn-rounded btn-brownish" %>
                 <%= f.submit %>
               <% end %>
               <% else %>
-                <%= link_to "Get help!", users_path(), class: "btn-accept"  %>
+                <%= link_to "Get help", users_path(), class: "btn-rounded btn-brownish"  %>
                 <%# Above is just a placeholder! It would be the form! %>
             <% end %>
           </div>
@@ -56,7 +56,7 @@ kinda like for the leave your shit website %>
                 <div class="container-helperscores">
                   <div class="helperreviews">
                     <div class="helperscores">
-                      <%= allfriend.inject{ |sum, el| sum + el }.to_f / allfriend.size/ 5 * 100 %>
+                      <%= allfriend.inject{ |sum, el| sum + el }.to_f / allfriend.size/ 5 * 100 %>%
                     </div>
                     <div class="txt-helperscoreexplain">
                       Friendliness
@@ -64,7 +64,7 @@ kinda like for the leave your shit website %>
                   </div>
                   <div class="helperreviews">
                     <div class="helperscores">
-                      <%= (allefficiency.inject{ |sum, el| sum + el }.to_f / allefficiency.size) / 5 * 100%>
+                      <%= (allefficiency.inject{ |sum, el| sum + el }.to_f / allefficiency.size) / 5 * 100%>%
                     </div>
                     <div class="txt-helperscoreexplain">
                       Happy with help
@@ -72,7 +72,7 @@ kinda like for the leave your shit website %>
                   </div>
                   <div class="helperreviews">
                     <div class="helperscores">
-                      <%= allpunctual.inject{ |sum, el| sum + el }.to_f / allpunctual.size/ 5 * 100 %>
+                      <%= allpunctual.inject{ |sum, el| sum + el }.to_f / allpunctual.size/ 5 * 100 %>%
                     </div>
                     <div class="txt-helperscoreexplain">
                       On time
@@ -81,7 +81,7 @@ kinda like for the leave your shit website %>
                   <% trecommend = allrecommend.select { |recommendation| recommendation == true} %>
                   <div class="helperreviews">
                     <div class="helperscores">
-                      <%= trecommend.size/allrecommend.size.to_f * 100 %>
+                      <%= trecommend.size/allrecommend.size.to_f * 100 %>%
                     </div>
                     <div class="txt-helperscoreexplain">
                       Recommended
@@ -163,7 +163,7 @@ kinda like for the leave your shit website %>
               </div>
             <% end %>
           <div class="helperindex-bottombtn">
-            <%= link_to "See more!", user_path(helper), class: "btn-accept"  %>
+            <%= link_to "See more", user_path(helper), class: "btn-rounded btn-brownishghost"  %>
           </div>
         </div>
       </div>
