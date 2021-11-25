@@ -2,7 +2,7 @@
 <div class="header-toppage center">
   <% if params[:help_request].present? %>
     <% if params[:help_request][:location].present? && params[:help_request][:start_time].present? && params[:help_request][:duration].present? && params[:help_request][:task_id] %>
-      <h4>Searching for helpers in <%= params[:help_request][:location]%> for <%= params[:help_request][:start_time] %> during <%= params[:help_request][:duration]%> hours, to help me with <%= Task.find(params[:help_request][:task_id]).name%></h4>
+      <h4><b>Searching for helpers in</b> <%= @location%> <b>for</b> <%= @time %> <b>for </b><%= params[:help_request][:duration]%> <b>hours, to help me with </b><%= Task.find(params[:help_request][:task_id]).name%></h4>
     <% end %>
   <% else %>
     <h1>You are looking at all available helpers</h1>
@@ -160,7 +160,7 @@ kinda like for the leave your shit website %>
                 <%= f.input :task_id, as: :hidden %>
                 <%= f.input :location, as: :hidden %>
                 <%= f.input :task_description, as: :hidden%>
-                <%= f.submit :html=> { class: "btn-rounded btn-brownishghost" }   %>
+                <%= f.submit "Request help", :class => "btn-rounded btn-brownishghost" %>
               <% end %>
               <% else %>
                 <%= link_to "Request help", users_path(), class: "btn-rounded btn-brownishghost"  %>

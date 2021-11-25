@@ -354,8 +354,8 @@ Availability.create!(
 
 p "Availabilities created for the custom users!"
 
-10.times do
-  Availability.create!(
+20.times do
+  Availability.create(
     user: User.all.sample,
     weekday: Availability::WEEKDAYS.sample
   )
