@@ -1,7 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: #FFF2CE;
-  height: 100px;
+  height: 80px;
   padding-left: 148px;
   padding-right: 70px;
   position: -webkit-sticky;
@@ -18,7 +18,10 @@
 .navbar-light .navbar-nav .nav-link  {
   font-family: "Montserrat", sans-serif;
   color: #20124D;
-  padding-right: 100px ;
+  margin-left: 50px;
+  margin-right:50px;
+
+
 }
 
 img {
@@ -38,7 +41,14 @@ img {
   li{
     &:hover {
       border: #FCC010;
-
     }
   }
+}
+
+#login-btn-home {
+  background: #FCC010;
+  border-radius: 5px;
+  align-items: center;
+  width: 100px;
+  text-align: center;
 }
