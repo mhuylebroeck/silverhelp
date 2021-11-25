@@ -29,6 +29,7 @@ gem 'redis', '~> 4.0'
 gem 'faker'
 gem 'cloudinary', '~> 1.16.0'
 gem 'open-uri'
+gem 'geocoder'
 
 
 # Reduces boot times through caching; required in config/boot.rb

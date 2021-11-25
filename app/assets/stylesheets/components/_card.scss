@@ -1,6 +1,87 @@
+$lightyellow: #FFE082;
+$strongyellow: #FCC010;
+
+// Everything here is for the helper index
 .grid-helperindex{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   padding: 0px 16px;
+  margin-left: 75px;
+  margin-right: 75px;
+  margin-bottom: 75px;
+}
+
+.card-helperindex {
+  background-color: $lightyellow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  margin: 20px;
+  box-shadow: 4px 8px 10px grey;
+}
+
+.txt-alignhelperindex {
+  margin-left: 111px;
+}
+
+.h2-helperindex {
+  display: flex;
+  align-content:center;
+  padding-top: 50px;
+
+}
+
+.card-helperinfo{
+  background-color: $strongyellow;
+  padding: 32px;
+  border-radius: 0px 0px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.helperavatar{
+  margin: 10px;
+}
+
+.helperindex-middlebutton{
+  z-index: 1;
+}
+
+.container-helperscores{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 24px;
+  font-weight: bold;
+}
+
+.helpertitle {
+  font-size: 32px;
+  margin: 16px;
+}
+
+.helperreviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.helperscores{
+  background-color: white;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.txt-helperscoreexplain{
+  color: white;
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
