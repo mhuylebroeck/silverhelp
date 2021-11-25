@@ -1,0 +1,44 @@
+.container-show {
+  margin-left: 180px;
+  margin-right: 180px;
+}
+
+.profile-show-avatar  {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-size: 20px;
+  font-weight: bold;
+  color: #20124D;
+
+  img  {
+    border-radius: 50%;
+    border: 5px;
+    border-color: #FCC010;
+  }
+}
+
+
+
+.container-profile-card {
+  border: #20124D;
+  border-color: #20124D;
+  border-radius: 30px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+.info-profile-show {
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.reviews-profile-show {
+  border-color: #20124D;
+  border-radius: 30px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}

@@ -1,16 +1,27 @@
-<h1>Hello, my name is <%= @user.name %>!</h1>
-<h2><%= cl_image_tag @user.avatar.key, height: 300, width: 400, crop: :fill %></h2>
+<div class="container-show">
+  <div class="profile-show-avatar">
+    <h2 ><%= cl_image_tag @user.avatar.key, height: 300, width: 400, crop: :fill %></h2>
+    <h1 class="profile-show" > <%= @user.name %></h1>
+  </div>
+  <div class="container-profile-card">
+    <div class="profile-show">
 
-<p><strong>Address: <%= @user.location %> </strong></p>
-<p><strong>Phone number: <%= @user.phone_number %> </strong></p>
-<p><strong>Description: <%= @user.description %> </strong></p>
-<p><strong>Vehicle?</strong><% if !@user.vehicle %>
-<p>Yes</p>
-<% else %>
-<p>No</p>
-<% end %>
-</p>
+    </div>
+    <div class="info-profile-show">
+      <p><strong>Address: <%= @user.location %> </strong></p>
+      <p><strong>Phone number: <%= @user.phone_number %> </strong></p>
+      <p><strong>Description: <%= @user.description %> </strong></p>
+      <p><strong>Vehicle?</strong><% if !@user.vehicle %>
+      <p>Yes</p>
+      <% else %>
+      <p>No</p>
+      <% end %>
+      </p>
+    </div>
+  </div>
 
-
-<h3> <%=@user.name%>'s reviews </h3>
-<h5>*reviews placeholder*</h5>
+  <div class="s">
+    <h3> <%=@user.name%>'s reviews </h3>
+    <h5>*reviews placeholder*</h5>
+  </div>
+</div>
