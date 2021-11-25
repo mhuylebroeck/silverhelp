@@ -1,0 +1,33 @@
+$strongyellow: #FCC010;
+
+.container-login{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.img-left{
+  background-image: url("https://images.unsplash.com/photo-1620862242704-93e77e90a83e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+  background-size: cover;
+  min-height: 75vh;
+}
+
+.form-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.centered {
+  text-align: center;
+  background-color: $strongyellow;
+  color: white;
+}
+
+.form-actions {
+    display: grid;
+}
+
+.btn-login:hover{
+  background-color: #b18604;
+}
