@@ -249,8 +249,8 @@ UserTask.create!(
 
 p "Creating generic user tasks"
 
-25.times do
-  UserTask.create!(
+50.times do
+  UserTask.create(
     user: User.all.sample,
     task: Task.all.sample
   )
@@ -331,11 +331,6 @@ Availability.create!(
 )
 
 Availability.create!(
-  user: User.where(name: "Jane Bronze")[0],
-  weekday: "monday"
-)
-
-Availability.create!(
   user: User.where(name: "John Silver")[0],
   weekday: "monday"
 )
@@ -354,8 +349,8 @@ Availability.create!(
 
 p "Availabilities created for the custom users!"
 
-10.times do
-  Availability.create!(
+50.times do
+  Availability.create(
     user: User.all.sample,
     weekday: Availability::WEEKDAYS.sample
   )

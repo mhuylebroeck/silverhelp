@@ -10,7 +10,7 @@ class HelpRequestsController < ApplicationController
     @help_request.senior_id = current_user.id
     @help_request.helper_id = params["user_id"].to_i
     if @help_request.save!
-      redirect_to root_path
+      redirect_to dashboard_path
     else
       render "help_requests/new"
     end

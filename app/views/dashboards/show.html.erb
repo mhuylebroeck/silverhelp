@@ -3,6 +3,21 @@
 
 <div class="dashboard-elements-container">
   <div class="dashboard-element">
+    <h3>Your Pending Help Requests</h3>
+    <% if !@help_requests.empty? %>
+      <% @help_requests.each do |request| %>
+        <% if request.pending? %>
+          <div class="dashboard-element-item">
+            <p><strong>Senior: </strong><%= request.senior.name %></p>
+            <p><strong>Task description: </strong><%= request.task_description  %></p>
+            <p><strong>Start time: </strong><%= request.start_time %></p>
+            <p><strong>Duration: </strong><%= request.duration %> </p>
+            <p><strong>Status: </strong><%= request.status %></p>
+             <%= link_to "Accept", help_request_path(request,{status: "accepted"}), method: :patch, class: "btn-accept"  %>
+          </div>
+        <% end %>
+      <% end %>
+
     <h3>Your Active Help Requests</h3>
     <% if @help_requests.active.empty? %>
       <p class="empty-message">You have no pending requests.</p>
