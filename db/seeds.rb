@@ -8,13 +8,13 @@ require "open-uri"
 #   Character.create(name: 'Luke', movie: movies.first)
 
 p "Destroying the database"
+HelpRequest.destroy_all
 UserCoupon.destroy_all
 UserTask.destroy_all
 Task.destroy_all
 Coupon.destroy_all
 Review.destroy_all
 User.destroy_all
-HelpRequest.destroy_all
 p "Destroyed!"
 
 def random_address
