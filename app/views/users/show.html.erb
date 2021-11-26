@@ -2,34 +2,43 @@
   <div class="container-show">
     <div class="profile-show-avatar">
       <h2 ><%= cl_image_tag @user.avatar.key, height: 300, width: 400, crop: :fill %></h2>
-      <h1 class="profile-show" > <%= @user.name %></h1>
+      <h1 class="profile-show" > <strong><%= @user.name %></strong></h1>
     </div>
     <div class="container-profile-card">
-      <div class="profile-show">
-
-      </div>
       <div class="info-profile-show">
-        <p><strong>About</strong></p>
-        <p><%= @user.description %></p>
-        <hr>
-        <p><strong>Location</strong></p>
-        <p><%= @user.location %></p>
-        <hr>
-        <p><strong>Contact details</p>
-        <p><%= @user.phone_number %></p>
+        <div class="about-profile-show">
+          <h4><strong>About</strong></h4>
+            <hr>
+          <p><%= @user.description %></p>
+        </div>
+        <div class="about-profile-show">
+          <p><i class="fas fa-map-marker-alt">  </i><strong>      Location</strong></p>
+          <p><%= @user.location %></p>
+        </div>
+        <div class="about-profile-show">
+          <p> <i class="fas fa-calendar-day">  </i><strong>      Availability</strong></p>
+            <% @user.availabilities.each do |availability| %>
+            <%=availability.weekday.capitalize%>
+            <% end %>
+          </div>
+        <div class="about-profile-show">
+          <p><i class="fas fa-car-side">  </i><strong>      Transportation</strong><% if !@user.vehicle %>
 
-        <p><strong>Vehicle?</strong><% if !@user.vehicle %>
-        <p>Yes</p>
-        <% else %>
-        <p>No</p>
-        <% end %>
-        </p>
+          <p><%= @user.name %> has a vehicle</p>
+          <% else %>
+          <p><%= @user.name %> has no vehicle</p>
+          <% end %>
+          </p>
+        </div>
       </div>
     </div>
-
-    <div class="s">
-      <h3> <%=@user.name%>'s reviews </h3>
-      <h5>*reviews placeholder*</h5>
+    <div class="container-review">
+      <div class="review-show">
+        <h4> <i class="fas fa-star"></i><strong> Reviews</strong> </h4>
+          <hr>
+        <h5>*reviews placeholder*</h5>
+        <p> They have been a lovely couple. They have come with their adorable cute puppy Murphy who has performed excellently. </p>
+      </div>
     </div>
   </div>
 </div>
