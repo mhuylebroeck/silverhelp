@@ -1,27 +1,35 @@
-<div class="container-show">
-  <div class="profile-show-avatar">
-    <h2 ><%= cl_image_tag @user.avatar.key, height: 300, width: 400, crop: :fill %></h2>
-    <h1 class="profile-show" > <%= @user.name %></h1>
-  </div>
-  <div class="container-profile-card">
-    <div class="profile-show">
-
+<div class="master-container-show">
+  <div class="container-show">
+    <div class="profile-show-avatar">
+      <h2 ><%= cl_image_tag @user.avatar.key, height: 300, width: 400, crop: :fill %></h2>
+      <h1 class="profile-show" > <%= @user.name %></h1>
     </div>
-    <div class="info-profile-show">
-      <p><strong>Address: <%= @user.location %> </strong></p>
-      <p><strong>Phone number: <%= @user.phone_number %> </strong></p>
-      <p><strong>Description: <%= @user.description %> </strong></p>
-      <p><strong>Vehicle?</strong><% if !@user.vehicle %>
-      <p>Yes</p>
-      <% else %>
-      <p>No</p>
-      <% end %>
-      </p>
-    </div>
-  </div>
+    <div class="container-profile-card">
+      <div class="profile-show">
 
-  <div class="s">
-    <h3> <%=@user.name%>'s reviews </h3>
-    <h5>*reviews placeholder*</h5>
+      </div>
+      <div class="info-profile-show">
+        <p><strong>About</strong></p>
+        <p><%= @user.description %></p>
+        <hr>
+        <p><strong>Location</strong></p>
+        <p><%= @user.location %></p>
+        <hr>
+        <p><strong>Contact details</p>
+        <p><%= @user.phone_number %></p>
+
+        <p><strong>Vehicle?</strong><% if !@user.vehicle %>
+        <p>Yes</p>
+        <% else %>
+        <p>No</p>
+        <% end %>
+        </p>
+      </div>
+    </div>
+
+    <div class="s">
+      <h3> <%=@user.name%>'s reviews </h3>
+      <h5>*reviews placeholder*</h5>
+    </div>
   </div>
 </div>
