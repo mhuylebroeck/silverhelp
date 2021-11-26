@@ -2,14 +2,14 @@
 
 <% if current_user.user_type == "helper" %>
 
-<%= simple_form_for([@user]) do |f| %>
+<%= simple_form_for(@user) do |f| %>
   <%= f.input :name %>
   <%= f.submit %>
 <% end %>
 
 <% else %>
 
-<%= simple_form_for([@user]) do |f| %>
+<%= simple_form_for(@user) do |f| %>
   <%= f.input :name %>
   <%= f.submit %>
 <% end %>
