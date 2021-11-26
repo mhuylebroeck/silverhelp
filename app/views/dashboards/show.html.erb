@@ -2,6 +2,8 @@
 <h1>Welcome to your profile</h1>
 
 <div class="dashboard-elements-container">
+<div>
+
   <div class="dashboard-element">
     <h3>Your Active Help Requests</h3>
     <% if @help_requests.active.empty? %>
@@ -39,17 +41,17 @@
       <%= render "dashboards/seniors/favorite_helpers_card" %>
     <% end %>
   </div>
-
+</div>
   <div class="dashboard-element-profile">
     <h3>Your Details</h3>
 
-    <h5>*photo placeholder*</h5>
+    <h2 ><%= cl_image_tag current_user.avatar.key, height: 300, width: 400, class: "profile-avatar" %></h2>
       <% if current_user.helper? %>
         <%= render "dashboards/helpers/profile_details_card" %>
       <% else %>
         <%= render "dashboards/seniors/profile_details_card" %>
       <% end %>
-    <%= link_to "Edit profile", user_path(@user), method: :patch, class: "btn-edit-profile"  %>
+    <%= link_to "Edit profile", edit_user_path(@user), class: "btn-edit-profile"  %>
     </p>
   </div>
 </div>

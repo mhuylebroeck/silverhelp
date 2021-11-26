@@ -1,9 +1,9 @@
 <div class="dashboard-element-item">
-  <p><strong>Requester: </strong><%= request.senior.name %> <%= link_to "view profile", user_path(request.senior), method: :get, class: "btn-edit-profile" %></p>
-  <p><strong>What they need help with : </strong><%= request.task_description  %></p>
-  <p><strong>Start time: </strong><%= request.start_time %></p>
-  <p><strong>Duration: </strong><%= request.duration %>hr </p>
-  <p><strong>Status: </strong><%= request.status %></p>
+  <p><strong><i class="far fa-user"></i></strong><%= request.senior.name %> <%= link_to "view profile", user_path(request.senior), method: :get, class: "btn-edit-profile" %></p>
+  <p><strong><i class="far fa-comment-dots"></i></strong><%= request.task_description  %></p>
+  <p><strong><i class="far fa-clock"></i></strong><%= request.start_time %></p>
+  <p><strong><i class="fas fa-hourglass-start"></i></strong><%= request.duration %>hr </p>
+  <p><strong><i class="fas fa-spinner"></i></strong><%= request.status %></p>
   <% if request.pending? %>
   <%= link_to "Accept", help_request_path(request,{status: "accepted"}), method: :patch, class: "btn-accept"  %>
   <% end %>
