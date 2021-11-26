@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
          # THIS
   has_many :owned_help_requests, class_name: "HelpRequest", foreign_key: "senior_id", dependent: :destroy
-  has_many :assigned_help_requests, class_name: "HelpRequests", foreign_key: "helper_id", dependent: :destroy
+  has_many :assigned_help_requests, class_name: "HelpRequest", foreign_key: "helper_id", dependent: :destroy
 
 
 
