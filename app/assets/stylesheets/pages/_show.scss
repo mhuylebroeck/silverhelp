@@ -2,6 +2,8 @@
 .container-show {
   margin-left: 280px;
   margin-right: 280px;
+  color: #20124D;
+
 ;
 
 }
@@ -17,10 +19,13 @@
   font-weight: bold;
   color: #20124D;
 
+
   img  {
     border-radius: 50%;
-    border: 5px;
-    border-color: #FCC010;
+    border: 5px solid;
+    border-color: #FFF2CE;
+;
+
   }
 }
 
@@ -32,11 +37,14 @@
   border-radius: 30px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
+  background: #fffcf4;
 }
 
 .info-profile-show {
   margin-left: 80px;
   margin-right: 80px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .reviews-profile-show {
@@ -44,13 +52,43 @@
   border-radius: 30px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
+
 }
 
 .profile-show {
   font-size: 30px;
 }
 
-.master-container-show {
-  background: linear-gradient(42deg, rgba(252,240,204,1) 0%, rgba(252,192,16,1) 100%);
+.review-show {
+  padding-bottom: 40px;
+}
 
+.container-review{
+  margin-bottom: 30px;
+  margin-top: 30px;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border: #20124D;
+  border-color: #20124D;
+  border-radius: 30px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  background: #fffcf4;
+  margin-bottom: 40px;
+}
+
+.about-profile-show {
+  padding-bottom:20px;
+
+  p {
+    margin-bottom:2px;
+  }
+}
+
+.master-container-show {
+  background-color: #FCC010;
+  padding-top:30px;
+  padding-bottom:30px;
 }
