@@ -9,18 +9,18 @@ background-color: #FFF2CE;
   display: grid;
   grid-template-columns: 75% 25%;
   grid-template-rows: fit-content;
-  grid
 }
 
 .dashboard-element{
-background-color: #FCC010;
-height: fit-content;
-border-radius: 30px;
-grid-column-start: 1;
-grid-column-end: 1;
-margin: 20px;
-padding: 20px;
-  h3{
+  background-color: #FCC010;
+  height: fit-content;
+  border-radius: 30px;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  margin: 20px;
+  padding: 20px;
+
+  h3 {
     padding: 20px;
   }
 }

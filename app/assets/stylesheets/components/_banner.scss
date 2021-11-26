@@ -13,7 +13,8 @@
 .homepage-container {
   background-color: #FFF2CE;
   height: 655px;
-  //border-radius: 30px;
+  border-bottom-left-radius: 130px;
+  border-bottom-right-radius: 130px;
   padding-left: 80px;
   padding-right: 80px;
   padding-top: 80px;
@@ -22,6 +23,7 @@
 .master-banner-container {
  display:flex;
  justify-content: center;
+ background-color: #FCC010;
 
 //   position: absolute;
 //   width: 1440px;
