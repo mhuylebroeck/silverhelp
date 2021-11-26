@@ -1,0 +1,8 @@
+<%= simple_form_for [helper, HelpRequest.new(params[:help_request].permit!)] do |f| %>
+  <%= f.input :start_time, as: :hidden %>
+  <%= f.input :duration, as: :hidden %>
+  <%= f.input :task_id, as: :hidden %>
+  <%= f.input :location, as: :hidden %>
+  <%= f.input :task_description, as: :hidden%>
+  <%= f.submit "Request help", :class => "btn-rounded btn-brownishghost btn-formalign" %>
+<% end %>

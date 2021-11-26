@@ -1,0 +1,35 @@
+<div class="container-helperscores">
+    <div class="helperreviews">
+      <div class="helperscores">
+        <%= allfriend.inject{ |sum, el| sum + el }.to_f / allfriend.size/ 5 * 100 %>%
+      </div>
+      <div class="txt-helperscoreexplain">
+        Friendliness
+      </div>
+    </div>
+    <div class="helperreviews">
+      <div class="helperscores">
+        <%= (allefficiency.inject{ |sum, el| sum + el }.to_f / allefficiency.size) / 5 * 100%>%
+      </div>
+      <div class="txt-helperscoreexplain">
+        Happy with help
+      </div>
+    </div>
+    <div class="helperreviews">
+      <div class="helperscores">
+        <%= allpunctual.inject{ |sum, el| sum + el }.to_f / allpunctual.size/ 5 * 100 %>%
+      </div>
+      <div class="txt-helperscoreexplain">
+        On time
+      </div>
+    </div>
+    <% trecommend = allrecommend.select { |recommendation| recommendation == true} %>
+    <div class="helperreviews">
+      <div class="helperscores">
+        <%= trecommend.size/allrecommend.size.to_f * 100 %>%
+      </div>
+      <div class="txt-helperscoreexplain">
+        Recommended
+      </div>
+    </div>
+  </div>
