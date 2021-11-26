@@ -16,6 +16,7 @@
   background-color: #FFF2CE;
   box-shadow:  0 0 15px rgba(0,0,0,0.4);
   transform: translate(10px, -10px);
+  text-decoration: none;
   }
 }
 
@@ -27,7 +28,37 @@
 
 .task-name-card {
   font-size: 16px;
+  text-decoration: none !important;
+  color: black;
 
+}
+
+.task-name-card:hover {
+  font-size: 16px;
+  color: black;
+  a {
+      text-decoration: none !important;
+  }
+}
+
+a .task-name-card:hover {
+  font-size: 16px;
+  text-decoration: none !important;
+  color: black;
+
+}
+
+.task-name-card:link {
+  font-size: 16px;
+  text-decoration: none;
+  color: black;
+
+}
+
+.whatever {
+  a{
+    text-decoration: none;
+  }
 }
 
 .container-cards-home {
