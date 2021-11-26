@@ -5,11 +5,37 @@
 
   <div class="form-inputs">
     <%= f.input :email, required: true, autofocus: true %>
+    <%= f.input :avatar, as: :file,
+                input_html: {autocomplete: "Your-profile-picture"} %>
+    <%= f.input :name,
+                required: true,
+                hint: ("Give us your name."),
+                input_html: { autocomplete: "name" } %>
+    <%= f.input :phone_number,
+                required: true,
+                hint: ("Give us your phone number."),
+                input_html: { autocomplete: "phone-number" } %>
+    <%= f.input :gender,
+                required: false,
+                hint: ("Give us your gender."),
+                input_html: { autocomplete: "gender" },
+                collection: ["F", "M", "NA"] %>
+    <%= f.input :location,
+                required: true,
+                hint: ("Give us your location."),
+                input_html: { autocomplete: "location" },
+                input_html: { class: "location-autocomplete" }%>
+    <%= f.input :user_type, required: true, collection: ["helper", "senior"] %>
 
+    <%= f.input :current_password,
+                hint: "we need your current password to confirm your changes",
+                required: true,
+                input_html: { autocomplete: "current-password" } %>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
+    <h2>Do you want to change your password? Go ahead!</h2>
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
@@ -17,13 +43,6 @@
     <%= f.input :password_confirmation,
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :avatar, as: :file,
-                required: true,
-                input_html: {autocomplete: "Your-profile-picture"} %>
   </div>
 
   <div class="form-actions">

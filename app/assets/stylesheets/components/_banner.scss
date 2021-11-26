@@ -79,12 +79,13 @@
 
 .search-form-home {
   border-color: #0c0b07;
-  width: 420px;
+  width: 410px;
   height: 56px;
   border-color: #fffcf4;
   box-decoration-break: none;
   border-radius: 4px;
   border: 0;
+  margin-left: 5px;
 }
 
 .search-btn-home {
@@ -92,9 +93,12 @@
   border: 1px solid #FCC010;
   box-sizing: border-box;
   border-radius: 4px;
-  width: 154.29px;
+  width: 150.29px;
   height: 56px;
-  padding: 20px
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .search-btn {
@@ -105,4 +109,10 @@
   font-size: 20px;
   display: flex;
   justify-content: center;
+  color: #FFF2CE;
+  font-weight: 600;
+}
+
+.form-homesearchbar{
+  margin-left: 10px;
 }

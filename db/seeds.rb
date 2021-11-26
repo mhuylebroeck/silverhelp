@@ -8,13 +8,13 @@ require "open-uri"
 #   Character.create(name: 'Luke', movie: movies.first)
 
 p "Destroying the database"
+HelpRequest.destroy_all
 UserCoupon.destroy_all
 UserTask.destroy_all
 Task.destroy_all
 Coupon.destroy_all
 Review.destroy_all
 User.destroy_all
-HelpRequest.destroy_all
 p "Destroyed!"
 
 def random_address
@@ -274,7 +274,7 @@ UserTask.create!(
 
 p "Creating generic user tasks"
 
-50.times do
+100.times do
   UserTask.create(
     user: User.all.sample,
     task: Task.all.sample
@@ -374,7 +374,7 @@ Availability.create!(
 
 p "Availabilities created for the custom users!"
 
-50.times do
+100.times do
   Availability.create(
     user: User.all.sample,
     weekday: Availability::WEEKDAYS.sample
