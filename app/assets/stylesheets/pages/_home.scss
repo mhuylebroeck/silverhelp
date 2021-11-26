@@ -62,12 +62,14 @@ body {
 }
 
 .container-how-it-works {
-  padding-top: 50px;
-  padding-left: 150px;
-  padding-right: 150px;
-  display: flex;
-  justify-content: center;
-  justify-content: space-between;
+    padding-top: 50px;
+    /* padding-left: 150px; */
+    /* padding-right: 150px; */
+    display: flex;
+    margin-left: auto;
+    max-width: 1000px;
+    margin-right: auto;
+    justify-content: center;
 }
 
 .img-info-home {
@@ -111,3 +113,8 @@ body {
   color: #20124D;
   padding-top: 30px;
 }
+
+// .container-containerhowitworks {
+//   display: flex;
+//   justify-content: center;
+// }
