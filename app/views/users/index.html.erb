@@ -2,7 +2,7 @@
 <div class="header-toppage center">
   <% if params[:help_request].present? %>
     <% if params[:help_request][:location].present? && params[:help_request][:start_time].present? && params[:help_request][:duration].present? && params[:help_request][:task_id] %>
-      <h4><b>Searching for helpers in</b> <%= @location%> <b>for</b> <%= @time %> <b>for </b><%= params[:help_request][:duration]%> <b>hour(s), to help me with </b><%= Task.find(params[:help_request][:task_id]).name%></h4>
+      <h4>Searching for helpers in <b><%= @location%></b> for <b><%= @time %></b> for <b><%= params[:help_request][:duration]%></b> hour(s), to help me with <b><%= Task.find(params[:help_request][:task_id]).name%></b></h4>
     <% end %>
   <% else %>
     <h1>You are looking at all available helpers</h1>
