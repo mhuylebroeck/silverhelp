@@ -18,9 +18,13 @@
   }
 }
 
-.fab {
+.fab, .fas {
   color: #20124D;
-
+  font-size: 25px;
+  padding: 5px;
+  &:hover{
+    color: #593db4;
+  }
 }
 
 .page-container {
@@ -32,4 +36,13 @@ grid-template-rows: auto 1fr auto;
 #login-btn-home {
   color: #FFF2CE;
   font-weight: 600;
+}
+
+#page-top{
+  color: #20124D;
+  font-size: 20px;
+}
+
+.footer-top{
+  text-align: center;
 }

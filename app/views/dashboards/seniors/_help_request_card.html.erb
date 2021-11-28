@@ -3,7 +3,7 @@
   <p><strong><i class="far fa-user"></i></strong><%= request.helper.name %></p>
   <p><strong><i class="far fa-comment-dots"></i></strong><%= request.task_description%></p>
   <p><strong><i class="far fa-clock"></i></strong><%= request.start_time %></p>
-  <p><strong><i class="fas fa-hourglass-start"></i></i></strong><%= request.duration %>hr </p>
+  <p><strong><i class="fas fa-hourglass-start"></i></strong><%= request.duration %>hr </p>
   <p><strong><i class="fas fa-spinner"></i></strong><%= request.status %></p>
   <%= link_to "Mark as completed", help_request_path(request,{status: "completed"}), method: :patch, class: "btn-accept"  %>
   <%= link_to "Withdraw request", help_request_path(request), method: :delete, data: { confirm: "Are you sure you want to withdraw this request? This cannot be undone." }, class: "btn-accept"  %>
