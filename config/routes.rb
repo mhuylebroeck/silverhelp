@@ -7,5 +7,8 @@ Rails.application.routes.draw do
     resources :help_requests, only: [:create]
   end
   resource :dashboard, only: [:show]
-  resources :help_requests, only: [:new, :update, :destroy]
+  resources :help_requests, only: [:new, :update, :destroy] do
+    resources :reviews, only: [:new, :create]
+  end
+
 end
