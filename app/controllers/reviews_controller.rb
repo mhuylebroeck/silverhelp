@@ -8,10 +8,12 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.help_request_id = params[:help_request_id]
+    @help_request = HelpRequest.find(params[:help_request_id])
     if @review.save
+      @help_request.status = 3
+      @help_request.save
       redirect_to dashboard_path
     else
-      @help_request = HelpRequest.find(params[:help_request_id])
       render :new
     end
   end
