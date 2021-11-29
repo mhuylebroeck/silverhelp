@@ -1,0 +1,21 @@
+$placeholder: #FCC010; // Change this to whatever colour we are now using as the primary colour!
+
+.review-container{
+  display: flex;
+}
+
+.review-leftside{
+  background-color: $placeholder;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.review-eyeline{
+  padding: 24px;
+}
+
+.review-form{
+  padding: 24px;
+}

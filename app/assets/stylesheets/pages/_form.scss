@@ -1,3 +1,7 @@
+////////////////////////////////////////////////////////
+// Help request Form:
+////////////////////////////////////////////////////////
+
 .category-wrapper {
   display: flex;
   justify-content: space-between;
@@ -115,7 +119,7 @@
   background-image: url("https://cdn-icons-png.flaticon.com/512/983/983083.png");
   background-size: 50px 50px;
   background-repeat: no-repeat;
-  height: 100px;
+  height: 120px;
   background-position: 50% 90%; // 95% 90%
 }
 
@@ -128,17 +132,17 @@
 
 
 #review_punctuality_rating_2 + label, #review_efficiency_rating_2 + label,
-#review_friendliness_rating_2 + label {
+#review_friendliness_rating_2 + label, #review_recommend_false + label {
   color: black;
   background-image: url("https://cdn-icons-png.flaticon.com/512/983/983046.png");
   background-size: 50px 50px;
   background-repeat: no-repeat;
-  height: 100px;
+  height: 120px;
   background-position: 50% 90%; // 95% 90%
 }
 
 #review_punctuality_rating_2:checked + label, #review_efficiency_rating_2:checked + label,
-#review_friendliness_rating_2:checked + label {
+#review_friendliness_rating_2:checked + label, #review_recommend_false:checked + label {
   background-color: #FFC65A;
   border-color: #FFC65A;
   background-image: url("https://cdn-icons-png.flaticon.com/512/983/983046.png");
@@ -151,7 +155,7 @@
   background-image: url("https://cdn-icons-png.flaticon.com/512/983/983084.png");
   background-size: 50px 50px;
   background-repeat: no-repeat;
-  height: 100px;
+  height: 120px;
   background-position: 50% 90%; // 95% 90%
 }
 
@@ -163,17 +167,17 @@
 }
 
 #review_punctuality_rating_4 + label, #review_efficiency_rating_4 + label,
-#review_friendliness_rating_4 + label {
+#review_friendliness_rating_4 + label, #review_recommend_true + label {
   color: black;
   background-image: url("https://cdn-icons-png.flaticon.com/512/983/983035.png");
   background-size: 50px 50px;
   background-repeat: no-repeat;
-  height: 100px;
+  height: 120px;
   background-position: 50% 90%; // 95% 90%
 }
 
 #review_punctuality_rating_4:checked + label, #review_efficiency_rating_4:checked + label,
-#review_friendliness_rating_4:checked + label {
+#review_friendliness_rating_4:checked + label, #review_recommend_true:checked + label {
   background-color: #FFC65A;
   border-color: #FFC65A;
   background-image: url("https://cdn-icons-png.flaticon.com/512/983/983035.png");
@@ -185,7 +189,7 @@
   background-image: url("https://cdn-icons-png.flaticon.com/512/983/983079.png");
   background-size: 50px 50px;
   background-repeat: no-repeat;
-  height: 100px;
+  height: 120px;
   background-position: 50% 90%; // 95% 90%
 }
 
