@@ -17,29 +17,26 @@
 }
 
 .btn-brownish {
-  color: #FCC010;
+  color: #F59D19 ;
+  background-color: #fffcf4;
   text-align: center;
   font-style: normal;
   font-weight: 200;
   font-size: 15px;
-  display: flex;
-  justify-content: center;
-  color: #fffcf4;
   font-weight: 600;
   box-sizing: border-box;
   border-radius: 4px;
   width: 150.29px;
   height: 56px;
   padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   transition: 0.5s;
-
- &:hover {
+  border: 1px solid $strongyellow;
+  padding-left: 31px;
+  padding-right: 31px;
+  &:hover {
     color: #fffcf4;
     text-decoration: none;
-    background-color: #FCC010;
+    background-color: #F59D19;
     border: none;
   }
 }
@@ -50,18 +47,13 @@
   font-style: normal;
   font-weight: 200;
   font-size: 15px;
-  display: flex;
-  justify-content: center;
-  color: #fffcf4;
+  padding: 20px;
   font-weight: 600;
   background: #FCC010;
   box-sizing: border-box;
   border-radius: 4px;
   width: 150.29px;
   height: 56px;
-  display: flex;
-  justify-content: center;
-  align-items:flex-end;
   transition: 0.5s;
   border: none;
   &:hover {
