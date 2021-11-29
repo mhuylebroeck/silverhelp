@@ -1,7 +1,12 @@
 .dashboard-container{
 background-color: #FFF2CE;
+font-family: "Montserrat", sans-serif;
   h1{
     text-align: center;
+    font-weight: bold;
+    text-shadow: 0 0 15px rgba(0,0,0,0.2);
+    padding: 20px;
+    color: #20124D
   }
 }
 
@@ -9,39 +14,61 @@ background-color: #FFF2CE;
   display: grid;
   grid-template-columns: 75% 25%;
   grid-template-rows: fit-content;
+  margin: 40px 20px 40px 20px;
 }
 
 .dashboard-element{
   background-color: #FCC010;
   height: fit-content;
-  border-radius: 30px;
+  border-radius: 10px;
   grid-column-start: 1;
   grid-column-end: 1;
-  margin: 20px;
-  padding: 20px;
-
+  margin: 40px;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   h3 {
     padding: 20px;
   }
 }
 
 .dashboard-element-profile{
+position: sticky;
+top: 80px;
 background-color: #FCC010;
 height: fit-content;
-border-radius: 30px;
+border-radius: 10px;
 margin: 20px;
 grid-column-start: 2;
 grid-column-end: 2;
 grid-row-start: 1;
 grid-row-end: 3;
 padding: 20px;
+box-shadow: 0 0 15px rgba(0,0,0,0.2);
   h3{
     padding: 20px;
   }
   text-align: center;
 }
 
-.btn-accept{
+
+
+.dashboard-element-item{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #FFF2CE;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  line-height: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  h6{
+    padding: 10px;
+  }
+  p{
+    padding: 6px;
+  }
+  .btn-accept{
   color: white;
   padding: 8px 24px;
   margin-left: 20px;
@@ -49,38 +76,36 @@ padding: 20px;
   border-radius: 4px;
   background: #1EDD88;
   transition: background 0.3s ease;
-}
-
-.btn-accept:hover {
+  &:hover {
   background: #1BCB7F;
   color: white;
 }
-
-.dashboard-element-item{
-  display: flex;
-  flex-wrap: wrap;
-  background-color: #FFF2CE;
-  border-radius: 20px;
-  padding: 20px;
-  margin: 20px;
-  line-height: 15px;
+}
+  .far, .fas{
+    padding: 6px;
+  }
 }
 
 .btn-edit-profile{
   color: black;
-  background-color: #695004;
   padding: 10px;
   border-radius: 20px;
   font-weight: bold;
   opacity: 0.6;
   transition: opacity 0.3s ease;
   margin: 20px;
-}
-
-.btn-edit-profile:hover{
+  &:hover{
   opacity: 1;
+  color: black;
+  text-decoration: none;
+}
 }
 
 .empty-message{
   padding-left: 20px;
+}
+
+.profile-avatar{
+  margin: 20px;
+  border-radius: 10px;
 }

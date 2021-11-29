@@ -79,7 +79,7 @@
 
 .search-form-home {
   border-color: #0c0b07;
-  width: 420px;
+  width: 400px;
   height: 56px;
   border-color: #fffcf4;
   box-decoration-break: none;
@@ -93,7 +93,7 @@
   border: 1px solid #FCC010;
   box-sizing: border-box;
   border-radius: 4px;
-  width: 154.29px;
+  width: 150.29px;
   height: 56px;
   padding: 20px;
   display: flex;
@@ -109,8 +109,14 @@
   font-size: 20px;
   display: flex;
   justify-content: center;
-}
+  color: #FFF2CE;
+  font-weight: 600;
+  transition: 0.5s;
 
-.form-homesearchbar{
-  margin-left: 10px;
+    &:hover {
+    color: #FFF2CE;
+    text-decoration: none;
+    background-color: #F59D19;
+    border: none;
+  }
 }

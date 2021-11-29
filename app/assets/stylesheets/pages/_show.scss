@@ -1,7 +1,7 @@
 
 .container-show {
-  margin-left: 280px;
-  margin-right: 280px;
+ // margin-left: 280px;
+ // margin-right: 280px;
   color: #20124D;
 
 ;
@@ -18,12 +18,16 @@
   font-size: 20px;
   font-weight: bold;
   color: #20124D;
+  padding-top: 40px;
 
 
   img  {
     border-radius: 50%;
     border: 5px solid;
-    border-color: #FFF2CE;
+    border-color: #FCC010;
+    height: 160px;
+    width: 160px;
+
 ;
 
   }
@@ -38,12 +42,16 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
   background: #fffcf4;
+  margin-left: 133px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  width: 323px;
 }
 
 .info-profile-show {
-  margin-left: 80px;
-  margin-right: 80px;
-  padding-top: 40px;
+  margin-left: 50px;
+  margin-right: 50px;
   padding-bottom: 40px;
 }
 
@@ -64,10 +72,12 @@
 }
 
 .container-review{
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   margin-top: 30px;
-  padding-left: 80px;
-  padding-right: 80px;
+  margin-right: 133px;
+  margin-left: 30px;
+  padding-left: 60px;
+  padding-right: 60px;
   padding-top: 40px;
   padding-bottom: 40px;
   border: #20124D;
@@ -76,7 +86,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
   background: #fffcf4;
-  margin-bottom: 40px;
+  color: #20124D;
 }
 
 .about-profile-show {
@@ -88,7 +98,54 @@
 }
 
 .master-container-show {
-  background-color: #FCC010;
+  background-color: #FFF2CE;
   padding-top:30px;
   padding-bottom:30px;
+  display: flex;
+  align-items: center;
+  align-items: flex-start;
+}
+
+.profile-show {
+  margin-bottom:30px;
+}
+
+.review-count {
+  font-size: 10px;
+}
+
+.container-show-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.btn-show {
+  color: #fffcf4;
+  text-align: center;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  color: #fffcf4;
+  font-weight: 600;
+  background: #FCC010;
+  border: 1px solid #FCC010;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 150.29px;
+  height: 56px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+
+ &:hover {
+    color: #fffcf4;
+    text-decoration: none;
+    background-color: #F59D19;
+    border: none;
+  }
 }
