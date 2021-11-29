@@ -1,20 +1,31 @@
 <div class="form-container-home">
-      <div class="form-home">
-
-      <%= simple_form_for @help_request, url: users_path, method: :get do |f| %>
-        <%= f.input :task_id,
-            collection: @tasks%>
-        <%= f.input :start_time,
-            html5: true %>
-        <%= f.input :duration,
-            as: :radio_buttons,
-            collection_wrapper_tag: 'div',
-            collection_wrapper_class: 'category-wrapper',
-            item_wrapper_class: 'category-item',
-            input_html: {class: 'category-selector'},
-            collection: HelpRequest::CATEGORIES %>
-        <%= f.input :location,
-            input_html: { class: "location-autocomplete" } %>
-        <%= f.input :task_description %>
-        <%= f.submit "Search" %>
+    <div class="form-home" data-controller="multi-step-form">
+      <%= simple_form_for [@help_request, HelpRequest.new(params[:help_request].permit!)], url: users_path, method: :get do |f| %>
+        <div class="d-none" data-multi-step-form-target="step">
+          <%= f.input :task_id, as: :hidden %>
+          <button data-action="click->multi-step-form#goToNext" data-next-step="1">Next step</button>
+        </div>
+        <div data-multi-step-form-target="step">
+          <%= f.input :start_time,
+              html5: true %>
+          <%= f.input :duration,
+              as: :radio_buttons,
+              collection_wrapper_tag: 'div',
+              collection_wrapper_class: 'category-wrapper',
+              item_wrapper_class: 'category-item',
+              input_html: {class: 'category-selector'},
+              collection: HelpRequest::CATEGORIES %>
+          <button data-action="click->multi-step-form#goToNext" data-next-step="2">Next step</button>
+        </div>
+        <div class="d-none" data-multi-step-form-target="step">
+          <%= f.input :location,
+              input_html: { class: "location-autocomplete" } %>
+          <button data-action="click->multi-step-form#goToNext" data-next-step="3">Next step</button>
+          </div>
+        <div class="d-none" data-multi-step-form-target="step">
+          <%= f.input :task_description %>
+          <%= f.submit "Search" %>
+        </div>
       <% end %>
+  </div>
+</div>

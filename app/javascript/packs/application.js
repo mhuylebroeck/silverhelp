@@ -27,10 +27,12 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { initAutocomplete } from '../plugins/init_autocomplete';
-
+import { initSelect2 } from '../plugins/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
   initAutocomplete();
   // Call your functions here, e.g:
-  // initSelect2();
+  initSelect2();
 });
+
+import "controllers"
