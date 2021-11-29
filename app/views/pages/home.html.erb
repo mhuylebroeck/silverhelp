@@ -13,11 +13,11 @@
 
           <div class="searchbar-home">
             <div class="search-form-home">
-              <%= simple_form_for @help_request, url: new_help_request_path, method: :get do |f| %>
+              <%= simple_form_for @help_request, html: { class: "flexbox"}, url: new_help_request_path, method: :get do |f| %>
                   <%= f.input :task_id,collection: Task.all, input_html: { class:"search-form-home form-homesearchbar select-2-suggestions", multiple: "multiple" }, label: false %>
+                 <%= f.submit "Search", class:"search-btn-home btn-warning search-btn flexbox-btn" %>
             </div>
             <div class="">
-                 <%= f.submit "Search", class:"search-btn-home btn-warning search-btn" %>
               <% end %>
             </div>
           </div>
@@ -32,80 +32,64 @@
   </div>
 
 
-<div class="form-container-home">
-    <div class="form-home">
-      <%= simple_form_for @help_request, url: new_help_request_path, method: :get do |f| %>
-        <%= f.input :task_id,
-            as: :radio_buttons,
-            collection_wrapper_tag: 'div',
-            collection_wrapper_class: 'category-wrapper',
-            item_wrapper_class: 'category-item',
-            input_html: {class: 'category-selector'},
-            collection: Task::CATEGORIES %>
-        <%= f.submit "Search" %>
-      <% end %>
-  </div>
-</div>
 
   <div class="container-categories-home">
     <h2>Discover our tasks categories</h2>
     <p> These are tasks are frequenty requested. Click on one of our options to find someone to help you.</p>
 
-
-
     <div class="container-cards-home" data-aos="fade-up">
 
       <div class="container-cards-home-1">
-      <div class="whatever">
-        <%= link_to(new_help_request_path) do%>
-          <div class="card-task-home">
-            <img src="https://i.ibb.co/RGn3Q6W/grocery-cart.png" alt="groceries" class="task-icon-home">
-            <div class="card-body">
-              <h5 class="task-name-card">Grocery shopping</h5>
-            </div>
-          </div>
-        <% end %>
-        </div>
-
         <div class="whatever">
-        <%= link_to(new_help_request_path) do%>
-          <div class="card-task-home">
-            <img src="https://i.ibb.co/276SYTS/car-repair.png" alt="groceries" class="task-icon-home">
-            <div class="card-body">
-              <h5 class="task-name-card">Home repairs</h5>
+          <%= link_to(new_help_request_path(:help_request => {:task_id =>"26"})) do%>
+            <div class="card-task-home">
+              <img src="https://i.ibb.co/RGn3Q6W/grocery-cart.png" alt="groceries" class="task-icon-home">
+              <div class="card-body">
+                <h5 class="task-name-card">Grocery shopping</h5>
+              </div>
             </div>
+          <% end %>
           </div>
-        <% end %>
-        </div>
 
-        <div class="whatever">
-        <%= link_to(new_help_request_path) do%>
-          <div class="card-task-home">
-            <img src="https://i.ibb.co/xDzFvGh/wheelchair.png" alt="groceries" class="task-icon-home">
-            <div class="card-body">
-              <h5 class="task-name-card">Wheelchair assistance</h5>
+          <div class="whatever">
+          <%= link_to(new_help_request_path(:help_request => {:task_id =>"27"})) do%>
+            <div class="card-task-home">
+              <img src="https://i.ibb.co/276SYTS/car-repair.png" alt="home repairs" class="task-icon-home">
+              <div class="card-body">
+                <h5 class="task-name-card">Home repairs</h5>
+              </div>
             </div>
+          <% end %>
           </div>
-        <% end %>
-        </div>
 
-        <div class="whatever">
-        <%= link_to(new_help_request_path) do%>
-          <div class="card-task-home">
-            <img src="https://i.ibb.co/HVFrR2k/mop.png" alt="groceries" class="task-icon-home">
-            <div class="card-body">
-              <h5 class="task-name-card">Cleaning</h5>
+          <div class="whatever">
+          <%= link_to(new_help_request_path(:help_request => {:task_id =>"30"})) do%>
+            <div class="card-task-home">
+              <img src="https://i.ibb.co/xDzFvGh/wheelchair.png" alt="wheelchair assistance" class="task-icon-home">
+              <div class="card-body">
+                <h5 class="task-name-card">Wheelchair assistance</h5>
+              </div>
             </div>
+          <% end %>
           </div>
-        <% end %>
+
+          <div class="whatever">
+          <%= link_to(new_help_request_path(:help_request => {:task_id =>"29"})) do%>
+            <div class="card-task-home">
+              <img src="https://i.ibb.co/HVFrR2k/mop.png" alt="cleaning" class="task-icon-home">
+              <div class="card-body">
+                <h5 class="task-name-card">Cleaning</h5>
+              </div>
+            </div>
+          <% end %>
+          </div>
         </div>
-      </div>
 
       <div class="container-cards-home-2">
         <div class="whatever">
-        <%= link_to(new_help_request_path) do%>
+        <%= link_to(new_help_request_path(:help_request => {:task_id =>"32"})) do%>
           <div class="card-task-home">
-            <img src="https://i.ibb.co/khFPKBD/chef.png" alt="groceries" class="task-icon-home">
+            <img src="https://i.ibb.co/khFPKBD/chef.png" alt="cooking" class="task-icon-home">
             <div class="card-body">
               <h5 class="task-name-card">Cooking</h5>
             </div>
@@ -114,9 +98,9 @@
         </div>
 
         <div class="whatever">
-        <%= link_to(new_help_request_path) do%>
+        <%= link_to(new_help_request_path(:help_request => {:task_id =>"31"})) do%>
           <div class="card-task-home">
-            <img src="https://i.ibb.co/Mkd5NCF/laundry-machine.png" alt="groceries" class="task-icon-home">
+            <img src="https://i.ibb.co/Mkd5NCF/laundry-machine.png" alt="laundry" class="task-icon-home">
             <div class="card-body">
               <h5 class="task-name-card">Laundry</h5>
             </div>
@@ -125,22 +109,22 @@
         </div>
 
         <div class="whatever">
-        <%= link_to(new_help_request_path) do%>
+        <%= link_to(new_help_request_path(:help_request => {:task_id =>"33"})) do%>
           <div class="card-task-home">
-            <img src="https://i.ibb.co/cCcpwJv/mental-health.png" alt="groceries" class="task-icon-home">
+            <img src="https://i.ibb.co/cCcpwJv/mental-health.png" alt="activities" class="task-icon-home">
             <div class="card-body">
-              <h5 class="task-name-card">Activities</h5>
+              <h5 class="task-name-card">Social activities</h5>
             </div>
           </div>
         <% end %>
         </div>
 
         <div class="whatever">
-        <%= link_to(new_help_request_path) do%>
+        <%= link_to(new_help_request_path(:help_request => {:task_id =>"28"})) do%>
           <div class="card-task-home">
-            <img src="https://i.ibb.co/TMT3rqv/administrator.png" alt="groceries" class="task-icon-home">
+            <img src="https://i.ibb.co/TMT3rqv/administrator.png" alt="others" class="task-icon-home">
             <div class="card-body">
-              <h5 class="task-name-card">Administration work</h5>
+              <h5 class="task-name-card">Others</h5>
             </div>
           </div>
         <% end %>
