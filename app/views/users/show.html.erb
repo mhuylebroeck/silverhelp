@@ -32,6 +32,9 @@
         <div class="container-show-btn">
           <h1 class="profile-show" > <strong>Hi, I'm <%= @user.name %></strong></h1>
           <%= link_to "Request help", users_path(), class: "btn-show"  %>
+          <%= link_to user_favorites_path(@user), method: :post do %>
+          <i class="fas fa-heart"></i>
+          <% end %>
         </div>
         <div class="about-profile-show">
           <h5><i class="fas fa-address-card"></i><strong> About</strong></h5>
