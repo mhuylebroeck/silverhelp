@@ -19,12 +19,13 @@ $verylightyellow: #FFF2CE;
 
 .header-toppage-title {
   margin-top: 50px;
-  margin-bottom: 46px;
+  margin-bottom: 30px;
+  color: #20124D;
 }
 
 .header-toppage-body {
   background-color: $verylightyellow;
-  border: 0.5px solid #9f9fa1 ;
+  border: 0.5px solid #FCC010;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
   height: 300px;
@@ -36,6 +37,13 @@ $verylightyellow: #FFF2CE;
 
 .form-index {
   border-radius: 5px;
-  border: 0.5px solid #9f9fa1;
+  border: 0.5px solid #FCC010;
   width: 220px;
+  margin-bottom: 20px;
+}
+
+.container-title-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
 }

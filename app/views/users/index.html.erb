@@ -2,97 +2,102 @@
 
   <div class="header-toppage">
     <div class="header-toppage-title">
-      <h4>Task details</h4>
+      <h4><strong>Task</strong> details </h4>
     </div>
     <div class="header-toppage-body">
       <% if params[:help_request].present? %>
         <% if params[:help_request][:location].present? && params[:help_request][:start_time].present? && params[:help_request][:duration].present? && params[:help_request][:task_id] %>
 
           <form action="">
-            <label>Task</label> <br>
+            <label><strong>Task</strong></label> <br>
             <input class="form-index"type="text" placeholder="<%= Task.find(params[:help_request][:task_id]).name%>">
           </form>
 
           <form  action="">
-            <label>Location</label>
+            <label><strong>Location</strong></label>
             <input class="form-index"type="text" placeholder="<%= @location%>">
           </form>
 
           <form action="">
-            <label>Time</label><br>
-            <input class="form-index" type="text" placeholder="<%= @time %>",  >
+            <label><strong>Date</strong></label><br>
+            <input class="form-index" type="text" placeholder="<%= @time %>" >
           </form>
 
          <%# <%= params[:help_request][:duration]%>
         <% end %>
       <% else %>
-        <h6>You are looking at all available helpers</h6>
+        <h4>You are looking at all available helpers</h4>
       <% end %>
     </div>
   </div>
   <%# We will have to add a conditional to change what is written based on what was searched,
   kinda like for the leave your shit website %>
 
-  <div class="grid-helperindex">
+  <div class="container-title-grid">
     <div class="h2-helperindex">
       <h2 class = "txt-alignhelperindex">There are <%= @helpers.size %> <strong>silverhelpers</strong> available for you!</h2>
     </div>
-    <% @helpers.each do |helper| %>
+    <div class="grid-helperindex">
+
+      <% @helpers.each do |helper| %>
 
 
-      <div class="card-helperindex mb-3">
+        <div class="card-helperindex mb-3">
 
-        <div class="card-picture-index">
-          <%= cl_image_tag helper.avatar.key, class: "avatar-mediumroundindex", crop: :fill %>
-        </div>
+          <div class="card-picture-index">
+            <%= cl_image_tag helper.avatar.key, class: "avatar-mediumroundindex", crop: :fill %>
+          </div>
 
-        <div class="card-body-index">
-          <h5 class="card-title"><strong><%= helper.name %></strong><small> (has COUNT reviews)</small></h5>
-              <% unless helper.help_requests.empty? %>
-              <% allfriend = []
-                allefficiency = []
-                allpunctual = []
-                allrecommend = [] %>
-                <%helper.help_requests.each do |requests| %>
-                  <% unless requests.review.nil? %>
-                    <% allfriend << requests.review.friendliness_rating %>
-                    <% allefficiency << requests.review.efficiency_rating %>
-                    <% allpunctual << requests.review.punctuality_rating %>
-                    <% allrecommend << requests.review.recommend %>
+          <div class="card-body-index">
+            <h5 class="card-title"><strong><%= helper.name %></strong><small> (has COUNT reviews)</small></h5>
+                <% unless helper.help_requests.empty? %>
+                <% allfriend = []
+                  allefficiency = []
+                  allpunctual = []
+                  allrecommend = [] %>
+                  <%helper.help_requests.each do |requests| %>
+                    <% unless requests.review.nil? %>
+                      <% allfriend << requests.review.friendliness_rating %>
+                      <% allefficiency << requests.review.efficiency_rating %>
+                      <% allpunctual << requests.review.punctuality_rating %>
+                      <% allrecommend << requests.review.recommend %>
+                    <% end %>
                   <% end %>
-                <% end %>
-                  <% unless allfriend.empty? %>
-                    <%= render "users/placeholders/filledreviews", allfriend: allfriend, allefficiency: allefficiency, allpunctual: allpunctual, allrecommend: allrecommend %>
+                    <% unless allfriend.empty? %>
+                      <%= render "users/placeholders/filledreviews", allfriend: allfriend, allefficiency: allefficiency, allpunctual: allpunctual, allrecommend: allrecommend %>
+                    <% else %>
+                      <%= render "users/placeholders/unfilledreviews", helper: helper %>
+                    <% end %>
                   <% else %>
                     <%= render "users/placeholders/unfilledreviews", helper: helper %>
                   <% end %>
+                <%# <p class="card-text"><small class="text-muted">Has REVIEW.COUNT reviews</small></p> %>
+
+              </div>
+
+
+            <div class="btns-card-index">
+              <div>
+              <%= link_to "See more", user_path(helper), class: "btn-brownish"  %>
+                <%# PUT THE SEE MORE BUTTON HERE %>
+              </div>
+
+              <div class="helperindex-bottombtn">
+                <% if params[:help_request].present? %>
+                      <%= render "users/placeholders/helpform", helper: helper %>
                 <% else %>
-                  <%= render "users/placeholders/unfilledreviews", helper: helper %>
+                      <%= link_to "Request help", users_path(), class: "btn-brownishghost"  %>
+                      <%# Above is just a placeholder! It would be the form! %>
+
                 <% end %>
-              <%# <p class="card-text"><small class="text-muted">Has REVIEW.COUNT reviews</small></p> %>
 
+              </div>
             </div>
 
 
-          <div class="btns-card-index">
-            <div>
-            <%= link_to "See more", user_path(helper), class: "btn-brownish"  %>
-              <%# PUT THE SEE MORE BUTTON HERE %>
-            </div>
+        </div>
 
-            <div class="helperindex-bottombtn">
-              <% if params[:help_request].present? %>
-                    <%= render "users/placeholders/helpform", helper: helper %>
-              <% else %>
-                    <%= link_to "Request help", users_path(), class: "btn-brownishghost"  %>
-                    <%# Above is just a placeholder! It would be the form! %>
-              <% end %>
-            </div>
-          </div>
-
-
-      </div>
-
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
