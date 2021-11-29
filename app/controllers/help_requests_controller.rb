@@ -5,6 +5,10 @@ class HelpRequestsController < ApplicationController
     @tasks = Task.all
   end
 
+  def show
+    @request = HelpRequest.find(params[:id])
+  end
+
   def create
     @help_request = HelpRequest.new(helper_params)
     @help_request.senior_id = current_user.id

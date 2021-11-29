@@ -1,0 +1,41 @@
+.confirmation-container{
+  text-align: center;
+  padding: 40px;
+  background-color: #FFE082;
+  border-radius: 10px;
+  color: #20124D;
+  margin: 80px 25% 80px 25%;
+  width: 50%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    h2{
+      padding: 20px;
+      font-weight: bolder;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      background-color: rgba(252, 193, 19, 0.6);
+      border-radius: 5px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h5{
+      padding: 15px;
+      font-weight: bold;
+    }
+    #description{
+      margin-bottom: 25px;
+    }
+    #btn-dashboard{
+      background-color: #fcc010;
+      border-radius: 5px;
+      align-items: center;
+      color: #20124D;
+      width: fit-content;
+      text-align: center;
+      padding: 10px;
+      margin: 20px;
+      font-weight: bold;
+      &:hover{
+        background-color: #eeb303;
+        text-decoration: none;
+
+      }
+    }
+}
