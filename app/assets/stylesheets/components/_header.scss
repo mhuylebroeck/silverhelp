@@ -1,7 +1,41 @@
+$lightyellow: #FFE082;
+$strongyellow: #FCC010;
+$whiteyellow: #727272;
+$darkblue: #20124D;
+$verylightyellow: #FFF2CE;
+
 .header-toppage {
-  background-color: #FCC010;
-  display: flex;
   height: 150px;
+  width: 300px;
+  margin-left: 60px;
+
+
+}
+
+.main-container-index {
+  display: flex;
   justify-content: center;
-  align-items: center;
+}
+
+.header-toppage-title {
+  margin-top: 50px;
+  margin-bottom: 46px;
+}
+
+.header-toppage-body {
+  background-color: $verylightyellow;
+  border: 0.5px solid #9f9fa1 ;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  height: 300px;
+  position: sticky;
+  position: -webkit-sticky;
+  padding: 30px;
+
+}
+
+.form-index {
+  border-radius: 5px;
+  border: 0.5px solid #9f9fa1;
+  width: 220px;
 }
