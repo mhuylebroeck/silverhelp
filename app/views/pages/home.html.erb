@@ -14,8 +14,7 @@
           <div class="searchbar-home">
             <div class="search-form-home">
               <%= simple_form_for @help_request, url: new_help_request_path, method: :get do |f| %>
-                  <%= f.input :task_id,collection: Task::CATEGORIES, class:"search-form-home form-homesearchbar", label: false %>
-                  <%= f.input :task_id, as: :search, input_html: {class: 'ui-autocomplete-input', data: {autocomplete_source: Task::CATEGORIES} }%>
+                  <%= f.input :task_id,collection: Task.all, input_html: { class:"search-form-home form-homesearchbar select-2-suggestions", multiple: "multiple" }, label: false %>
             </div>
             <div class="">
                  <%= f.submit "Search", class:"search-btn-home btn-warning search-btn" %>
