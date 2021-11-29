@@ -1,5 +1,7 @@
-// Import page-specific CSS files here.
-@import "home";
 @import "dashboard";
-@import "show";
-@import "form";
+@import "home";
+
+@import "users/show";
+
+@import "help_requests/form";
+@import "help_requests/show";
