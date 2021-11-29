@@ -18,6 +18,8 @@ class User < ApplicationRecord
   has_many :tasks, through: :user_tasks
   has_one_attached :avatar
   has_many :reviews, through: :help_requests
+  has_many :favorites, foreign_key: :senior_id
+  has_many :favorite_helpers, through: :favorites
 
   def help_requests
     # This is so that we can get all of the tasks someone has, no matter if they're a helper or a senior.
