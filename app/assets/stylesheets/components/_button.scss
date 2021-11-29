@@ -16,28 +16,62 @@
   }
 }
 
-.btn-brownish{
-  background-color: #CE8703;
-  padding: 8px 24px;
-  &:hover{
-    background-color: #8f5e03;
+.btn-brownish {
+  color: #FCC010;
+  text-align: center;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  color: #fffcf4;
+  font-weight: 600;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 150.29px;
+  height: 56px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+
+ &:hover {
+    color: #fffcf4;
+    text-decoration: none;
+    background-color: #FCC010;
+    border: none;
   }
 }
 
 .btn-brownishghost{
-  border: 1px solid #CE8703;
-  padding: 8px 16px;
-  font-weight: bold;
-  background-color: transparent;
-  &:hover{
-    background-color: #CE8703;
+  color: #fffcf4;
+  text-align: center;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  color: #fffcf4;
+  font-weight: 600;
+  background: #FCC010;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 150.29px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items:flex-end;
+  transition: 0.5s;
+  border: none;
+  &:hover {
+    color: #fffcf4;
+    text-decoration: none;
+    background-color: #F59D19;
+    border: none;
   }
 }
 
-.btn-formalign{
-  margin: 0px;
-  top: 0px;
-}
 
 // Homepage Button
 

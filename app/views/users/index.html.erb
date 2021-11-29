@@ -15,55 +15,61 @@ kinda like for the leave your shit website %>
 </div>
 <div class="grid-helperindex">
   <% @helpers.each do |helper| %>
-    <div class="card-helperindex">
-      <div class="helperavatar">
+
+
+    <div class="card-helperindex mb-3">
+
+      <div class="card-picture-index">
         <%= cl_image_tag helper.avatar.key, class: "avatar-mediumroundindex", crop: :fill %>
       </div>
-        <div class="helpertitle">
 
-          <%= helper.age %>
-        </div>
-        <div class="helperindex-middlebutton">
-          <%= link_to "See more", user_path(helper), class: "btn-rounded btn-brownish"  %>
-          <%# PUT THE SEE MORE BUTTON HERE %>
-        </div>
-      <div class="card-helperinfo">
-        <% unless helper.help_requests.empty? %>
-        <% allfriend = []
-          allefficiency = []
-          allpunctual = []
-          allrecommend = [] %>
-          <%helper.help_requests.each do |requests| %>
-            <% unless requests.review.nil? %>
-              <% allfriend << requests.review.friendliness_rating %>
-              <% allefficiency << requests.review.efficiency_rating %>
-              <% allpunctual << requests.review.punctuality_rating %>
-              <% allrecommend << requests.review.recommend %>
-            <% end %>
-          <% end %>
-            <% unless allfriend.empty? %>
-              <%= render "users/placeholders/filledreviews", allfriend: allfriend, allefficiency: allefficiency, allpunctual: allpunctual, allrecommend: allrecommend %>
-            <% else %>
-              <%= render "users/placeholders/unfilledreviews", helper: helper %>
-            <% end %>
-          <% else %>
-            <%= render "users/placeholders/unfilledreviews", helper: helper %>
-          <% end %>
-        <div class="helperindex-bottombtn">
-        <%# PUT GET HELP HERE %>
+      <div class="card-body-index">
+        <h5 class="card-title"><%= helper.name %></h5>
+            <% unless helper.help_requests.empty? %>
+            <% allfriend = []
+              allefficiency = []
+              allpunctual = []
+              allrecommend = [] %>
+              <%helper.help_requests.each do |requests| %>
+                <% unless requests.review.nil? %>
+                  <% allfriend << requests.review.friendliness_rating %>
+                  <% allefficiency << requests.review.efficiency_rating %>
+                  <% allpunctual << requests.review.punctuality_rating %>
+                  <% allrecommend << requests.review.recommend %>
+                <% end %>
+              <% end %>
+                <% unless allfriend.empty? %>
+                  <%= render "users/placeholders/filledreviews", allfriend: allfriend, allefficiency: allefficiency, allpunctual: allpunctual, allrecommend: allrecommend %>
+                <% else %>
+                  <%= render "users/placeholders/unfilledreviews", helper: helper %>
+                <% end %>
+              <% else %>
+                <%= render "users/placeholders/unfilledreviews", helper: helper %>
+              <% end %>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
+          </div>
+
+
+        <div class="btns-card-index">
+
+          <div class="helperindex-middlebutton ">
+            <%= link_to "See more", user_path(helper), class: "btn-rounded btn-brownish"  %>
+            <%# PUT THE SEE MORE BUTTON HERE %>
+          </div>
+
+          <div class="helperindex-bottombtn">
           <% if params[:help_request].present? %>
-            <%= render "users/placeholders/helpform", helper: helper %>
+                <%= render "users/placeholders/helpform", helper: helper %>
           <% else %>
-            <%= link_to "Request help", users_path(), class: "btn-rounded btn-brownishghost"  %>
-            <%# Above is just a placeholder! It would be the form! %>
+                <%= link_to "Request help", users_path(), class: "btn-brownishghost"  %>
+                <%# Above is just a placeholder! It would be the form! %>
           <% end %>
+          </div>
         </div>
-      </div>
+
+
     </div>
-
-
-
-
 
   <% end %>
 </div>
