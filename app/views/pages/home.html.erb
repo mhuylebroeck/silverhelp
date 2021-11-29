@@ -13,17 +13,14 @@
 
           <div class="searchbar-home">
             <div class="search-form-home">
-              <form action="">
-                <input class="search-form-home form-homesearchbar" type="text" placeholder="Tell us what you want help with ...">
-              </form>
+              <%= simple_form_for @help_request, url: new_help_request_path, method: :get do |f| %>
+                  <%= f.input :task_id,collection: Task::CATEGORIES, class:"search-form-home form-homesearchbar", label: false %>
+                  <%= f.input :task_id, as: :search, input_html: {class: 'ui-autocomplete-input', data: {autocomplete_source: Task::CATEGORIES} }%>
             </div>
-
-
             <div class="">
-              <%= link_to "Search", new_help_request_path, class:"search-btn-home btn-warning search-btn"%>
-
+                 <%= f.submit "Search", class:"search-btn-home btn-warning search-btn" %>
+              <% end %>
             </div>
-
           </div>
         </div>
 
@@ -38,16 +35,14 @@
 
 <div class="form-container-home">
     <div class="form-home">
-      <%= simple_form_for @help_request, url: users_path, method: :get do |f| %>
+      <%= simple_form_for @help_request, url: new_help_request_path, method: :get do |f| %>
         <%= f.input :task_id,
-            collection: @tasks%>
-        <%= f.input :duration,
             as: :radio_buttons,
             collection_wrapper_tag: 'div',
             collection_wrapper_class: 'category-wrapper',
             item_wrapper_class: 'category-item',
             input_html: {class: 'category-selector'},
-            collection: HelpRequest::CATEGORIES %>
+            collection: Task::CATEGORIES %>
         <%= f.submit "Search" %>
       <% end %>
   </div>
