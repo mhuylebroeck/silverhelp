@@ -111,4 +111,12 @@
   justify-content: center;
   color: #FFF2CE;
   font-weight: 600;
+  transition: 0.5s;
+
+    &:hover {
+    color: #FFF2CE;
+    text-decoration: none;
+    background-color: #F59D19;
+    border: none;
+  }
 }
