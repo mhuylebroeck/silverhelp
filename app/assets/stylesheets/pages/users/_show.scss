@@ -24,7 +24,7 @@
   img  {
     border-radius: 50%;
     border: 5px solid;
-    border-color: #FFF2CE;
+    border-color: #FCC010;
     height: 160px;
     width: 160px;
 
@@ -46,7 +46,7 @@
   position: -webkit-sticky;
   position: sticky;
   top: 0px;
- // z-index: 1;
+  width: 323px;
 }
 
 .info-profile-show {
@@ -76,8 +76,8 @@
   margin-top: 30px;
   margin-right: 133px;
   margin-left: 30px;
-  padding-left: 80px;
-  padding-right: 80px;
+  padding-left: 60px;
+  padding-right: 60px;
   padding-top: 40px;
   padding-bottom: 40px;
   border: #20124D;
@@ -112,4 +112,40 @@
 
 .review-count {
   font-size: 10px;
+}
+
+.container-show-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.btn-show {
+  color: #fffcf4;
+  text-align: center;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  color: #fffcf4;
+  font-weight: 600;
+  background: #FCC010;
+  border: 1px solid #FCC010;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 150.29px;
+  height: 56px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+
+ &:hover {
+    color: #fffcf4;
+    text-decoration: none;
+    background-color: #F59D19;
+    border: none;
+  }
 }
