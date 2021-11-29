@@ -5,12 +5,16 @@ class HelpRequestsController < ApplicationController
     @tasks = Task.all
   end
 
+  def show
+    @request = HelpRequest.find(params[:id])
+  end
+
   def create
     @help_request = HelpRequest.new(helper_params)
     @help_request.senior_id = current_user.id
     @help_request.helper_id = params["user_id"].to_i
     if @help_request.save!
-      redirect_to dashboard_path
+      redirect_to help_request_path(@help_request)
     else
       render "help_requests/new"
     end
