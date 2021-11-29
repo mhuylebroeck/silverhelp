@@ -35,9 +35,28 @@
     </div>
   </div>
 
+
+<div class="form-container-home">
+    <div class="form-home">
+      <%= simple_form_for @help_request, url: users_path, method: :get do |f| %>
+        <%= f.input :task_id,
+            collection: @tasks%>
+        <%= f.input :duration,
+            as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'},
+            collection: HelpRequest::CATEGORIES %>
+        <%= f.submit "Search" %>
+      <% end %>
+  </div>
+</div>
+
   <div class="container-categories-home">
     <h2>Discover our tasks categories</h2>
     <p> These are tasks are frequenty requested. Click on one of our options to find someone to help you.</p>
+
 
 
     <div class="container-cards-home" data-aos="fade-up">

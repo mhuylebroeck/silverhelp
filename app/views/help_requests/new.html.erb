@@ -1,6 +1,5 @@
 <div class="form-container-home">
-      <div class="form-home">
-
+    <div class="form-home">
       <%= simple_form_for @help_request, url: users_path, method: :get do |f| %>
         <%= f.input :task_id,
             collection: @tasks%>
@@ -18,3 +17,5 @@
         <%= f.input :task_description %>
         <%= f.submit "Search" %>
       <% end %>
+  </div>
+</div>
