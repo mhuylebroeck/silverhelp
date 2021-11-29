@@ -23,3 +23,13 @@ $placeholder: #FCC010; // Change this to whatever colour we are now using as the
   display: flex;
   align-items: center;
 }
+
+.movbuttons{
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ grid-gap: 16px;
+}
+
+.btn-reviewbtncontainer{
+
+}

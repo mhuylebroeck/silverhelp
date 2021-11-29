@@ -102,6 +102,7 @@ form#new_review {
 }
 
 .reviewcategory-selector {
+  // This deletes the radio buttons!
   position: absolute;
   transform: scale(0);
 }
