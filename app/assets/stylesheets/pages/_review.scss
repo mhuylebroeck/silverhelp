@@ -1,7 +1,8 @@
 $placeholder: #FCC010; // Change this to whatever colour we are now using as the primary colour!
 
 .review-container{
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .review-leftside{
@@ -10,6 +11,7 @@ $placeholder: #FCC010; // Change this to whatever colour we are now using as the
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 80vh;
 }
 
 .review-eyeline{
@@ -18,4 +20,6 @@ $placeholder: #FCC010; // Change this to whatever colour we are now using as the
 
 .review-form{
   padding: 24px;
+  display: flex;
+  align-items: center;
 }

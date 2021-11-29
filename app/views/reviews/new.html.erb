@@ -5,44 +5,94 @@
     <p class= "review-eyeline">We hope that our people could successfully help you with your task. Can we ask for a few minutes of your time to review <%= @help_request.helper.name %>?</p>
   </div>
 
-  <div class="review-form">
+  <div class="review-form" data-controller="wizard">
     <%= simple_form_for([ @help_request, @review ]) do |f| %>
-      <%= f.input :friendliness_rating, label: "How friendly was your helper?",
-                  error: "Mandatory: Please choose a review from 1 (very unfriendly) to 5 (very friendly)",
-                  as: :radio_buttons,
-                  collection_wrapper_tag: 'div',
-                  collection_wrapper_class: 'reviewcategory-wrapper',
-                  item_wrapper_class: 'category-item',
-                  input_html: {class: 'reviewcategory-selector'},
-                  collection: Review::FRIENDLINESS %>
-      <%= f.input :efficiency_rating, label: "How happy are you with the task performed by your helper?",
-                  error: "Mandatory: Please choose a review from 1 (very bad at task) to 5 (very good at task)",
-                  as: :radio_buttons,
-                  collection_wrapper_tag: 'div',
-                  collection_wrapper_class: 'reviewcategory-wrapper',
-                  item_wrapper_class: 'category-item',
-                  input_html: {class: 'reviewcategory-selector'},
-                  collection: Review::EFFICIENCY %>
-      <%= f.input :punctuality_rating, label: "Did your helper arrive at the agreed time?",
-                  error: "Mandatory: Please choose a review from 1 (very late) to 5 (perfectly on time)",
-                  as: :radio_buttons,
-                  collection_wrapper_tag: 'div',
-                  collection_wrapper_class: 'reviewcategory-wrapper',
-                  item_wrapper_class: 'category-item',
-                  input_html: {class: 'reviewcategory-selector'},
-                  collection: Review::PUNCTUALITY %>
-      <%= f.input :recommend, label: "Would you recommend your helper?",
-                  error: "Mandatory: Please tell us whether you recommend this helper or not",
-                  as: :radio_buttons,
-                  collection_wrapper_tag: 'div',
-                  collection_wrapper_class: 'reviewcategory-wrapper',
-                  item_wrapper_class: 'category-item',
-                  input_html: {class: 'reviewcategory-selector'},
-                  collection: [["Yes", true], ["No", false]] %>
-      <%= f.input :description, as: :text, label: "Do you want to say anything else about your helper?",
-                  error: "Please tell us what you think of this helper in 10 words or more",
-                  placeholder: "Tell us your thoughts on this helper in 10 words or more..." %>
-      <%= f.button :submit, "Send your review", :class => "btn-rounded centered btn-review", :style => "margin-left: 0px; margin-right: 0px" %>
+      <div data-wizard-target="step">
+        <%= f.input :friendliness_rating, label: "How friendly was your helper?",
+                    error: "Mandatory: Please choose a review from 1 (very unfriendly) to 5 (very friendly)",
+                    as: :radio_buttons,
+                    collection_wrapper_tag: 'div',
+                    collection_wrapper_class: 'reviewcategory-wrapper',
+                    item_wrapper_class: 'category-item',
+                    input_html: {class: 'reviewcategory-selector'},
+                    collection: Review::FRIENDLINESS %>
+        <%= button_tag "Next", type: :button,
+          data: {
+            action: "click->wizard#goToNext",
+            next_step: "1"
+          } %>
+      </div>
+      <div data-wizard-target="step" class="d-none">
+        <%= f.input :efficiency_rating, label: "How happy are you with the task performed by your helper?",
+                    error: "Mandatory: Please choose a review from 1 (very bad at task) to 5 (very good at task)",
+                    as: :radio_buttons,
+                    collection_wrapper_tag: 'div',
+                    collection_wrapper_class: 'reviewcategory-wrapper',
+                    item_wrapper_class: 'category-item',
+                    input_html: {class: 'reviewcategory-selector'},
+                    collection: Review::EFFICIENCY %>
+        <%= button_tag "Previous", type: :button,
+          data: {
+            action: "click->wizard#goToPrevious",
+            previous_step: "1"
+          } %>
+        <%= button_tag "Next", type: :button,
+          data: {
+            action: "click->wizard#goToNext",
+            next_step: "2"
+          } %>
+      </div>
+      <div data-wizard-target="step" class="d-none">
+        <%= f.input :punctuality_rating, label: "Did your helper arrive at the agreed time?",
+                    error: "Mandatory: Please choose a review from 1 (very late) to 5 (perfectly on time)",
+                    as: :radio_buttons,
+                    collection_wrapper_tag: 'div',
+                    collection_wrapper_class: 'reviewcategory-wrapper',
+                    item_wrapper_class: 'category-item',
+                    input_html: {class: 'reviewcategory-selector'},
+                    collection: Review::PUNCTUALITY %>
+        <%= button_tag "Previous", type: :button,
+          data: {
+            action: "click->wizard#goToPrevious",
+            previous_step: "2"
+          } %>
+        <%= button_tag "Next", type: :button,
+          data: {
+            action: "click->wizard#goToNext",
+            next_step: "3"
+          } %>
+      </div>
+      <div data-wizard-target="step" class="d-none">
+        <%= f.input :recommend, label: "Would you recommend your helper?",
+                    error: "Mandatory: Please tell us whether you recommend this helper or not",
+                    as: :radio_buttons,
+                    collection_wrapper_tag: 'div',
+                    collection_wrapper_class: 'reviewreccategory-wrapper',
+                    item_wrapper_class: 'category-item',
+                    input_html: {class: 'reviewcategory-selector'},
+                    collection: [["Yes", true], ["No", false]] %>
+        <%= button_tag "Previous", type: :button,
+          data: {
+            action: "click->wizard#goToPrevious",
+            previous_step: "3"
+          } %>
+        <%= button_tag "Next", type: :button,
+          data: {
+            action: "click->wizard#goToNext",
+            next_step: "4"
+          } %>
+      </div>
+      <div data-wizard-target="step" class="d-none">
+        <%= f.input :description, as: :text, label: "Do you want to say anything else about your helper?",
+                    error: "Please tell us what you think of this helper in 10 words or more",
+                    placeholder: "Tell us your thoughts on this helper in 10 words or more..." %>
+        <%= button_tag "Previous", type: :button,
+          data: {
+            action: "click->wizard#goToPrevious",
+            previous_step: "4"
+          } %>
+        <%= f.button :submit, "Send your review", :class => "btn-rounded centered btn-review", :style => "margin-left: 0px; margin-right: 0px" %>
+      </div>
     <% end %>
   </div>
 </div>

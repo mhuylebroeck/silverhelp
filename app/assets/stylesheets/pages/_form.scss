@@ -83,9 +83,20 @@
 // Review Form:
 ////////////////////////////////////////////////////////
 
+form#new_review {
+    width: 100%;
+}
+
 .reviewcategory-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  margin: 16px;
+}
+
+.reviewreccategory-wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
   margin: 16px;
 }
@@ -120,6 +131,7 @@
   background-size: 50px 50px;
   background-repeat: no-repeat;
   height: 120px;
+  min-width: 88px;
   background-position: 50% 90%; // 95% 90%
 }
 
@@ -138,6 +150,7 @@
   background-size: 50px 50px;
   background-repeat: no-repeat;
   height: 120px;
+  min-width: 88px;
   background-position: 50% 90%; // 95% 90%
 }
 
@@ -156,6 +169,7 @@
   background-size: 50px 50px;
   background-repeat: no-repeat;
   height: 120px;
+  min-width: 88px;
   background-position: 50% 90%; // 95% 90%
 }
 
@@ -173,6 +187,7 @@
   background-size: 50px 50px;
   background-repeat: no-repeat;
   height: 120px;
+  min-width: 88px;
   background-position: 50% 90%; // 95% 90%
 }
 
@@ -190,6 +205,7 @@
   background-size: 50px 50px;
   background-repeat: no-repeat;
   height: 120px;
+  min-width: 88px;
   background-position: 50% 90%; // 95% 90%
 }
 
