@@ -72,9 +72,10 @@
   margin-left: 66px;
   background-color: #fffcf4;
   padding: 4px;
-  width: 580px;
+  width: 569px;
   height: 64px;
   border-radius: 4px;
+  width: 550px;
 }
 
 .search-form-home {
@@ -90,12 +91,13 @@
 
 .search-btn-home {
   background: #FCC010;
-  border: 1px solid #FCC010;
+  border: 1px solid #fffcf4;
   box-sizing: border-box;
   border-radius: 4px;
-  width: 150.29px;
+  width: 153.29px;
   height: 56px;
-  padding: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,6 +114,8 @@
   color: #FFF2CE;
   font-weight: 600;
   transition: 0.5s;
+  margin-left: 5px;
+
 
     &:hover {
     color: #FFF2CE;
