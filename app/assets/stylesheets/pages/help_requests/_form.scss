@@ -1,3 +1,7 @@
+////////////////////////////////////////////////////////
+// Help request Form:
+////////////////////////////////////////////////////////
+
 .category-wrapper {
   display: flex;
   justify-content: space-between;
@@ -73,6 +77,144 @@
   background-color: #FFC65A;
   border-color: #FFC65A;
   background-image: image-url("big_task_white.png");
+}
+
+////////////////////////////////////////////////////////
+// Review Form:
+////////////////////////////////////////////////////////
+
+form#new_review {
+    width: 100%;
+}
+
+.reviewcategory-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  margin: 16px;
+}
+
+.reviewreccategory-wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  margin: 16px;
+}
+
+.reviewcategory-selector {
+  // This deletes the radio buttons!
+  position: absolute;
+  transform: scale(0);
+}
+
+.reviewcategory-selector + label {
+  display: block;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 16px;
+  text-align: center;
+  padding: 10px 10px 30px 10px;
+  border: 1px solid #EAEAEA;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.reviewcategory-selector:checked + label {
+  color: white !important;
+}
+
+
+#review_punctuality_rating_1 + label, #review_efficiency_rating_1 + label,
+#review_friendliness_rating_1 + label {
+  color: black;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/983/983083.png");
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  height: 120px;
+  min-width: 88px;
+  background-position: 50% 90%; // 95% 90%
+}
+
+#review_punctuality_rating_1:checked + label, #review_efficiency_rating_1:checked + label,
+#review_friendliness_rating_1:checked + label {
+  background-color: #FFC65A;
+  border-color: #FFC65A;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/983/983083.png");
+}
+
+
+#review_punctuality_rating_2 + label, #review_efficiency_rating_2 + label,
+#review_friendliness_rating_2 + label, #review_recommend_false + label {
+  color: black;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/983/983046.png");
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  height: 120px;
+  min-width: 88px;
+  background-position: 50% 90%; // 95% 90%
+}
+
+#review_punctuality_rating_2:checked + label, #review_efficiency_rating_2:checked + label,
+#review_friendliness_rating_2:checked + label, #review_recommend_false:checked + label {
+  background-color: #FFC65A;
+  border-color: #FFC65A;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/983/983046.png");
+}
+
+
+#review_punctuality_rating_3 + label, #review_efficiency_rating_3 + label,
+#review_friendliness_rating_3 + label {
+  color: black;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/983/983084.png");
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  height: 120px;
+  min-width: 88px;
+  background-position: 50% 90%; // 95% 90%
+}
+
+#review_punctuality_rating_3:checked + label, #review_efficiency_rating_3:checked + label,
+#review_friendliness_rating_3:checked + label {
+  background-color: #FFC65A;
+  border-color: #FFC65A;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/983/983084.png");
+}
+
+#review_punctuality_rating_4 + label, #review_efficiency_rating_4 + label,
+#review_friendliness_rating_4 + label, #review_recommend_true + label {
+  color: black;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/983/983035.png");
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  height: 120px;
+  min-width: 88px;
+  background-position: 50% 90%; // 95% 90%
+}
+
+#review_punctuality_rating_4:checked + label, #review_efficiency_rating_4:checked + label,
+#review_friendliness_rating_4:checked + label, #review_recommend_true:checked + label {
+  background-color: #FFC65A;
+  border-color: #FFC65A;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/983/983035.png");
+}
+
+#review_punctuality_rating_5 + label, #review_efficiency_rating_5 + label,
+#review_friendliness_rating_5 + label {
+  color: black;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/983/983079.png");
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  height: 120px;
+  min-width: 88px;
+  background-position: 50% 90%; // 95% 90%
+}
+
+#review_punctuality_rating_5:checked + label, #review_efficiency_rating_5:checked + label,
+#review_friendliness_rating_5:checked + label {
+  background-color: #FFC65A;
+  border-color: #FFC65A;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/983/983079.png");
 }
 
 .flexbox{
