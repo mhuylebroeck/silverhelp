@@ -48,14 +48,12 @@
           <hr>
           <p><%= @user.description %></p>
         </div>
-        <h5> <i class="fas fa-star"></i><strong> *#* Reviews</strong></h5>
+        <% request_length = @user.help_requests.where(status: "completed").length %>
+        <h5> <i class="fas fa-star"></i><strong><%= request_length > 1 ? "*#{request_length}* Reviews": "*#{request_length}* Review"  %></strong></h5>
           <hr>
-        <h5>*reviews placeholder*</h5>
-        <p> They have been a lovely couple. They have come with their adorable cute puppy Murphy who has performed excellently. </p>
-        <h5>*reviews placeholder*</h5>
-        <p> They have been a lovely couple. They have come with their adorable cute puppy Murphy who has performed excellently. </p>
-        <h5>*reviews placeholder*</h5>
-        <p> They have been a lovely couple. They have come with their adorable cute puppy Murphy who has performed excellently. </p>
+          <% @user.help_requests.where(status: "completed").reverse.each do |request| %>
+            <p>"<i><%= request.review.description %></i>" - After helping <%= request.senior.name.split[0].to_s %> with <b><%= request.task.name.downcase %></b></p>
+          <% end %>
       </div>
     </div>
 </div>

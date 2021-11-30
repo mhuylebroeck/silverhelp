@@ -1,7 +1,7 @@
 <div class="container-helperscores">
     <div class="helperreviews">
       <div class="helperscores">
-        <%= allfriend.inject{ |sum, el| sum + el }.to_f / allfriend.size/ 5 * 100 %>%
+        <%= (allfriend.inject{ |sum, el| sum + el }.to_f / allfriend.size/ 5 * 100).round %>%
       </div>
       <div class="txt-helperscoreexplain">
         Friendliness
@@ -9,7 +9,7 @@
     </div>
     <div class="helperreviews">
       <div class="helperscores">
-        <%= (allefficiency.inject{ |sum, el| sum + el }.to_f / allefficiency.size) / 5 * 100%>%
+        <%= ((allefficiency.inject{ |sum, el| sum + el }.to_f / allefficiency.size) / 5 * 100).round%>%
       </div>
       <div class="txt-helperscoreexplain">
         Happy with help
@@ -17,7 +17,7 @@
     </div>
     <div class="helperreviews">
       <div class="helperscores">
-        <%= allpunctual.inject{ |sum, el| sum + el }.to_f / allpunctual.size/ 5 * 100 %>%
+        <%= (allpunctual.inject{ |sum, el| sum + el }.to_f / allpunctual.size/ 5 * 100).round %>%
       </div>
       <div class="txt-helperscoreexplain">
         On time
@@ -26,7 +26,7 @@
     <% trecommend = allrecommend.select { |recommendation| recommendation == true} %>
     <div class="helperreviews">
       <div class="helperscores">
-        <%= trecommend.size/allrecommend.size.to_f * 100 %>%
+        <%= (trecommend.size/allrecommend.size.to_f * 100).round %>%
       </div>
       <div class="txt-helperscoreexplain">
         Recommended
