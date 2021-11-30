@@ -1,18 +1,35 @@
-  <div class="confirmation-container">
-    <h2>Your request is sent!</h2>
-      <h5>Request Details</h5>
-        <p><strong>What?</strong> <%= @request.task_description %></p>
-        <p><strong>When?</strong> <%= @request.start_time %></p>
-        <p><strong>How long?</strong> <%= @request.duration %>hrs</p>
-        <p><strong>Where?</strong> <%= @request.location %></p>
-        <p><strong>Who?</strong> <%= @request.helper.name %></p>
-      <h5>What happens now?</h5>
-        <p id="description">Your chosen <strong>SilverHelper</strong> will now be notified that you
-        have requested their help. If they are available they can
-        head to their <strong>dashboard</strong> to accept your request and share
-        their contact details so you can make arrangements.
-        Follow the link to the <strong>dashboard</strong> below to keep an eye on the status
-        of your request.
-        </p>
-        <%= link_to "Dashboard", dashboard_path, id: "btn-dashboard"%>
-  </div>
+  <div class="container-confirmation-page">
+    <div class="confirmation-container">
+      <div class="title-confirmation">
+        <h2><strong>Great! <%=  @request.senior.name %>, <br> your request is sent!</strong></h2>
+        <p>Help will be on the way soon. Your chosen SilverHelper will now be notified that you have requested their help</p>
+      </div>
+          <h5><strong>Request Details</strong></h5>
+          <div class="request-details-confirmation">
+            <p><strong>Your task</strong> <br> <%= Task.find(@request.task_id).name%></p>
+            <%# <p><strong>What?</strong> <%= @request.task_description %>
+            <p><strong>Time of your task</strong> <br> <%= @request.start_time %></p>
+
+
+            <p><strong>Duration</strong> <br> <%= @request.duration %> hours</p>
+            <p><strong>Address</strong> <br><%= @request.location %></p>
+            <p><strong>Your Silverhelper</strong> <br><%= @request.helper.name %></p>
+
+        </div>
+       <div class="What-new-confirmation">
+        <h5><strong>What happens now?</strong></h5>
+          <p id="description">Your chosen <strong>SilverHelper</strong> will now be notified that you
+          have requested their help. If they are available they can
+          head to their <strong>dashboard</strong> to accept your request and share
+          their contact details so you can make arrangements.
+          Follow the link to the <strong>dashboard</strong> below to keep an eye on the status
+          of your request.
+          </p>
+          <%= link_to "Dashboard", dashboard_path, id: "btn-dashboard"%>
+        </div>
+    </div>
+
+    <div>
+      <img src="https://i.ibb.co/F4gCpdV/undraw-certification-aif8-1.png" class="img-confirmation" alt="">
+    </div>
+</div>

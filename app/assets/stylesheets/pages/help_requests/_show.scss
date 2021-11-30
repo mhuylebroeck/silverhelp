@@ -1,27 +1,17 @@
 .confirmation-container{
-  text-align: center;
-  padding: 40px;
-  background-color: #FFE082;
+  background-color: #FFF2CE;
+  border: 0.5px solid #FCC010;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  text-align: left;
   border-radius: 10px;
   color: #20124D;
-  margin: 80px 25% 80px 25%;
-  width: 50%;
+  width: 70%;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    h2{
-      padding: 20px;
-      font-weight: bolder;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-      background-color: rgba(252, 193, 19, 0.6);
-      border-radius: 5px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    }
-    h5{
-      padding: 15px;
-      font-weight: bold;
-    }
-    #description{
-      margin-bottom: 25px;
-    }
+  padding: 50px;
+
+
+
     #btn-dashboard{
       background-color: #fcc010;
       border-radius: 5px;
@@ -38,4 +28,26 @@
 
       }
     }
+}
+
+.img-confirmation{
+  height: 300px;
+  width: 400px;
+}
+
+.container-confirmation-page {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 133px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+
+.title-confirmation {
+margin-bottom: 60px;
+}
+
+.request-details-confirmation {
+  margin-bottom: 30px;
 }
