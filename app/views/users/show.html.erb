@@ -1,4 +1,5 @@
 <div class="master-container-show">
+  <% if params[:help_request].present? %>
     <%= simple_form_for [@help_request, HelpRequest.new(params[:help_request].permit!)], url: users_path, method: :get do |f| %>
         <%= f.input :task_id,collection: Task.all, as: :hidden%>
         <%= f.input :start_time,
@@ -9,6 +10,7 @@
           input_html: { class: "location-autocomplete" }, as: :hidden %>
         <%= f.input :task_description, as: :hidden %>
     <% end %>
+  <% end %>
   <div class="container-show">
     <div class="container-profile-card">
       <% if @users_favorite %>
@@ -54,7 +56,7 @@
                 <% if params[:help_request].present? %>
                       <%= render "users/placeholders/helpform", helper: User.find(params["id"]) %>
                 <% else %>
-                      <%= link_to "Request help", users_path(), class: "btn-brownishghost"  %>
+                      <%= link_to "Start a help request", root_path, class: "btn-brownishghost"  %>
                       <%# Above is just a placeholder! It would be the form! %>
 
                 <% end %>
