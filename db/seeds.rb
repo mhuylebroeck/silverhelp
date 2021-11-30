@@ -196,14 +196,22 @@ p "Finished creating all the users!"
 
 p "Creating coupons"
 
+def pleuro(number)
+  if number > 1
+    "#{number} euros"
+  else
+    "#{number} euro"
+  end
+end
+
 c = 0
 5.times do
   c += 1
   name = Faker::Restaurant.name
-  discount = Faker::Number.between(from: 0, to: 25)
+  discount = Faker::Number.between(from: 1, to: 25)
   Coupon.create!(
     name: "Coupon for #{name}",
-    description: "Gives you a discount of #{discount} euro at #{name}, at any of their locations in Barcelona.",
+    description: "Gives you a discount of #{pleuro(discount)} at #{name}, at any of their locations in Barcelona.",
     price: Faker::Number.between(from: 0, to: 250)
   )
   p "Created #{c} coupon(s)!"

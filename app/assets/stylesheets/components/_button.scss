@@ -102,3 +102,17 @@
 .disabled{
   pointer-events: none;
 }
+
+// Coupon
+
+.btn-coupon{
+  text-decoration: none;
+  background-color: cadetblue;
+  padding: 8px 16px;
+  color: black;
+  &:hover{
+    text-decoration: none !important;
+    background-color: powderblue;
+    color: black;
+  }
+}

@@ -13,4 +13,8 @@ Rails.application.routes.draw do
   resources :help_requests, only: [:new, :update, :destroy, :show] do
     resources :reviews, only: [:new, :create]
   end
+
+  resources :coupons, only: [:index]
+
+  resources :user_coupons, only: [:create]
 end

@@ -1,0 +1,53 @@
+.container-coupons{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  margin: 16px;
+}
+
+.card-coupon{
+  background: #fef2ce;
+}
+.img-coupon{
+  img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid black;
+  }
+}
+
+.txt-couponname{
+  text-align: center;
+  margin: 16px;
+}
+
+.eyeline-coupon{
+  margin: 8px;
+  display: flex;
+  min-height: 64px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.coupon-description{
+  margin-right: 8px;
+}
+
+.coupon-price{
+  margin-left: 8px;
+  text-align: right;
+}
+
+.coupon-header{
+  height: 106px;
+  background-color: #f7c033;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.coupon-button {
+  display: grid;
+  text-align: center;
+}

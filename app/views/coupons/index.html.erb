@@ -1,0 +1,31 @@
+<div class = "coupon-header">
+  <h1>Coupon Shop</h1>
+  <h2>Trade your accumulated points for coupons from our affiliated brands!</h2>
+</div>
+
+<% restaurants_photos = ["https://source.unsplash.com/collection/1028299", "https://source.unsplash.com/collection/345703", "https://source.unsplash.com/collection/312299", "https://source.unsplash.com/collection/3398352"] %>
+
+<div class="container-coupons">
+  <% @coupons.each do |coupon| %>
+    <div class="card-coupon">
+      <div class="img-coupon">
+        <img src=<%= restaurants_photos.sample %>  alt="place of the coupon <%= coupon.name %>">
+
+      </div>
+      <div class="txt-couponname">
+        <h3><b><%= coupon.name[11..-1] %></b></h3>
+      </div>
+      <div class="eyeline-coupon">
+        <div class="coupon-description">
+          <%= coupon.description %>
+        </div>
+        <div class="coupon-price">
+          <b><%= coupon.price %> points</b>
+        </div>
+      </div>
+      <div class="coupon-button">
+        <%= link_to "Buy this coupon", user_coupons_path(:coupon_id => coupon.id ), method: :post, class: "btn-coupon"  %>
+      </div>
+    </div>
+  <% end %>
+</div>
