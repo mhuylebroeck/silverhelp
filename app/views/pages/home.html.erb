@@ -14,8 +14,8 @@
           <div class="searchbar-home">
             <div class="search-form-home">
               <%= simple_form_for @help_request, html: { class: "flexbox"}, url: new_help_request_path, method: :get do |f| %>
-                  <%= f.input :task_id,collection: Task.all, input_html: { class:"search-form-home form-homesearchbar select-2-suggestions", multiple: "multiple" }, label: false %>
-                 <%= f.submit "Search", class:"search-btn-home btn-warning search-btn flexbox-btn" %>
+                  <%= f.input :task_id,collection: Task.all, input_html: { class:"search-form-home form-homesearchbar select-2-suggestions ", multiple: "multiple" }, label: false %>
+                 <%= f.submit "Get help", class:"search-btn-home search-btn " %>
             </div>
             <div class="">
               <% end %>
@@ -151,7 +151,7 @@
 
         <div class="info-homepage" data-aos="fade-up-right">
           <h2 style=" color:#FCC010;"> Step 2 </h2>
-          <h3>Choose your Silverhelper by reviews, skills, and price.</h3>
+          <h3>Choose your Silverhelper by reviews and skills</h3>
           <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculis purus laoreet fames fermentum. Fermentum, arcu lacus lobortis sed tellus.</p>
         </div>
 
@@ -164,7 +164,7 @@
 
         <div class="info-homepage-right" data-aos="fade-up-left">
           <h2 style=" color:#FCC010;"> Step 3 </h2>
-          <h3> Schedule when it works for you. </h3>
+          <h3> Contact the Silverhelper and get your help</h3>
           <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculis purus laoreet fames fermentum. Fermentum, arcu lacus lobortis sed tellus. </p>
         </div>
 
