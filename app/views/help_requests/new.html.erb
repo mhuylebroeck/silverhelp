@@ -3,17 +3,17 @@
     <div class="you-mother-fucker">
       <% task_name = Task.find(params["help_request"]["task_id"][1]).name %>
       <h1>Silver Helpers to do <%= task_name %></h1>
-      <h1>Step 1 out of 3</h1>
     </div>
   </div>
   <div class="right-text">
-    <div  data-controller="multi-step-form">
+    <div class = "form-right-container" data-controller="multi-step-form">
       <%= simple_form_for [@help_request, HelpRequest.new(params[:help_request].permit!)], url: users_path, method: :get do |f| %>
         <div class="d-none" data-multi-step-form-target="step">
           <%= f.input :task_id, as: :hidden %>
           <button data-action="click->multi-step-form#goToNext" data-next-step="1">Next step</button>
         </div>
         <div data-multi-step-form-target="step">
+          <h1>Step 1 out of 3</h1>
           <%= f.input :start_time,
             html5: true %>
           <%= f.input :duration,
@@ -26,11 +26,13 @@
           <button data-action="click->multi-step-form#goToNext" data-next-step="2">Next step</button>
         </div>
         <div class="d-none" data-multi-step-form-target="step">
+          <h1>Step 2 out of 3</h1>
           <%= f.input :location,
             input_html: { class: "location-autocomplete" }, label:"Address" %>
           <button data-action="click->multi-step-form#goToNext" data-next-step="3">Next step</button>
         </div>
         <div class="d-none" data-multi-step-form-target="step">
+          <h1>Step 3 out of 3</h1>
           <%= f.input :task_description %>
           <%= f.submit "Search" %>
         </div>
