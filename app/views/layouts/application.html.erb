@@ -19,12 +19,12 @@
 
   <body>
     <div class="page-container">
-      <% unless controller_name == "help_requests" && action_name == "new"%>
+      <% unless controller_name == "help_requests" && action_name == "new" || controller_name == "reviews" && action_name == "new"%>
         <div class="navbar-container"><%= render "shared/navbar" %></div>
       <% end %>
       <div class="content-container"><%= yield %></div>
       <div class="flashes-container"><%= render "shared/flashes" %></div>
-      <% unless action_name == "new" %>
+      <% unless controller_name == "help_requests" && action_name == "new" || controller_name == "reviews" && action_name == "new" %>
         <div class="footer-container"><%= render "shared/footer" %></div>
       <% end %>
     </div>
