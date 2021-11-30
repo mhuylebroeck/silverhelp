@@ -6,30 +6,49 @@
       </div>
           <h5><strong>Request Details</strong></h5>
           <div class="request-details-confirmation">
-            <p><strong>Your task</strong> <br> <%= Task.find(@request.task_id).name%></p>
-            <%# <p><strong>What?</strong> <%= @request.task_description %>
-            <p><strong>Time of your task</strong> <br> <%= @request.start_time %></p>
+              <div class="icon-conf">
+                <i class="fas fa-thumbtack"></i>
+                 <p><strong>Your task</strong> <br> <%= Task.find(@request.task_id).name%></p>
+              </div>
 
+              <div class="icon-conf">
+                <i class="fas fa-pen" ></i>
+                <p><strong>Description</strong> <br><%= @request.task_description %> </p>
+              </div>
 
-            <p><strong>Duration</strong> <br> <%= @request.duration %> hours</p>
-            <p><strong>Address</strong> <br><%= @request.location %></p>
-            <p><strong>Your Silverhelper</strong> <br><%= @request.helper.name %></p>
+              <div class="icon-conf">
+                <i class="fas fa-calendar-week"></i>
+                <p><strong>Time of your task</strong> <br> <%= @request.start_time %></p>
+              </div>
+
+              <div class="icon-conf">
+                <i class="fas fa-clock"></i>
+                <p><strong>Duration</strong> <br> <%= @request.duration %> hours</p>
+              </div>
+
+              <div class="icon-conf">
+                <i class="fas fa-map-marker-alt"></i>
+                <p><strong>Address</strong> <br><%= @request.location %></p>
+              </div>
+
+              <div  class="icon-conf">
+                <i class="fas fa-user"></i>
+                <p><strong>Your Silverhelper</strong> <br><%= @request.helper.name %></p>
+              </div>
 
         </div>
-       <div class="What-new-confirmation">
-        <h5><strong>What happens now?</strong></h5>
-          <p id="description">Your chosen <strong>SilverHelper</strong> will now be notified that you
-          have requested their help. If they are available they can
-          head to their <strong>dashboard</strong> to accept your request and share
-          their contact details so you can make arrangements.
-          Follow the link to the <strong>dashboard</strong> below to keep an eye on the status
-          of your request.
-          </p>
-          <%= link_to "Dashboard", dashboard_path, id: "btn-dashboard"%>
-        </div>
+
     </div>
+         <div class="What-new-confirmation">
+          <h5><strong>What happens now?</strong></h5>
+            <p id="description">
+            Follow the link to the <strong>dashboard</strong> below to keep an eye on the status
+            of your request.
+            </p>
+            <%= link_to "Dashboard", dashboard_path, id: "btn-dashboard"%>
+        </div>
 
     <div>
-      <img src="https://i.ibb.co/F4gCpdV/undraw-certification-aif8-1.png" class="img-confirmation" alt="">
+      <%# <img src="https://i.ibb.co/F4gCpdV/undraw-certification-aif8-1.png" class="img-confirmation" alt=""> %>
     </div>
 </div>
