@@ -3,14 +3,12 @@
  // margin-left: 280px;
  // margin-right: 280px;
   color: #20124D;
-
 ;
 
 }
 
 .profile-show-avatar  {
   text-align: center;
-  margin-top: 30px;
   margin-bottom: 30px;
   text-align: center;
   font-family: "Montserrat", sans-serif;
@@ -18,7 +16,7 @@
   font-size: 20px;
   font-weight: bold;
   color: #20124D;
-  padding-top: 40px;
+  padding-top: 15px;
 
 
   img  {
@@ -47,6 +45,19 @@
   position: sticky;
   top: 0px;
   width: 323px;
+  margin-top: 30px;
+  .fas, .far{
+    margin-left: 80%;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-size: 30px;
+  }
+  .far{
+    color: #20124D;
+  }
+  #favorite-heart{
+    color: #db5461;
+  }
 }
 
 .info-profile-show {
