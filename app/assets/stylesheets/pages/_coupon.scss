@@ -2,11 +2,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
-  margin: 16px;
+  margin: 24px 70px;
 }
 
 .card-coupon{
   background: #fef2ce;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 .img-coupon{
   img{
@@ -19,19 +20,21 @@
 
 .txt-couponname{
   text-align: center;
-  margin: 16px;
+  padding: 16px 16px 8px 16px;
+  background-color: #f7c033;
 }
 
 .eyeline-coupon{
   margin: 8px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
   min-height: 64px;
-  align-items: flex-end;
-  justify-content: space-between;
+  align-items: end;
 }
 
 .coupon-description{
   margin-right: 8px;
+  font-size: 14px;
 }
 
 .coupon-price{
@@ -45,6 +48,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  h2{
+    font-size: 24px;
+  }
 }
 
 .coupon-button {

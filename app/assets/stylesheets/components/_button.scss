@@ -107,12 +107,13 @@
 
 .btn-coupon{
   text-decoration: none;
-  background-color: cadetblue;
+  background-color: #FCC010;
   padding: 8px 16px;
   color: black;
+  transition: 0.5s;
   &:hover{
     text-decoration: none !important;
-    background-color: powderblue;
+    background-color: #F59D19;
     color: black;
   }
 }
