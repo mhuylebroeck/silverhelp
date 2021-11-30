@@ -86,7 +86,7 @@
 
             <div class="btns-card-index">
               <div>
-              <%= link_to "See more", user_path(helper), class: "btn-brownish"  %>
+              <%= link_to "See more", user_path(helper, :help_request => {:task_id =>params["help_request"]["task_id"], :start_time => params["help_request"]["start_time"], :duration => params["help_request"]["duration"], :location => params["help_request"]["location"], :task_description => params["help_request"]["task_description"]}), class: "btn-brownish"  %>
                 <%# PUT THE SEE MORE BUTTON HERE %>
               </div>
 

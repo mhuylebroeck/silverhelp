@@ -2,11 +2,16 @@
   <% if @favorites.empty? %>
     <p class="empty-message">You have no favorite helpers.</p>
   <% else %>
-    <div class="favorite-card">
+    <div class="favorite-container">
       <% @favorites.each do |favorite| %>
-        <%= cl_image_tag favorite.helper.avatar.key, height: 300, width: 400, class: "profile-avatar" %>
-        <strong><%= favorite.helper.name %></strong>
-        <%= link_to "view profile", user_path(favorite.helper), method: :get, class: "btn-edit-profile" %></p>
+        <div class="favorite-card">
+            <%= cl_image_tag favorite.helper.avatar.key, height: 300, width: 400, id: "favorite-avatar" %>
+            <p><strong><%= favorite.helper.name %></strong></p>
+            <%= link_to "view profile", user_path(favorite.helper), method: :get, class: "btn-edit-profile", id: "favorite-profile-btn" %>
+            <%= link_to favorite_path(favorite), method: :delete do %>
+            <i class="fas fa-heart" id="dashboard-favorite-heart"></i>
+            <% end %>
+        </div>
       <% end %>
     </div>
   <% end %>

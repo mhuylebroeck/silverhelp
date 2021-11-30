@@ -5,8 +5,9 @@ font-family: "Montserrat", sans-serif;
     text-align: center;
     font-weight: bold;
     text-shadow: 0 0 15px rgba(0,0,0,0.2);
-    padding: 20px;
-    color: #20124D
+    padding: 40px 0px 10px 0px;
+    color: #20124D;
+    margin: 0px;
   }
 }
 
@@ -14,38 +15,42 @@ font-family: "Montserrat", sans-serif;
   display: grid;
   grid-template-columns: 75% 25%;
   grid-template-rows: fit-content;
-  margin: 40px 20px 40px 20px;
+  margin: 0px 20px 40px 20px;
+}
+
+.dashboard-horizontal-elements{
+margin: 30px;
 }
 
 .dashboard-element{
-  background-color: #FCC010;
+  background-color: #FFF2CE;
   height: fit-content;
-  border-radius: 10px;
+  border-radius: 5px;
   grid-column-start: 1;
   grid-column-end: 1;
-  margin: 40px;
+  margin-bottom: 40px;
   padding: 30px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
   h3 {
     padding: 20px;
+    color: #20124D;
   }
 }
 
 .dashboard-element-profile{
-position: sticky;
-top: 80px;
-background-color: #FCC010;
+background-color: #FFF2CE;
 height: fit-content;
-border-radius: 10px;
-margin: 20px;
+border-radius: 5px;
+margin: 30px;
 grid-column-start: 2;
 grid-column-end: 2;
 grid-row-start: 1;
 grid-row-end: 3;
 padding: 20px;
-box-shadow: 0 0 15px rgba(0,0,0,0.2);
+box-shadow: 0 0 15px rgba(0,0,0,0.1);
   h3{
     padding: 20px;
+    color: #20124D;
   }
   text-align: center;
 }
@@ -56,8 +61,8 @@ box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  background-color: #FFF2CE;
-  border-radius: 10px;
+  background-color: #FCC010;
+  border-radius: 5px;
   padding: 20px;
   margin: 20px;
   line-height: 15px;
@@ -89,7 +94,6 @@ box-shadow: 0 0 15px rgba(0,0,0,0.2);
 .btn-edit-profile{
   color: black;
   padding: 10px;
-  border-radius: 20px;
   font-weight: bold;
   opacity: 0.6;
   transition: opacity 0.3s ease;
@@ -107,11 +111,38 @@ box-shadow: 0 0 15px rgba(0,0,0,0.2);
 
 .profile-avatar{
   margin: 20px;
-  border-radius: 10px;
-  height: 200px;
+  border-radius: 5px;
+  width: 225px;
+}
+
+.favorite-container{
+  display: flex;
+  width: fit-content;
+  padding: 20px;
 }
 
 .favorite-card{
-  display: flex;
-  justify-content: space-between;
+  display: inline-grid;
+  background-color: #FCC010;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 5px;
+  margin: 0 20px 0 20px;
+  #favorite-avatar{
+    width: 225px;
+    height: 225px;
+  }
+  p{
+    padding-top: 10px;
+  }
+  #dashboard-favorite-heart{
+    color: #20124D;
+    margin: 0 20px 5px 78%;
+    font-size: 30px;
+  }
+
+  #favorite-profile-btn{
+    margin: 0px;
+  }
 }
