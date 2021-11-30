@@ -1,11 +1,11 @@
 <div class= "d-flex align-items-center">
   <div class="left-text">
-    <div class="you-mother-fucker">
+    <div class="you-mother-fucker" data-aos="fade-right">
       <% task_name = Task.find(params["help_request"]["task_id"][1]).name %>
-      <h1>Silver Helpers to do <%= task_name %></h1>
+      <h1>You are looking for help <br> with <strong><%= task_name %></strong></h1>
     </div>
   </div>
-  <div class="right-text">
+  <div class="right-text" data-aos="fade-left">
     <div class = "form-right-container" data-controller="multi-step-form">
       <%= simple_form_for [@help_request, HelpRequest.new(params[:help_request].permit!)], url: users_path, method: :get do |f| %>
         <div class="d-none" data-multi-step-form-target="step">
@@ -13,7 +13,7 @@
           <button data-action="click->multi-step-form#goToNext" data-next-step="1">Next step</button>
         </div>
         <div data-multi-step-form-target="step">
-          <h1>Step 1 out of 3</h1>
+          <h1><strong>Step 1 out of 3</strong></h1>
           <%= f.input :start_time,
             html5: true %>
           <%= f.input :duration,
@@ -23,18 +23,18 @@
             item_wrapper_class: 'category-item',
             input_html: {class: 'category-selector'},
             collection: HelpRequest::CATEGORIES %>
-          <button data-action="click->multi-step-form#goToNext" data-next-step="2">Next step</button>
+          <button data-action="click->multi-step-form#goToNext" data-next-step="2" class="btn-new-form">Next step</button>
         </div>
-        <div class="d-none" data-multi-step-form-target="step">
-          <h1>Step 2 out of 3</h1>
+        <div class="d-none"  data-multi-step-form-target="step">
+          <h1><strong>Step 2 out of 3</strong></h1>
           <%= f.input :location,
             input_html: { class: "location-autocomplete" }, label:"Address" %>
-          <button data-action="click->multi-step-form#goToNext" data-next-step="3">Next step</button>
+          <button data-action="click->multi-step-form#goToNext" data-next-step="3" class="btn-new-form">Next step</button>
         </div>
         <div class="d-none" data-multi-step-form-target="step">
-          <h1>Step 3 out of 3</h1>
+          <h1><strong>Step 3 out of 3</strong></h1>
           <%= f.input :task_description %>
-          <%= f.submit "Search" %>
+          <%= f.submit "Search", class:"btn-new-form" %>
         </div>
       <% end %>
     </div>
