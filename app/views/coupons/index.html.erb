@@ -23,6 +23,9 @@
           <b><%= coupon.price %> points</b>
         </div>
       </div>
+      <div class="coupon-button">
+        <%= link_to "Buy this coupon", user_coupons_path(:coupon_id => coupon.id ), method: :post, class: "btn-coupon"  %>
+      </div>
     </div>
   <% end %>
 </div>

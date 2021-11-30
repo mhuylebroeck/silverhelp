@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   end
 
   resources :coupons, only: [:index]
+
+  resources :user_coupons, only: [:create]
 end
