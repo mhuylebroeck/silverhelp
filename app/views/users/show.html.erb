@@ -43,7 +43,7 @@
         </div>
         <h5> <i class="fas fa-star"></i><strong> *<%= @user.help_requests.where(status: "completed").length %>* Review(s)</strong></h5>
           <hr>
-          <% @user.help_requests.where(status: "completed").each do |request| %>
+          <% @user.help_requests.where(status: "completed").reverse.each do |request| %>
             <p>"<i><%= request.review.description %></i>" - After helping with <b><%= request.task.name.downcase %></b></p>
           <% end %>
       </div>

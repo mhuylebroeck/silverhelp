@@ -298,17 +298,12 @@ HelpRequest.create!(
 )
 
 p "Creating already accepted request between Jane and Maria"
-# enum status: {
-#     pending: 0,
-#     accepted: 1,
-#     declined: 2
-#   }
 
 HelpRequest.create!(
   start_time: Time.new,
   duration: 1,
-  task_description: "Help me go to move my furniture around.",
-  status: 1,
+  task_description: "Help me move my furniture around.",
+  status: "completed",
   senior_id: User.where(name: "Maria Silva")[0].id,
   helper_id: User.where(name: "Jane Bronze")[0].id,
   task_id: Task.where(name: "Home repairs")[0].id
@@ -322,7 +317,56 @@ Review.create!(
   efficiency_rating: 4,
   punctuality_rating: 5,
   recommend: true,
-  help_request_id: HelpRequest.where(task_description: "Help me go to move my furniture around.")[0].id
+  help_request_id: HelpRequest.where(task_description: "Help me move my furniture around.")[0].id
+)
+
+# Creating more help requests and reviews for Jane
+
+p "Creating already accepted requests for Jane"
+
+HelpRequest.create!(
+  start_time: Time.new,
+  duration: 1,
+  task_description: "I know it's late, but can someone help me with this?",
+  status: "completed",
+  senior: User.where(user_type: "senior").sample,
+  helper_id: User.where(name: "Jane Bronze")[0].id,
+  task: Task.where(name: UserTask::ALL_TASKS.sample)[0]
+)
+
+p "Creating reviews for Jane"
+
+Review.create!(
+  description: "Very helpful woman, hope she achieves her dreams.",
+  friendliness_rating: 5,
+  efficiency_rating: 4,
+  punctuality_rating: 4,
+  recommend: true,
+  help_request_id: HelpRequest.where(task_description: "I know it's late, but can someone help me with this?")[0].id
+)
+p "Finished creating review for Jane"
+
+p "Creating already accepted requests for Jane"
+
+HelpRequest.create!(
+  start_time: Time.new,
+  duration: 1,
+  task_description: "Can someone help me with this? My arthritis is killing me.",
+  status: "completed",
+  senior: User.where(user_type: "senior").sample,
+  helper_id: User.where(name: "Jane Bronze")[0].id,
+  task: Task.where(name: UserTask::ALL_TASKS.sample)[0]
+)
+
+p "Creating reviews for Jane"
+
+Review.create!(
+  description: "She brought me medicine! But she was late because of it. Very wonderful soul, nevertheless.",
+  friendliness_rating: 5,
+  efficiency_rating: 5,
+  punctuality_rating: 3,
+  recommend: true,
+  help_request_id: HelpRequest.where(task_description: "Can someone help me with this? My arthritis is killing me.")[0].id
 )
 p "Finished creating review for Jane"
 
