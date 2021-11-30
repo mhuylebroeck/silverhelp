@@ -1,11 +1,50 @@
 .left-text{
   width:50%;
-  height: 100vh;
+  height: fit-content;
   background-color: #fcc010;
- .you-mother-fucker{ margin-top: 45%;
+  padding-top: 350px;
+  padding-bottom: 380px;
+  color: #20124D ;
+
+
+ .you-mother-fucker{
+   //margin-top: 30%;
+   margin-left: 100px;
+   align-content: center;
  }
 }
 
 .right-text{
   width:50%;
+}
+
+.form-right-container {
+   color: #20124D ;
+  margin-top: 0%;
+  padding-left: 100px ;
+  padding-right: 100px;
+}
+
+.btn-new-form {
+
+  background: #FCC010;
+  border: 1px solid #fffcf4;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 153.29px;
+  height: 56px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-control {
+  border: 1px solid #fcc010;
+}
+
+.category-selector + label {
+  border: 1px solid #fcc010;
+  height: 90px;
 }
