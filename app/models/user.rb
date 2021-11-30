@@ -6,11 +6,10 @@ class User < ApplicationRecord
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
 
+
          # THIS
   has_many :owned_help_requests, class_name: "HelpRequest", foreign_key: "senior_id", dependent: :destroy
   has_many :assigned_help_requests, class_name: "HelpRequest", foreign_key: "helper_id", dependent: :destroy
-
-
 
   has_many :availabilities, dependent: :destroy
   has_many :user_coupons, dependent: :destroy
@@ -20,6 +19,7 @@ class User < ApplicationRecord
   has_many :reviews, through: :help_requests
   has_many :favorites, foreign_key: :senior_id
   has_many :favorite_helpers, through: :favorites
+  has_many :coupons, through: :user_coupons
 
   def help_requests
     # This is so that we can get all of the tasks someone has, no matter if they're a helper or a senior.
