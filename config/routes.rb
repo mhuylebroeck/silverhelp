@@ -5,7 +5,11 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :help_requests, only: [:create]
+    resources :favorites, only: [:create]
   end
   resource :dashboard, only: [:show]
-  resources :help_requests, only: [:new, :update, :destroy, :show]
+
+  resources :help_requests, only: [:new, :update, :destroy, :show] do
+    resources :reviews, only: [:new, :create]
+  end
 end

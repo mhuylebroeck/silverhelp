@@ -1,0 +1,35 @@
+$placeholder: #FCC010; // Change this to whatever colour we are now using as the primary colour!
+
+.review-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.review-leftside{
+  background-color: $placeholder;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+.review-eyeline{
+  padding: 24px;
+}
+
+.review-form{
+  padding: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.movbuttons{
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ grid-gap: 16px;
+}
+
+.btn-reviewbtncontainer{
+
+}

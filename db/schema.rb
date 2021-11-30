@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_25_104852) do
+ActiveRecord::Schema.define(version: 2021_11_29_171219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,15 @@ ActiveRecord::Schema.define(version: 2021_11_25_104852) do
     t.integer "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "senior_id"
+    t.bigint "helper_id"
+    t.index ["helper_id"], name: "index_favorites_on_helper_id"
+    t.index ["senior_id"], name: "index_favorites_on_senior_id"
   end
 
   create_table "help_requests", force: :cascade do |t|
@@ -131,6 +140,8 @@ ActiveRecord::Schema.define(version: 2021_11_25_104852) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "availabilities", "users"
+  add_foreign_key "favorites", "users", column: "helper_id"
+  add_foreign_key "favorites", "users", column: "senior_id"
   add_foreign_key "help_requests", "tasks"
   add_foreign_key "help_requests", "users", column: "helper_id"
   add_foreign_key "help_requests", "users", column: "senior_id"
