@@ -1,5 +1,14 @@
 <div class="master-container-show">
-
+    <%= simple_form_for [@help_request, HelpRequest.new(params[:help_request].permit!)], url: users_path, method: :get do |f| %>
+        <%= f.input :task_id,collection: Task.all, as: :hidden%>
+        <%= f.input :start_time,
+          html5: true, as: :hidden %>
+        <%= f.input :duration,
+          collection: HelpRequest::CATEGORIES, as: :hidden %>
+        <%= f.input :location,
+          input_html: { class: "location-autocomplete" }, as: :hidden %>
+        <%= f.input :task_description, as: :hidden %>
+    <% end %>
   <div class="container-show">
     <div class="container-profile-card">
       <% if @users_favorite %>
@@ -41,7 +50,15 @@
       <div class="review-show">
         <div class="container-show-btn">
           <h1 class="profile-show" > <strong>Hi, I'm <%= @user.name %></strong></h1>
-          <%= link_to "Request help", users_path(), class: "btn-show"  %>
+          <div class="helperindex-bottombtn">
+                <% if params[:help_request].present? %>
+                      <%= render "users/placeholders/helpform", helper: User.find(params["id"]) %>
+                <% else %>
+                      <%= link_to "Request help", users_path(), class: "btn-brownishghost"  %>
+                      <%# Above is just a placeholder! It would be the form! %>
+
+                <% end %>
+          </div>
         </div>
         <div class="about-profile-show">
           <h5><i class="fas fa-address-card"></i><strong> About</strong></h5>
