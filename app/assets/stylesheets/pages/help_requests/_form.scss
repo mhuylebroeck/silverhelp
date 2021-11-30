@@ -224,3 +224,39 @@ form#new_review {
 .flexbox-btn{
   margin-left: 20px;
 }
+
+.btn-index-form {
+  color: #fffcf4;
+  text-align: center;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 15px;
+  font-weight: 600;
+  background: #FCC010;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 150.29px;
+  height: 56px;
+  transition: 0.5s;
+  border: none;
+  text-align: center;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 15px;
+  font-weight: 600;
+  background: #FCC010;
+  box-sizing: border-box;
+  border-radius: 4px;
+  transition: 0.5s;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 10px;
+}
+
+  .btn-index-form:hover{
+    background-color:#ffb326 ;
+
+  }

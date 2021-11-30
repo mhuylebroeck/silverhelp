@@ -7,22 +7,29 @@
     <div class="header-toppage-body">
       <% if params[:help_request].present? %>
         <% if params[:help_request][:location].present? && params[:help_request][:start_time].present? && params[:help_request][:duration].present? && params[:help_request][:task_id] %>
+<%# //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// %>
+          <%# <form action=""> %>
+            <%# <label><strong>Task</strong></label> <br> %>
+            <%# <input class="form-index" type="text" placeholder="<%= Task.find(params[:help_request][:task_id]).name%>
+            <%# <label><strong>Location</strong></label> %>
+            <%# <input class="form-index" type="text" placeholder="<%= @location%>
+            <%# <label><strong>Date</strong></label><br> %>
+            <%# <input class="form-index" type="text" placeholder="<%= @time %>
+            <%# <input type="submit" value="Submit"> %>
+          <%# </form> %>
+<%# //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// %>
+          <%= simple_form_for [@help_request, HelpRequest.new(params[:help_request].permit!)], url: users_path, method: :get do |f| %>
+              <%= f.input :task_id,collection: Task.all%>
+              <%= f.input :start_time,
+                html5: true %>
+              <%= f.input :duration,
+                collection: HelpRequest::CATEGORIES %>
+              <%= f.input :location,
+                input_html: { class: "location-autocomplete" }, label:"Address" %>
+              <%= f.submit "Edit task", class: "btn-index-form" %>
+          <% end %>
 
-          <form action="">
-            <label><strong>Task</strong></label> <br>
-            <input class="form-index"type="text" placeholder="<%= Task.find(params[:help_request][:task_id]).name%>">
-          </form>
-
-          <form  action="">
-            <label><strong>Location</strong></label>
-            <input class="form-index"type="text" placeholder="<%= @location%>">
-          </form>
-
-          <form action="">
-            <label><strong>Date</strong></label><br>
-            <input class="form-index" type="text" placeholder="<%= @time %>" >
-          </form>
-
+<%# //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// %>
          <%# <%= params[:help_request][:duration]%>
         <% end %>
       <% else %>
@@ -35,7 +42,7 @@
 
   <div class="container-title-grid">
     <div class="h2-helperindex">
-      <h2 class = "txt-alignhelperindex">There are <%= @helpers.size %> <strong>silverhelpers</strong> available for you!</h2>
+      <h2 class = "txt-alignhelperindex">There <%=@helpers.size == 1 ? "is" : "are"  %> <%= @helpers.size %> <strong><%=@helpers.size == 1 ? " silverhelper": "silverhelpers"  %></strong> available for you!</h2>
     </div>
     <div class="grid-helperindex">
 
@@ -49,7 +56,8 @@
           </div>
 
           <div class="card-body-index">
-            <h5 class="card-title"><strong><%= helper.name %></strong><small> (has COUNT reviews)</small></h5>
+            <% number_reviews = helper.help_requests.where(status: "completed").length %>
+            <h5 class="card-title"><strong><%= helper.name %></strong><small> (has <%= number_reviews > 1 ? "#{number_reviews} reviews" : "#{number_reviews} review" %>)</small></h5>
                 <% unless helper.help_requests.empty? %>
                 <% allfriend = []
                   allefficiency = []
@@ -78,7 +86,7 @@
 
             <div class="btns-card-index">
               <div>
-              <%= link_to "See more", user_path(helper), class: "btn-brownish"  %>
+              <%= link_to "See more", user_path(helper, :help_request => {:task_id =>params["help_request"]["task_id"], :start_time => params["help_request"]["start_time"], :duration => params["help_request"]["duration"], :location => params["help_request"]["location"], :task_description => params["help_request"]["task_description"]}), class: "btn-brownish"  %>
                 <%# PUT THE SEE MORE BUTTON HERE %>
               </div>
 

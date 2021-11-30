@@ -14,8 +14,8 @@
           <div class="searchbar-home">
             <div class="search-form-home">
               <%= simple_form_for @help_request, html: { class: "flexbox"}, url: new_help_request_path, method: :get do |f| %>
-                  <%= f.input :task_id,collection: Task.all, input_html: { class:"search-form-home form-homesearchbar select-2-suggestions", multiple: "multiple" }, label: false %>
-                 <%= f.submit "Search", class:"search-btn-home btn-warning search-btn flexbox-btn" %>
+                  <%= f.input :task_id,collection: Task.all, input_html: { class:"search-form-home form-homesearchbar select-2-suggestions ", multiple: "multiple" }, label: false %>
+                 <%= f.submit "Get help", class:"search-btn-home search-btn " %>
             </div>
             <div class="">
               <% end %>
@@ -41,7 +41,7 @@
 
       <div class="container-cards-home-1">
         <div class="whatever">
-          <%= link_to(new_help_request_path(:help_request => {:task_id =>["","26"]})) do%>
+          <%= link_to(new_help_request_path(:help_request => {:task_id =>["",Task.find_by(name: "Groceries").id]})) do%>
             <div class="card-task-home">
               <img src="https://i.ibb.co/RGn3Q6W/grocery-cart.png" alt="groceries" class="task-icon-home">
               <div class="card-body">
@@ -52,7 +52,7 @@
           </div>
 
           <div class="whatever">
-          <%= link_to(new_help_request_path(:help_request => {:task_id =>["","27"]})) do%>
+          <%= link_to(new_help_request_path(:help_request => {:task_id =>["",Task.find_by(name: "Home repairs").id]})) do%>
             <div class="card-task-home">
               <img src="https://i.ibb.co/276SYTS/car-repair.png" alt="home repairs" class="task-icon-home">
               <div class="card-body">
@@ -63,7 +63,7 @@
           </div>
 
           <div class="whatever">
-          <%= link_to(new_help_request_path(:help_request => {:task_id =>["","30"]})) do%>
+          <%= link_to(new_help_request_path(:help_request => {:task_id =>["",Task.find_by(name: "Wheelchair assistance").id]})) do%>
             <div class="card-task-home">
               <img src="https://i.ibb.co/xDzFvGh/wheelchair.png" alt="wheelchair assistance" class="task-icon-home">
               <div class="card-body">
@@ -74,7 +74,7 @@
           </div>
 
           <div class="whatever">
-          <%= link_to(new_help_request_path(:help_request => {:task_id =>["","29"]})) do%>
+          <%= link_to(new_help_request_path(:help_request => {:task_id =>["",Task.find_by(name: "Cleaning").id]})) do%>
             <div class="card-task-home">
               <img src="https://i.ibb.co/HVFrR2k/mop.png" alt="cleaning" class="task-icon-home">
               <div class="card-body">
@@ -87,7 +87,7 @@
 
       <div class="container-cards-home-2">
         <div class="whatever">
-        <%= link_to(new_help_request_path(:help_request => {:task_id =>["","32"]})) do%>
+        <%= link_to(new_help_request_path(:help_request => {:task_id =>["",Task.find_by(name: "Cooking").id]})) do%>
           <div class="card-task-home">
             <img src="https://i.ibb.co/khFPKBD/chef.png" alt="cooking" class="task-icon-home">
             <div class="card-body">
@@ -98,7 +98,7 @@
         </div>
 
         <div class="whatever">
-        <%= link_to(new_help_request_path(:help_request => {:task_id =>["","31"]})) do%>
+        <%= link_to(new_help_request_path(:help_request => {:task_id =>["",Task.find_by(name: "Cleaning").id]})) do%>
           <div class="card-task-home">
             <img src="https://i.ibb.co/Mkd5NCF/laundry-machine.png" alt="laundry" class="task-icon-home">
             <div class="card-body">
@@ -109,7 +109,7 @@
         </div>
 
         <div class="whatever">
-        <%= link_to(new_help_request_path(:help_request => {:task_id =>["","33"]})) do%>
+        <%= link_to(new_help_request_path(:help_request => {:task_id =>["",Task.find_by(name: "Activities").id]})) do%>
           <div class="card-task-home">
             <img src="https://i.ibb.co/cCcpwJv/mental-health.png" alt="activities" class="task-icon-home">
             <div class="card-body">
@@ -120,7 +120,7 @@
         </div>
 
         <div class="whatever">
-        <%= link_to(new_help_request_path(:help_request => {:task_id =>["","28"]})) do%>
+        <%= link_to(new_help_request_path(:help_request => {:task_id =>["",Task.find_by(name: "Company for excursion").id]})) do%>
           <div class="card-task-home">
             <img src="https://i.ibb.co/TMT3rqv/administrator.png" alt="others" class="task-icon-home">
             <div class="card-body">
@@ -141,7 +141,8 @@
      <img src="https://i.ibb.co/v36Zp8T/undraw-Publish-post-re-wmql.png" alt="Place-holder" class="img-info-home">
 
         <div class="info-homepage-right" data-aos="zoom-out-left">
-          <h2 style=" color:#FCC010;"> Step 1 </h2>
+          <h2> Step 1 </h2>
+          <%# WHY IS THIS NO LONGER ORANGE? not enough contrast, there was a complaint on the accessibility report %>
           <h3> Complete the form with the task information  </h3>
           <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculis purus laoreet fames fermentum. Fermentum, arcu lacus lobortis sed tellus.</p>
         </div>
@@ -150,8 +151,8 @@
     <div class="container-how-it-works">
 
         <div class="info-homepage" data-aos="fade-up-right">
-          <h2 style=" color:#FCC010;"> Step 2 </h2>
-          <h3>Choose your Silverhelper by reviews, skills, and price.</h3>
+          <h2> Step 2 </h2>
+          <h3>Choose your Silverhelper by reviews and skills</h3>
           <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculis purus laoreet fames fermentum. Fermentum, arcu lacus lobortis sed tellus.</p>
         </div>
 
@@ -163,8 +164,8 @@
         https://i.ibb.co/Qrn1gTq/undraw-Business-deal-re-up4u.png" alt="Place-holder" class="img-info-home">
 
         <div class="info-homepage-right" data-aos="fade-up-left">
-          <h2 style=" color:#FCC010;"> Step 3 </h2>
-          <h3> Schedule when it works for you. </h3>
+          <h2> Step 3 </h2>
+          <h3> Contact the Silverhelper and get your help</h3>
           <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculis purus laoreet fames fermentum. Fermentum, arcu lacus lobortis sed tellus. </p>
         </div>
 

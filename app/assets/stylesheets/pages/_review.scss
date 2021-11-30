@@ -11,11 +11,12 @@ $placeholder: #FCC010; // Change this to whatever colour we are now using as the
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 80vh;
+  min-height: 100vh;
 }
 
 .review-eyeline{
   padding: 24px;
+  text-align: center;
 }
 
 .review-form{
@@ -30,6 +31,6 @@ $placeholder: #FCC010; // Change this to whatever colour we are now using as the
  grid-gap: 16px;
 }
 
-.btn-reviewbtncontainer{
-
+textarea#review_description {
+  height: 20vh;
 }
