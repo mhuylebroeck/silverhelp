@@ -41,14 +41,11 @@
           <hr>
           <p><%= @user.description %></p>
         </div>
-        <h5> <i class="fas fa-star"></i><strong> *#* Reviews</strong></h5>
+        <h5> <i class="fas fa-star"></i><strong> *<%= @user.help_requests.where(status: "completed").length %>* Review(s)</strong></h5>
           <hr>
-        <h5>*reviews placeholder*</h5>
-        <p> They have been a lovely couple. They have come with their adorable cute puppy Murphy who has performed excellently. </p>
-        <h5>*reviews placeholder*</h5>
-        <p> They have been a lovely couple. They have come with their adorable cute puppy Murphy who has performed excellently. </p>
-        <h5>*reviews placeholder*</h5>
-        <p> They have been a lovely couple. They have come with their adorable cute puppy Murphy who has performed excellently. </p>
+          <% @user.help_requests.where(status: "completed").each do |request| %>
+            <p>"<i><%= request.review.description %></i>" - After helping with <b><%= request.task.name.downcase %></b></p>
+          <% end %>
       </div>
     </div>
 </div>
