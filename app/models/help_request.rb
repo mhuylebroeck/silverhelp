@@ -24,5 +24,5 @@ class HelpRequest < ApplicationRecord
   }
 
 # ["Small (0-1 hour)", "Medium (1 hour)", "Large (2-4 hours)"]
- CATEGORIES = [['Small (0-1 hour)', '1'], ['Medium (1-2 hours)', '2'], ["Large (2-4 hours)", 3 ]]
+ CATEGORIES = [['Small     (0-1 hour)', '1'], ['Medium    (1-2 hours)', '2'], ["Large    (2-4 hours)", 3 ]]
 end

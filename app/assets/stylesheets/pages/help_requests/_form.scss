@@ -225,20 +225,38 @@ form#new_review {
   margin-left: 20px;
 }
 
-.btn-index-form{
+.btn-index-form {
+  color: #fffcf4;
+  text-align: center;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 15px;
+  font-weight: 600;
+  background: #FCC010;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 150.29px;
+  height: 56px;
+  transition: 0.5s;
+  border: none;
+  text-align: center;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 15px;
+  font-weight: 600;
+  background: #FCC010;
+  box-sizing: border-box;
+  border-radius: 4px;
+  transition: 0.5s;
+  border: none;
   width: 100%;
-  background-color: white;
-  border: 1px solid #FCC010;
-  box-shadow: none;
   padding: 10px;
-  color: #F59D19;
-  border-radius: 3px;
+  border-radius: 5px;
   font-family: "Montserrat", sans-serif;
-  font-size: 18px;
   margin-top: 10px;
 }
 
   .btn-index-form:hover{
     background-color:#ffb326 ;
-    color: white;
+
   }
