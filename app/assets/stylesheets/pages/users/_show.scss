@@ -25,9 +25,6 @@
     border-color: #FCC010;
     height: 160px;
     width: 160px;
-
-;
-
   }
 }
 
@@ -46,17 +43,15 @@
   top: 0px;
   width: 323px;
   margin-top: 30px;
-  .fas, .far{
+
+  #empty-heart, #favorite-heart{
+    color: #20124D;
     margin-left: 80%;
     margin-top: 20px;
     margin-bottom: 0px;
     font-size: 30px;
-  }
-  .far{
-    color: #20124D;
-  }
-  #favorite-heart{
-    color: #db5461;
+    height: 30px;
+    width: 30px;
   }
 }
 

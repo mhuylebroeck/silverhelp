@@ -2,45 +2,44 @@
 <h1>Welcome to your profile</h1>
 
 <div class="dashboard-elements-container">
-<div>
-
-  <div class="dashboard-element">
-    <h3>Your Active Help Requests</h3>
-    <% if @help_requests.active.empty? %>
-      <p class="empty-message">You have no pending requests.</p>
-    <% else %>
-      <% @help_requests.active.each do |request| %>
-          <% if current_user.helper? %>
-            <%= render "dashboards/helpers/help_request_card", request: request %>
-          <% else %>
-            <%= render "dashboards/seniors/help_request_card", request: request %>
-          <% end %>
-      <% end %>
-    <% end %>
-  </div>
-
-  <div class="dashboard-element">
-    <h3>Your Completed Help Requests</h3>
-    <% if @help_requests.done.empty? %>
-        <p class="empty-message">You have no recent bookings.</p>
-    <% else %>
-      <% @help_requests.done.each do |request| %>
-        <% if current_user.helper? %>
-          <%= render "dashboards/helpers/completed_request_card", request: request %>
-        <% else %>
-          <%= render "dashboards/seniors/completed_request_card", request: request %>
+  <div class="dashboard-horizontal-elements">
+    <div class="dashboard-element">
+      <h3>Your Active Help Requests</h3>
+      <% if @help_requests.active.empty? %>
+        <p class="empty-message">You have no pending requests.</p>
+      <% else %>
+        <% @help_requests.active.each do |request| %>
+            <% if current_user.helper? %>
+              <%= render "dashboards/helpers/help_request_card", request: request %>
+            <% else %>
+              <%= render "dashboards/seniors/help_request_card", request: request %>
+            <% end %>
         <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
 
-  <div class="dashboard-element">
-    <% if current_user.helper? %>
-      <%= render "dashboards/helpers/saved_coupons_card" %>
-    <% else %>
-      <%= render "dashboards/seniors/favorite_helpers_card" %>
-    <% end %>
-  </div>
+    <div class="dashboard-element">
+      <h3>Your Completed Help Requests</h3>
+      <% if @help_requests.done.empty? %>
+          <p class="empty-message">You have no recent bookings.</p>
+      <% else %>
+        <% @help_requests.done.each do |request| %>
+          <% if current_user.helper? %>
+            <%= render "dashboards/helpers/completed_request_card", request: request %>
+          <% else %>
+            <%= render "dashboards/seniors/completed_request_card", request: request %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="dashboard-element">
+      <% if current_user.helper? %>
+        <%= render "dashboards/helpers/saved_coupons_card" %>
+      <% else %>
+        <%= render "dashboards/seniors/favorite_helpers_card" %>
+      <% end %>
+    </div>
 </div>
   <div class="dashboard-element-profile">
     <h3>Your Details</h3>

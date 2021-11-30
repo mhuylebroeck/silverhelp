@@ -8,7 +8,7 @@
         <% end %>
       <% else %>
         <%= link_to user_favorites_path(@user), method: :post do %>
-          <i class="far fa-heart"></i>
+          <i class="far fa-heart" id="empty-heart"></i>
         <% end %>
       <% end %>
 
