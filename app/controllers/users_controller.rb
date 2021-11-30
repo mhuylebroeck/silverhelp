@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def show #the profile display page for the helper
     @user = User.find(params[:id])
+    @users_favorite = current_user.favorites.find { |favorite| favorite.helper_id == @user.id && favorite.senior_id == current_user.id }
   end
 
   def index #the index page for the helper

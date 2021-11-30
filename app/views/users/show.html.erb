@@ -2,7 +2,17 @@
 
   <div class="container-show">
     <div class="container-profile-card">
-        <h2 class="profile-show-avatar" ><%= cl_image_tag @user.avatar.key, height: 300, width: 400, crop: :fill %></h2>
+      <% if @users_favorite %>
+        <%= link_to favorite_path(@users_favorite), method: :delete do %>
+          <i class="fas fa-heart" id="favorite-heart"></i>
+        <% end %>
+      <% else %>
+        <%= link_to user_favorites_path(@user), method: :post do %>
+          <i class="far fa-heart"></i>
+        <% end %>
+      <% end %>
+
+      <h2 class="profile-show-avatar" ><%= cl_image_tag @user.avatar.key, height: 300, width: 400, crop: :fill %></h2>
       <div class="info-profile-show">
         <div class="about-profile-show">
           <p><i class="fas fa-map-marker-alt">  </i><strong>      Location</strong></p>
@@ -32,9 +42,6 @@
         <div class="container-show-btn">
           <h1 class="profile-show" > <strong>Hi, I'm <%= @user.name %></strong></h1>
           <%= link_to "Request help", users_path(), class: "btn-show"  %>
-          <%= link_to user_favorites_path(@user), method: :post do %>
-          <i class="fas fa-heart"></i>
-          <% end %>
         </div>
         <div class="about-profile-show">
           <h5><i class="fas fa-address-card"></i><strong> About</strong></h5>
