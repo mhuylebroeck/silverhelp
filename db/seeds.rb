@@ -163,7 +163,7 @@ maria = User.new(
   gender: "F",
   description: "An old woman with a young soul. Come talk to me about VR sets for old people!",
   location: "Carrer de Prats de Molló, 08021 Barcelona",
-  user_type: "elder"
+  user_type: "senior"
 )
 
 file = URI.open("https://res.cloudinary.com/dbzm7zcr1/image/upload/v1637751302/maria.jpg")
@@ -181,7 +181,7 @@ p "Creating generic elders"
     phone_number: Faker::PhoneNumber.phone_number,
     gender: ["F", "M", "NA"].sample,
     location: random_address,
-    user_type: "elder"
+    user_type: "senior"
   )
   user.description = "Hello. I am #{user.name}. I am #{concordance(adjective)} person who needs help with some tasks."
   file = URI.open("https://source.unsplash.com/collection/98364774")

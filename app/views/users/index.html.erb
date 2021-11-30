@@ -49,7 +49,8 @@
           </div>
 
           <div class="card-body-index">
-            <h5 class="card-title"><strong><%= helper.name %></strong><small> (has <%= helper.help_requests.where(status: "completed").length %> reviews)</small></h5>
+            <% number_reviews = helper.help_requests.where(status: "completed").length %>
+            <h5 class="card-title"><strong><%= helper.name %></strong><small> (has <%= number_reviews > 1 ? "#{number_reviews} reviews" : "#{number_reviews} review" %>)</small></h5>
                 <% unless helper.help_requests.empty? %>
                 <% allfriend = []
                   allefficiency = []
