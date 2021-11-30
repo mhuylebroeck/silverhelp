@@ -1,6 +1,8 @@
 <div class="dashboard-element-item">
-  <p><strong>Helper: </strong><%= request.helper.name %></p>
-  <p><strong>Task description: </strong><%= request.task_description  %></p>
-  <p><strong>Duration: </strong><%= request.duration %>hr </p>
-  <p><strong>Status: </strong><%= request.status %></p>
+  <%= cl_image_tag request.helper.avatar.key, height: 50, width: 60, id: "request-avatar" %>
+  <p><strong><i class="far fa-user"></i></strong><%= request.helper.name %></p>
+  <p><strong><i class="far fa-comment-dots"></i></strong><%= request.task_description  %></p>
+  <p><strong><i class="far fa-comment-dots"></i></strong><%= Task.find(request.task_id).name  %></p>
+  <p><strong><i class="fas fa-hourglass-start"></i></strong><%= request.duration %>hr </p>
+  <p><strong><i class="fas fa-spinner"></i></strong><%= request.status %></p>
 </div>
