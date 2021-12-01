@@ -4,7 +4,9 @@
         <h2><strong>Great! <%=  @request.senior.name %>, <br> your request is sent!</strong></h2>
         <p>Help will be on the way soon. Your chosen SilverHelper will now be notified that you have requested their help</p>
       </div>
+        <div class="request-title">
           <h5><strong>Request Details</strong></h5>
+        </div>
           <div class="request-details-confirmation">
               <div class="icon-conf">
                 <i class="fas fa-thumbtack"></i>
@@ -39,13 +41,16 @@
         </div>
 
     </div>
-         <div class="What-new-confirmation">
-          <h5><strong>What happens now?</strong></h5>
+        <div class="what-new-confirmation">
+            <h5><strong>What happens now?</strong></h5>
             <p id="description">
-            Follow the link to the <strong>dashboard</strong> below to keep an eye on the status
+            Follow the link to the <strong>dashboard</strong> below <br> to keep an eye on the status
             of your request.
             </p>
-            <%= link_to "Dashboard", dashboard_path, id: "btn-dashboard"%>
+            <div class="btn-confirmation-how">
+              <%= link_to "Dashboard", dashboard_path, id: "btn-dashboard"%>
+              <%= link_to "Back to homepage", root_path, id: "btn-dashboard"%>
+            </div>
         </div>
 
     <div>
