@@ -19,7 +19,11 @@
     </div>
 
     <div class="dashboard-element">
-      <h3>Your Completed Help Requests</h3>
+      <% if current_user.helper? %>
+        <h3>Your Completed Help Requests</h3>
+      <% else %>
+        <h3>Your Past Help Requests</h3>
+      <% end %>
       <% if @help_requests.done.empty? %>
           <p class="empty-message">You have no recent bookings.</p>
       <% else %>
@@ -40,7 +44,8 @@
         <%= render "dashboards/seniors/favorite_helpers_card" %>
       <% end %>
     </div>
-</div>
+  </div>
+
   <div class="dashboard-element-profile">
     <h3>Your Details</h3>
     <h2 ><%= cl_image_tag current_user.avatar.key, height: 300, width: 400, class: "profile-avatar" %></h2>
