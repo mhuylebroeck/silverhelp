@@ -50,19 +50,19 @@ classmates = [
   {
     name: "Josep Carbonell",
     description: "Before joining Le Wagon I've done a 'Superior Grade' of marketing and advertising and there is when I first did something of coding and I liked a lot.
-When I graduated I decided to join Silverhelper to learn everything and work as a helper.",
+When I graduated I decided to join Silverhelp to learn everything and work as a helper.",
     photo: "https://avatars.githubusercontent.com/u/88286752?v=4"
   },
   {
     name: "Cyprien Eckert",
-    description: "I interrupted my senior engineering degree in order to come here and learn how to help elders faster. I wish to keep learning after Silverhelper, whether it is through experience by finding an immediate job, or by undertaking another educational activity.",
+    description: "I interrupted my senior engineering degree in order to come here and learn how to help elders faster. I wish to keep learning after Silverhelp, whether it is through experience by finding an immediate job, or by undertaking another educational activity.",
     photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1633880462/nfhvr4joxfuc7vr6jbdy.jpg"
   },
   {
     name: "Øyvind Fossum",
     description: "Hi my name is Øyvind, 32 year old from Norway.
 
-I currently work as a structural engineer in Copenhagen, Denmark. I joined Silverhelper cause I've always wanted to get into helping elder and gain the elder mindset. I also often have an impulse to help elders coming to me out of nowhere, and I'd love to have the ability to quickly do it. I think Silverhelper can open up many interesting opportunities, both within my current impulse and elsewhere, and I am really excited to see what kind of second order effects might come out of this website :D",
+I currently work as a structural engineer in Copenhagen, Denmark. I joined Silverhelp cause I've always wanted to get into helping elder and gain the elder mindset. I also often have an impulse to help elders coming to me out of nowhere, and I'd love to have the ability to quickly do it. I think Silverhelp can open up many interesting opportunities, both within my current impulse and elsewhere, and I am really excited to see what kind of second order effects might come out of this website :D",
     photo: "https://avatars.githubusercontent.com/u/54372529?v=4"
   },
   {
@@ -95,12 +95,12 @@ social and environmental issues. I got interested in helping seniors while worki
   },
   {
     name: "Emily Millard",
-    description: "I started learning to help elders independently about 3 months ago. For the past two years I have been an Estate Agent, but felt there was no place for progression in the role I was in. I enjoyed learning to help elders after my working day and decided to join Silverhelpers after feeling like I could make a tangible career change by intensifying my learning.",
+    description: "I started learning to help elders independently about 3 months ago. For the past two years I have been an Estate Agent, but felt there was no place for progression in the role I was in. I enjoyed learning to help elders after my working day and decided to join Silverhelp after feeling like I could make a tangible career change by intensifying my learning.",
     photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1633345135/m4oz6fhvmpercgxw0kga.jpg"
   },
   {
     name: "Maxime Mondet",
-    description: "Hello! I'm Maxime from Paris. I am currently a graphic designer, I would like to perfect my skills in helping seniors with Silverhelper. Supporting elders career seems to be the right direction for me !",
+    description: "Hello! I'm Maxime from Paris. I am currently a graphic designer, I would like to perfect my skills in helping seniors with Silverhelp. Supporting elders career seems to be the right direction for me !",
     photo: "https://avatars.githubusercontent.com/u/68341915?v=4"
   },
   {
@@ -116,7 +116,7 @@ After this website I think I will try my skills and improve on them before to ju
   },
   {
     name: "Diana Perugia Baiadori",
-    description: "I recently finished my Bachelor of Science, where I have gained experience in helping seniors in regards to the people who work in science. I discovered I like helping seniors, and would like to pursue this career, but got frustrated by the fact that I was not able to find elderly people easily. That is why I am interested in Silverhelper.",
+    description: "I recently finished my Bachelor of Science, where I have gained experience in helping seniors in regards to the people who work in science. I discovered I like helping seniors, and would like to pursue this career, but got frustrated by the fact that I was not able to find elderly people easily. That is why I am interested in Silverhelp.",
     photo: "https://avatars.githubusercontent.com/u/90901457?v=4"
   },
   {
@@ -131,7 +131,7 @@ After this website I think I will try my skills and improve on them before to ju
 
   {
     name: "Sasha Shevchenko",
-    description: "Hi, I'm Sasha. My recent work experience at an international shipping company definitely opened up me eyes to present companies' relicense on elders and employees that help them. I therefore decided to explore the world of helping elders and senior development myself by joining Silverhelper. I'm super excited!",
+    description: "Hi, I'm Sasha. My recent work experience at an international shipping company definitely opened up me eyes to present companies' relicense on elders and employees that help them. I therefore decided to explore the world of helping elders and senior development myself by joining Silverhelp. I'm super excited!",
     photo: "https://avatars.githubusercontent.com/u/90352613?v=4"
   },
   {
@@ -339,7 +339,7 @@ maria.save!
 
 p "Creating generic elders"
 
-10.times do
+2.times do
   adjective = Faker::Adjective.positive
   user = User.new(
     email: Faker::Internet.email,
@@ -371,16 +371,55 @@ def pleuro(number)
   end
 end
 
+name = "World News Map"
+Coupon.create!(
+  name: "Coupon for #{name}",
+  description: "Get one free expansion on your comparisons storage at the World News Map website.",
+  price: Faker::Number.between(from: 0, to: 250)
+)
+
+name = "EyeQ Table"
+discount = Faker::Number.between(from: 1, to: 25)
+Coupon.create!(
+  name: "Coupon for #{name}",
+  description: "Get a discount of #{pleuro(discount)} at the EyeQ Table app monthly plan for your business.",
+  price: Faker::Number.between(from: 0, to: 250)
+)
+
+name = "PLANET EXCHANGE"
+discount = Faker::Number.between(from: 1, to: 25)
+Coupon.create!(
+  name: "Coupon for #{name}",
+  description: "Get a discount of #{pleuro(discount)} at the PLANET EXCHANGE app premium plan.",
+  price: Faker::Number.between(from: 0, to: 250)
+)
+
+name = "CryptONS"
+discount = Faker::Number.between(from: 1, to: 25)
+Coupon.create!(
+  name: "Coupon for #{name}",
+  description: "Get one free expansion on your crypto coins storage at the CryptONS website.",
+  price: Faker::Number.between(from: 0, to: 250)
+)
+
+name = "Travelsy"
+discount = Faker::Number.between(from: 1, to: 25)
+Coupon.create!(
+  name: "Coupon for #{name}",
+  description: "Get a discount of #{pleuro(discount)} when planning any package on the Travelsy website.",
+  price: Faker::Number.between(from: 0, to: 250)
+)
+
+p "Creating generic coupons"
+
 c = 0
-
-
 5.times do
   c += 1
   name = Faker::Restaurant.name
   discount = Faker::Number.between(from: 1, to: 25)
   Coupon.create!(
     name: "Coupon for #{name}",
-    description: "Gives you a discount of #{pleuro(discount)} at #{name}, at any of their locations in Barcelona.",
+    description: "Get a discount of #{pleuro(discount)} in any of their locations in Barcelona.",
     price: Faker::Number.between(from: 0, to: 250)
   )
   p "Created #{c} coupon(s)!"
@@ -469,6 +508,7 @@ HelpRequest.create!(
   duration: 1,
   task_description: "Help me go to Mercadona get the best local products (NOT a sponsored task)",
   status: 0,
+  location: random_address,
   senior_id: User.where(name: "Maria Silva")[0].id,
   helper_id: User.where(name: "Mateo Huylebroeck")[0].id,
   task_id: Task.where(name: "Groceries")[0].id
@@ -481,6 +521,7 @@ HelpRequest.create!(
   duration: 1,
   task_description: "Help me move my furniture around.",
   status: "completed",
+  location: random_address,
   senior_id: User.where(name: "Maria Silva")[0].id,
   helper_id: User.where(name: "Lucy Pinker")[0].id,
   task_id: Task.where(name: "Home repairs")[0].id
@@ -505,6 +546,7 @@ HelpRequest.create!(
   start_time: Time.new,
   duration: 1,
   task_description: "I know it's late, but can someone help me with this?",
+  location: random_address,
   status: "completed",
   senior: User.where(user_type: "senior").sample,
   helper_id: User.where(name: "Lucy Pinker")[0].id,
@@ -530,6 +572,7 @@ HelpRequest.create!(
   duration: 1,
   task_description: "Can someone help me with this? My arthritis is killing me.",
   status: "completed",
+  location: random_address,
   senior: User.where(user_type: "senior").sample,
   helper_id: User.where(name: "Lucy Pinker")[0].id,
   task: Task.where(name: UserTask::ALL_TASKS.sample)[0]
@@ -549,7 +592,7 @@ p "Finished creating review for Lucy"
 
 p "Assigning coupons to different users"
 
-10.times do
+9.times do
   user = User.all.sample
   coupon = Coupon.all.sample
   UserCoupon.create!(
