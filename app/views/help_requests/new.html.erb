@@ -24,7 +24,9 @@
             item_wrapper_class: 'category-item',
             input_html: {class: 'category-selector'},
             collection: HelpRequest::CATEGORIES %>
+          <div class = "d-flex justify-content-end">
           <button data-action="click->multi-step-form#goToNext" data-next-step="2" class="btn-new-form">Next step</button>
+          </div>
         </div>
         <div class="d-none"  data-multi-step-form-target="step">
           <h1><strong>Step 2 out of 3</strong></h1>
