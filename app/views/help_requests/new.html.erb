@@ -15,9 +15,8 @@
         </div>
         <div data-multi-step-form-target="step">
           <h1><strong>Step 1 out of 3</strong></h1>
-          <%= f.input :start_time, error: "Mandatory: Please choose a review from 1 (very unfriendly) to 5 (very friendly)",
-            html5: true %>
-          <%= f.input :duration,
+            <%= f.input :start_time, error: "Mandatory: Please choose a review from 1 (very unfriendly) to 5 (very friendly)", as: :string, input_html: {class: "datepicker", data: { controller: 'flatpickr' }  }   %>
+            <%= f.input :duration,
             as: :radio_buttons,
             collection_wrapper_tag: 'div',
             collection_wrapper_class: 'category-wrapper',

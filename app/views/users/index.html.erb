@@ -20,8 +20,7 @@
                     <%# //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// %>
           <%= simple_form_for [@help_request, HelpRequest.new(params[:help_request].permit!)], url: users_path, method: :get do |f| %>
               <%= f.input :task_id,collection: Task.all%>
-              <%= f.input :start_time,
-                html5: true %>
+              <%= f.input :start_time, as: :string, input_html: {class: "datepicker", data: { controller: 'flatpickr' }  }   %>
               <%= f.input :duration,
                 collection: HelpRequest::CATEGORIES %>
               <%= f.input :location,
