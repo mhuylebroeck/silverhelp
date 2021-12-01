@@ -1,2 +1,12 @@
 <h3>Your Saved Coupons</h3>
-<p class="empty-message">You have no saved coupons.</p>
+  <% if @coupons.empty? %>
+    <p class="empty-message">You have no saved coupons.</p>
+  <% else %>
+    <div class="favorite-container">
+      <% @coupons.each do |coupon| %>
+        <div class="favorite-card">
+            <p><strong><%= coupon.name %></strong></p>
+        </div>
+       <% end %>
+    </div>
+  <% end %>

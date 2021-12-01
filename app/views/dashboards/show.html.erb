@@ -43,14 +43,17 @@
 </div>
   <div class="dashboard-element-profile">
     <h3>Your Details</h3>
-
     <h2 ><%= cl_image_tag current_user.avatar.key, height: 300, width: 400, class: "profile-avatar" %></h2>
       <% if current_user.helper? %>
         <%= render "dashboards/helpers/profile_details_card" %>
+
       <% else %>
         <%= render "dashboards/seniors/profile_details_card" %>
       <% end %>
-    <%= link_to "Edit profile", edit_user_path(@user), class: "btn-status-change"  %>
+    <%= link_to "Edit profile", edit_user_registration_path, class: "btn-status-change", id: "btn-edit-profile"  %>
     </p>
   </div>
+  <% if current_user.helper? %>
+  <%= render "dashboards/helpers/rewards_counter_card" %>
+  <% end %>
 </div>

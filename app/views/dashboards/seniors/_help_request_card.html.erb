@@ -1,5 +1,5 @@
 <div class="dashboard-element-item">
-  <h6><strong>Details</strong></h6>
+  <%= cl_image_tag request.helper.avatar.key, id: "request-avatar" %>
   <p><strong><i class="far fa-user"></i></strong><%= request.helper.name %></p>
   <p><strong><i class="far fa-comment-dots"></i></strong><%= request.task_description%></p>
   <p><strong><i class="far fa-clock"></i></strong><%= request.start_time %></p>

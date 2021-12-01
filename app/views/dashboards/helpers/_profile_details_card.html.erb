@@ -1,9 +1,9 @@
     <p><strong><%= @user.name %></strong></p>
     <p><strong><%= @user.email %></strong></p>
     <p><strong>Phone: </strong><%= @user.phone_number %></p>
-    <p><strong>My location: </strong><%= @user.location %></p>
-    <p><strong>About me: </strong><%= @user.description %></p>
-    <p><strong>Availability: </strong>
+    <p><strong>My location: <br></strong><%= @user.location %></p>
+    <p><strong>About me: <br></strong><%= @user.description %></p>
+    <p><strong>Availability: <br></strong>
     <% @user.availabilities.each do |availability| %>
       <%= availability.weekday %>
       <% end %>
