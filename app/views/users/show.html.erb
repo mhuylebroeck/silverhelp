@@ -56,7 +56,7 @@
                 <% if params[:help_request].present? %>
                       <%= render "users/placeholders/helpform", helper: User.find(params["id"]) %>
                 <% else %>
-                      <%= link_to "Start a help request", root_path, class: "btn-brownishghost"  %>
+                      <%= link_to "Request help", root_path, class: "btn-brownishghost"  %>
                       <%# Above is just a placeholder! It would be the form! %>
 
                 <% end %>
@@ -68,7 +68,7 @@
           <p><%= @user.description %></p>
         </div>
         <% request_length = @user.help_requests.where(status: "completed").length %>
-        <h5> <i class="fas fa-star"></i><strong><%= request_length > 1 ? "*#{request_length}* Reviews": "*#{request_length}* Review"  %></strong></h5>
+        <h5> <i class="fas fa-star"></i><strong><%= request_length > 1 ? "#{request_length} Reviews": "#{request_length} Review"  %></strong></h5>
           <hr>
           <% @user.help_requests.where(status: "completed").reverse.each do |request| %>
             <p>"<i><%= request.review.description %></i>" - After helping <%= request.senior.name.split[0].to_s %> with <b><%= request.task.name.downcase %></b></p>

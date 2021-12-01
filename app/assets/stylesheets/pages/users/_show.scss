@@ -21,10 +21,11 @@
 
   img  {
     border-radius: 50%;
-    border: 5px solid;
+    border: 2px solid;
     border-color: #FCC010;
     height: 160px;
     width: 160px;
+    object-fit: cover;
   }
 }
 
@@ -36,13 +37,16 @@
   border-radius: 30px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
-  background: #fffcf4;
+  background: #FFF2CE;
   margin-left: 133px;
   position: -webkit-sticky;
   position: sticky;
   top: 0px;
   width: 323px;
   margin-top: 30px;
+
+  border: 0.5px solid #FCC010;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 
   #empty-heart, #favorite-heart{
     color: #20124D;
@@ -91,8 +95,10 @@
   border-radius: 30px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
-  background: #fffcf4;
+  background: #FFF2CE;
   color: #20124D;
+  border: 0.5px solid #FCC010;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .about-profile-show {
@@ -104,12 +110,18 @@
 }
 
 .master-container-show {
-  background-color: #FFF2CE;
-  padding-top:30px;
-  padding-bottom:30px;
+  background-color: #fffcf4;
+  padding-top:20px;
+  margin-bottom:30px;
   display: flex;
   align-items: center;
   align-items: flex-start;
+  height: 100%;
+  background-image: url("https://i.ibb.co/NLXqywC/mega-creator-14.png");
+  background-size: cover;
+  background-position: center;
+
+
 }
 
 .profile-show {
