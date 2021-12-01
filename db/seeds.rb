@@ -14,6 +14,7 @@ UserTask.destroy_all
 Task.destroy_all
 Coupon.destroy_all
 Review.destroy_all
+Favorite.destroy_all
 User.destroy_all
 p "Destroyed!"
 
@@ -205,6 +206,8 @@ def pleuro(number)
 end
 
 c = 0
+
+
 5.times do
   c += 1
   name = Faker::Restaurant.name
