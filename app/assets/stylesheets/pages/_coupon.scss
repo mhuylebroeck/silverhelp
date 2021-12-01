@@ -1,27 +1,46 @@
+.coupon-style{
+  border: 5px dotted black; /* Dotted border */
+  width: 80%;
+  border-radius: 15px; /* Rounded border */
+  margin: 0 auto; /* Center the coupon */
+  max-width: 600px;
+}
+
 .container-coupons{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   margin: 24px 70px;
+
+
 }
 
 .card-coupon{
   background: #fef2ce;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 2px 16px;
+  background-color: #fef2ce;
+  height: 384px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
 .img-coupon{
+  backdrop-filter: blur(60px);
   img{
     width: 100%;
-    height: 200px;
+    height: 120px;
     object-fit: cover;
     border-bottom: 1px solid black;
   }
 }
 
 .txt-couponname{
+  backdrop-filter: blur(60px);
   text-align: center;
   padding: 16px 16px 8px 16px;
-  background-color: #f7c033;
+  // background-color: #f7c033;
 }
 
 .eyeline-coupon{
@@ -30,6 +49,12 @@
   grid-template-columns: 4fr 1fr;
   min-height: 64px;
   align-items: end;
+
+}
+
+.takeout{
+  border-bottom: 5px dotted black;
+  height: max-content;
 }
 
 .coupon-description{

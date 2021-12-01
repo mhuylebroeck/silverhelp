@@ -200,13 +200,12 @@ john = User.new(
   name: "Mateo Huylebroeck",
   phone_number: 2834247928,
   gender: "M",
-  description: "Hello! My name is Mateo from Belgium. Two years ago I moved to Barcelona to do a Masters in Sustainable Business & innovation. After that I started working as a marketeer for a company in the e-mobility industry.
-
-I want to learn how to help the elderly to complement these skills with my education and experience in sustainable businesses and develop the strength to lift two elders at once to create a positive impact for people and the environment.",
+  description: "Hello! My name is Mateo from Belgium. Two years ago I moved to Barcelona to do a Masters in Sustainable Business & innovation.
+I want to develop the strength to lift two elders at once to create a positive impact for people and the environment.",
   location: "Carrer de Pau Alsina, 119, 08024 Barcelona",
   user_type: "helper",
   vehicle: true,
-  points_balance: 250
+  points_balance: 750
 )
 file = URI.open("https://avatars.githubusercontent.com/u/90754426?v=4")
 john.avatar.attach(io: file, filename: 'john.png', content_type: 'image/png')
@@ -430,25 +429,6 @@ coupon = Coupon.new(
 file = URI.open("https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")
 coupon.picture.attach(io: file, filename: 'coupon.png', content_type: 'image/png')
 coupon.save!
-
-p "Creating generic coupons"
-
-c = 0
-4.times do
-  c += 1
-  name = Faker::Restaurant.name
-  discount = Faker::Number.between(from: 1, to: 25)
-  coupon = Coupon.new(
-    name: "Coupon for #{name}",
-    description: "Get a discount of #{pleuro(discount)} in any of their locations in Barcelona.",
-    price: Faker::Number.between(from: 0, to: 250)
-  )
-  file = URI.open("https://source.unsplash.com/collection/1028299")
-  coupon.picture.attach(io: file, filename: 'coupon.png', content_type: 'image/png')
-  coupon.save!
-  p "Created #{c} coupon(s)!"
-  sleep(0.5)
-end
 
 p "Finished creating coupons."
 

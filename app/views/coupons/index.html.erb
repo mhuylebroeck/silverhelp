@@ -7,24 +7,29 @@
 
 <div class="container-coupons">
   <% @coupons.each do |coupon| %>
-    <div class="card-coupon">
-      <div class="img-coupon">
-        <%= cl_image_tag coupon.picture.key, crop: :fill %>
-
-      </div>
-      <div class="txt-couponname">
-        <h3><b><%= coupon.name[11..-1] %></b></h3>
-      </div>
-      <div class="eyeline-coupon">
-        <div class="coupon-description">
-          <%= coupon.description %>
+    <div class="coupon-style">
+      <div class="card-coupon">
+        <div class="ticket">
+          <div class="img-coupon">
+            <%= cl_image_tag coupon.picture.key, crop: :fill %>
+          </div>
+          <div class="txt-couponname">
+            <h3><b><%= coupon.name[11..-1] %></b></h3>
+          </div>
         </div>
-        <div class="coupon-price">
-          <b><%= coupon.price %> points</b>
+        <div class="eyeline-coupon">
+          <div class="coupon-description">
+            <%= coupon.description %>
+          </div>
+          <div class="coupon-price">
+            <b><%= coupon.price %> points</b>
+          </div>
         </div>
-      </div>
-      <div class="coupon-button">
-        <%= link_to "Buy this coupon", user_coupons_path(:coupon_id => coupon.id ), method: :post, class: "btn-coupon"  %>
+        <div class="takeout">
+        </div>
+        <div class="coupon-button">
+          <%= link_to "Buy this coupon", user_coupons_path(:coupon_id => coupon.id ), method: :post, class: "btn-coupon"  %>
+        </div>
       </div>
     </div>
   <% end %>
