@@ -45,9 +45,15 @@
 
 .form-control {
   border: 1px solid #fcc010;
+
 }
 
 .category-selector + label {
   border: 1px solid #fcc010;
   height: 90px;
+}
+
+.form-control[readonly] {
+    background-color: #fff;
+    opacity: 1;
 }
