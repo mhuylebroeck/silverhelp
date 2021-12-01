@@ -15,21 +15,23 @@ background-color: #FFF2CE;
 
 .dashboard-elements-container{
   display: grid;
-  grid-template-columns: 75% 25%;
+  grid-template-columns: 30% 70%;
   grid-template-rows: fit-content;
   margin: 0px 20px 0px 20px;
 }
 
 .dashboard-horizontal-elements{
-margin: 30px;
+  margin: 30px;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
 }
 
 .dashboard-element{
   background-color: #FCC010;
   height: fit-content;
   border-radius: 5px;
-  grid-column-start: 1;
-  grid-column-end: 1;
+
   margin-bottom: 40px;
   padding: 30px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
@@ -48,8 +50,8 @@ margin: 30px;
   height: fit-content;
   border-radius: 5px;
   margin: 30px;
-  grid-column-start: 2;
-  grid-column-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 1;
   padding: 20px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   text-align: center;
@@ -67,10 +69,10 @@ margin: 30px;
 
 .dashboard-element-reward{
   background-color: #FCC010;
-  grid-column-start: 2;
-  grid-column-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 1;
   border-radius: 5px;
-  margin: 30px;
+  margin: 10px 30px 30px 30px;
   padding: 20px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   text-align: center;
@@ -197,7 +199,7 @@ margin: 30px;
 }
 
 .coupon-container{
-
+  display: flex;
 }
 
 .coupon-card{
