@@ -372,57 +372,82 @@ def pleuro(number)
 end
 
 name = "World News Map"
-Coupon.create!(
+coupon = Coupon.new(
   name: "Coupon for #{name}",
   description: "Get one free expansion on your comparisons storage at the World News Map website.",
   price: Faker::Number.between(from: 0, to: 250)
 )
 
+file = URI.open("https://images.unsplash.com/photo-1585829365295-ab7cd400c167?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")
+coupon.picture.attach(io: file, filename: 'coupon.png', content_type: 'image/png')
+coupon.save!
+
 name = "EyeQ Table"
 discount = Faker::Number.between(from: 1, to: 25)
-Coupon.create!(
+coupon = Coupon.new(
   name: "Coupon for #{name}",
   description: "Get a discount of #{pleuro(discount)} at the EyeQ Table app monthly plan for your business.",
   price: Faker::Number.between(from: 0, to: 250)
 )
 
+file = URI.open("https://images.unsplash.com/photo-1600147131759-880e94a6185f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=436&q=80")
+coupon.picture.attach(io: file, filename: 'coupon.png', content_type: 'image/png')
+coupon.save!
+
 name = "PLANET EXCHANGE"
 discount = Faker::Number.between(from: 1, to: 25)
-Coupon.create!(
+coupon = Coupon.new(
   name: "Coupon for #{name}",
   description: "Get a discount of #{pleuro(discount)} at the PLANET EXCHANGE app premium plan.",
   price: Faker::Number.between(from: 0, to: 250)
 )
 
+file = URI.open("https://images.unsplash.com/photo-1588364549713-21e0a5bc735e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1331&q=80")
+coupon.picture.attach(io: file, filename: 'coupon.png', content_type: 'image/png')
+coupon.save!
+
 name = "CryptONS"
 discount = Faker::Number.between(from: 1, to: 25)
-Coupon.create!(
+coupon = Coupon.new(
   name: "Coupon for #{name}",
   description: "Get one free expansion on your crypto coins storage at the CryptONS website.",
   price: Faker::Number.between(from: 0, to: 250)
 )
 
+file = URI.open("https://images.unsplash.com/photo-1605792657660-596af9009e82?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=802&q=80")
+coupon.picture.attach(io: file, filename: 'coupon.png', content_type: 'image/png')
+coupon.save!
+
+
 name = "Travelsy"
 discount = Faker::Number.between(from: 1, to: 25)
-Coupon.create!(
+coupon = Coupon.new(
   name: "Coupon for #{name}",
   description: "Get a discount of #{pleuro(discount)} when planning any package on the Travelsy website.",
   price: Faker::Number.between(from: 0, to: 250)
 )
 
+file = URI.open("https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")
+coupon.picture.attach(io: file, filename: 'coupon.png', content_type: 'image/png')
+coupon.save!
+
 p "Creating generic coupons"
 
 c = 0
-5.times do
+4.times do
   c += 1
   name = Faker::Restaurant.name
   discount = Faker::Number.between(from: 1, to: 25)
-  Coupon.create!(
+  coupon = Coupon.new(
     name: "Coupon for #{name}",
     description: "Get a discount of #{pleuro(discount)} in any of their locations in Barcelona.",
     price: Faker::Number.between(from: 0, to: 250)
   )
+  file = URI.open("https://source.unsplash.com/collection/1028299")
+  coupon.picture.attach(io: file, filename: 'coupon.png', content_type: 'image/png')
+  coupon.save!
   p "Created #{c} coupon(s)!"
+  sleep(0.5)
 end
 
 p "Finished creating coupons."
