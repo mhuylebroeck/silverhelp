@@ -41,7 +41,7 @@
 
       <div class="container-cards-home-1">
         <div class="whatever">
-          <%= link_to(new_help_request_path(:help_request => {:task_id =>["",Task.find_by(name: "Groceries").id]})) do%>
+          <%= link_to(new_help_request_path(:help_request => {:task_id =>["",Task.find_by(name: "Grocery shopping").id]})) do%>
             <div class="card-task-home">
               <img src="https://i.ibb.co/RGn3Q6W/grocery-cart.png" alt="groceries" class="task-icon-home">
               <div class="card-body">
@@ -98,7 +98,7 @@
         </div>
 
         <div class="whatever">
-        <%= link_to(new_help_request_path(:help_request => {:task_id =>["",Task.find_by(name: "Cleaning").id]})) do%>
+        <%= link_to(new_help_request_path(:help_request => {:task_id =>["",Task.find_by(name: "Laundry").id]})) do%>
           <div class="card-task-home">
             <img src="https://i.ibb.co/Mkd5NCF/laundry-machine.png" alt="laundry" class="task-icon-home">
             <div class="card-body">
@@ -109,7 +109,8 @@
         </div>
 
         <div class="whatever">
-        <%= link_to(new_help_request_path(:help_request => {:task_id =>["",Task.find_by(name: "Activities").id]})) do%>
+        <%= link_to(new_help_request_path(:help_request => {:task_id =>["",Task.find_by(name: "Social activities").id]})) do%>
+
           <div class="card-task-home">
             <img src="https://i.ibb.co/cCcpwJv/mental-health.png" alt="activities" class="task-icon-home">
             <div class="card-body">
@@ -120,11 +121,11 @@
         </div>
 
         <div class="whatever">
-        <%= link_to(new_help_request_path(:help_request => {:task_id =>["",Task.find_by(name: "Company for excursion").id]})) do%>
+        <%= link_to(new_help_request_path(:help_request => {:task_id =>["",Task.find_by(name: "Other").id]})) do%>
           <div class="card-task-home">
             <img src="https://i.ibb.co/TMT3rqv/administrator.png" alt="others" class="task-icon-home">
             <div class="card-body">
-              <h5 class="task-name-card">Others</h5>
+              <h5 class="task-name-card">Other</h5>
             </div>
           </div>
         <% end %>

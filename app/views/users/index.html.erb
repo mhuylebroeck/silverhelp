@@ -7,7 +7,7 @@
     <div class="header-toppage-body">
       <% if params[:help_request].present? %>
         <% if params[:help_request][:location].present? && params[:help_request][:start_time].present? && params[:help_request][:duration].present? && params[:help_request][:task_id] %>
-<%# //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// %>
+                <%# //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// %>
           <%# <form action=""> %>
             <%# <label><strong>Task</strong></label> <br> %>
             <%# <input class="form-index" type="text" placeholder="<%= Task.find(params[:help_request][:task_id]).name%>
@@ -17,11 +17,10 @@
             <%# <input class="form-index" type="text" placeholder="<%= @time %>
             <%# <input type="submit" value="Submit"> %>
           <%# </form> %>
-<%# //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// %>
+                    <%# //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// %>
           <%= simple_form_for [@help_request, HelpRequest.new(params[:help_request].permit!)], url: users_path, method: :get do |f| %>
               <%= f.input :task_id,collection: Task.all%>
-              <%= f.input :start_time,
-                html5: true %>
+              <%= f.input :start_time, as: :string, input_html: {class: "datepicker", data: { controller: 'flatpickr' }  }   %>
               <%= f.input :duration,
                 collection: HelpRequest::CATEGORIES %>
               <%= f.input :location,
@@ -29,8 +28,8 @@
               <%= f.submit "Edit task", class: "btn-index-form" %>
           <% end %>
 
-<%# //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// %>
-         <%# <%= params[:help_request][:duration]%>
+              <%# //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// %>
+              <%# <%= params[:help_request][:duration]%>
         <% end %>
       <% else %>
         <h4>You are looking at all available helpers</h4>
@@ -86,17 +85,20 @@
 
             <div class="btns-card-index">
               <div>
-              <%= link_to "See more", user_path(helper, :help_request => {:task_id =>params["help_request"]["task_id"], :start_time => params["help_request"]["start_time"], :duration => params["help_request"]["duration"], :location => params["help_request"]["location"], :task_description => params["help_request"]["task_description"]}), class: "btn-brownish"  %>
+              <% if params[:help_request].present? %>
+                <%= link_to "See more", user_path(helper, :help_request => {:task_id =>params["help_request"]["task_id"], :start_time => params["help_request"]["start_time"], :duration => params["help_request"]["duration"], :location => params["help_request"]["location"], :task_description => params["help_request"]["task_description"]}), class: "btn-brownish"  %>
                 <%# PUT THE SEE MORE BUTTON HERE %>
+              <% else %>
+                <% link_to "See more", user_path(helper), class: "btn-brownish" %>
+              <% end %>
               </div>
 
               <div class="helperindex-bottombtn">
                 <% if params[:help_request].present? %>
                       <%= render "users/placeholders/helpform", helper: helper %>
                 <% else %>
-                      <%= link_to "Request help", users_path(), class: "btn-brownishghost"  %>
+                      <%= link_to "Request help", root_path(), class: "btn-brownishghost"  %>
                       <%# Above is just a placeholder! It would be the form! %>
-
                 <% end %>
 
               </div>

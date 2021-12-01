@@ -1,6 +1,6 @@
 class UserTask < ApplicationRecord
-  ALL_TASKS = ["Groceries", "Home repairs", "Furniture assembly", "Cleaning", "Wheelchair assistance",
-               "Company for excursion", "Cooking", "Social Activities"]
+  ALL_TASKS = ["Grocery shopping", "Home repairs", "Laundry", "Cleaning", "Wheelchair assistance",
+               "Social activities", "Cooking", "Other"]
 
   belongs_to :user
   belongs_to :task

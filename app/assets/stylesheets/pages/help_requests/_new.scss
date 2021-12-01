@@ -38,13 +38,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #fffcf4;
+  font-weight: 600;
+  margin-top:40px;
 }
 
 .form-control {
   border: 1px solid #fcc010;
+
 }
 
 .category-selector + label {
   border: 1px solid #fcc010;
   height: 90px;
+}
+
+.form-control[readonly] {
+    background-color: #fff;
+    opacity: 1;
 }
