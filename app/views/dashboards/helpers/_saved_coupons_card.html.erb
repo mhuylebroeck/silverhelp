@@ -2,9 +2,9 @@
   <% if @coupons.empty? %>
     <p class="empty-message">You have no saved coupons.</p>
   <% else %>
-    <div class="favorite-container">
+    <div class="coupon-container">
       <% @coupons.each do |coupon| %>
-        <div class="favorite-card">
+        <div class="coupon-card">
             <p><strong><%= coupon.name %></strong></p>
         </div>
        <% end %>

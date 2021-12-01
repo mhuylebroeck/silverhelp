@@ -67,7 +67,6 @@ margin: 30px;
 
 .dashboard-element-reward{
   background-color: #FCC010;
-  height: fit-content;
   grid-column-start: 2;
   grid-column-end: 2;
   border-radius: 5px;
@@ -76,11 +75,12 @@ margin: 30px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   text-align: center;
     h3{
-      padding: 20px;
+      padding-top: 20px;
       color: #20124D;
     }
     p{
-      margin: 10px;
+      font-size: 30px;
+      color: #20124D;
     }
 }
 
@@ -113,6 +113,13 @@ margin: 30px;
     padding: 0px;
     font-size: 15px;
   }
+  .name-link{
+    color: black;
+    &:hover{
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
 }
 
 .btn-status-change{
@@ -135,6 +142,7 @@ margin: 30px;
 .btn-view-profile{
   color: black;
   padding: 10px;
+  font-size: 12px;
   font-weight: bold;
   opacity: 0.6;
   transition: opacity 0.3s ease;
@@ -186,4 +194,18 @@ margin: 30px;
   #favorite-profile-btn{
     margin: 0px;
   }
+}
+
+.coupon-container{
+
+}
+
+.coupon-card{
+  height: 140px;
+  width: 160px;
+  border: 3px dotted black;
+  padding: 20px;
+  background-color: #FFF2CE;
+  text-align: center;
+  margin: 20px;
 }
