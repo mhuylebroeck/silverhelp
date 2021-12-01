@@ -16,6 +16,7 @@ class HelpRequest < ApplicationRecord
   validates :start_time, presence: true, allow_blank: false
   validates :duration, presence: true
   validates :task_id, presence: true
+  validates :location, presence: true
   enum status: {
     pending: 0,
     accepted: 1,
