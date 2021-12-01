@@ -15,9 +15,7 @@
         </div>
         <div data-multi-step-form-target="step">
           <h1><strong>Step 1 out of 3</strong></h1>
-            <%= f.input :start_time, as: :string, input_html: {class: "datepicker", data: { controller: 'flatpickr' }  }   %>
-            <%# <%= f.input :start_time,
-            html5: true %>
+            <%= f.input :start_time, error: "Mandatory: Please choose a review from 1 (very unfriendly) to 5 (very friendly)", as: :string, input_html: {class: "datepicker", data: { controller: 'flatpickr' }  }   %>
             <%= f.input :duration,
             as: :radio_buttons,
             collection_wrapper_tag: 'div',
@@ -25,18 +23,26 @@
             item_wrapper_class: 'category-item',
             input_html: {class: 'category-selector'},
             collection: HelpRequest::CATEGORIES %>
+          <div class = "d-flex justify-content-end">
           <button data-action="click->multi-step-form#goToNext" data-next-step="2" class="btn-new-form">Next step</button>
+          </div>
         </div>
         <div class="d-none"  data-multi-step-form-target="step">
           <h1><strong>Step 2 out of 3</strong></h1>
           <%= f.input :location,
             input_html: { class: "location-autocomplete" }, label:"Address" %>
-          <button data-action="click->multi-step-form#goToNext" data-next-step="3" class="btn-new-form">Next step</button>
+          <div class = "d-flex justify-content-between">
+            <button data-action="click->multi-step-form#goToPrevious" data-next-step="2" class="btn-new-form">Previous step</button>
+            <button data-action="click->multi-step-form#goToNext" data-next-step="3" class="btn-new-form">Next step</button>
+          </div>
         </div>
         <div class="d-none" data-multi-step-form-target="step">
           <h1><strong>Step 3 out of 3</strong></h1>
           <%= f.input :task_description %>
-          <%= f.submit "Search", class:"btn-new-form" %>
+          <div class = "d-flex justify-content-between">
+            <button data-action="click->multi-step-form#goToPrevious" data-next-step="3" class="btn-new-form">Previous step</button>
+            <%= f.submit "Search", class:"btn-new-form" %>
+          </div>
         </div>
       <% end %>
     </div>

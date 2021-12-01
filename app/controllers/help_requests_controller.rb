@@ -1,8 +1,13 @@
 class HelpRequestsController < ApplicationController
 
   def new
-    @help_request = HelpRequest.new
-    @tasks = Task.all
+    if params["help_request"]["task_id"][1].nil?
+      redirect_to root_path
+      flash[:alert] = "Add a task to start searching for SilverHelpers."
+    else
+      @help_request = HelpRequest.new
+      @tasks = Task.all
+    end
   end
 
   def show
