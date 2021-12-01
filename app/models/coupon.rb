@@ -3,4 +3,5 @@ class Coupon < ApplicationRecord
    validates :description, presence: true
    validates :price, presence: true
   has_many :user_coupons
+  has_one_attached :picture
 end

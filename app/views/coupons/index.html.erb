@@ -9,7 +9,7 @@
   <% @coupons.each do |coupon| %>
     <div class="card-coupon">
       <div class="img-coupon">
-        <img src=<%= restaurants_photos.sample %>  alt="place of the coupon <%= coupon.name %>">
+        <%= cl_image_tag coupon.picture.key, crop: :fill %>
 
       </div>
       <div class="txt-couponname">
