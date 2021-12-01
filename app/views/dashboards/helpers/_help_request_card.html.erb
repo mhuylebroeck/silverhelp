@@ -1,5 +1,5 @@
 <div class="dashboard-element-item">
-  <p><strong><i class="far fa-user"></i></strong><%= request.senior.name %> <%= link_to "view profile", user_path(request.senior), method: :get, class: "btn-edit-profile" %></p>
+  <p><strong><i class="far fa-user"></i></strong><%= request.senior.name %> <%= link_to "view profile", user_path(request.senior), method: :get, class: "btn-view-profile" %></p>
   <p><strong><i class="far fa-comment-dots"></i></strong><%= request.task_description  %></p>
   <p><strong><i class="far fa-clock"></i></strong><%= request.start_time %></p>
   <p><strong><i class="fas fa-hourglass-start"></i></strong><%= request.duration %>hr </p>

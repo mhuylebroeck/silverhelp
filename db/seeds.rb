@@ -526,18 +526,6 @@ p "Created user tasks!"
 
 # CREATING THE TASKS REQUESTS
 
-p "Creating a pending grocery request between John and Maria"
-
-HelpRequest.create!(
-  start_time: Time.new,
-  duration: 1,
-  task_description: "Help me go to Mercadona get the best local products (NOT a sponsored task)",
-  status: 0,
-  location: random_address,
-  senior_id: User.where(name: "Maria Silva")[0].id,
-  helper_id: User.where(name: "Mateo Huylebroeck")[0].id,
-  task_id: Task.where(name: "Grocery shopping")[0].id
-)
 
 p "Creating already accepted request between Lucy and Maria"
 
