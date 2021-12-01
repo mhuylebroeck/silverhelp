@@ -10,8 +10,8 @@
   padding: 50px 50px 20px 50px;
   width: 600px;
   margin-left: 133px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 50px;
+  margin-bottom: 150px;
 
     h5 {
     margin-bottom: 10px;
@@ -30,6 +30,7 @@
   background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4)), url("https://images.unsplash.com/photo-1603792907191-89e55f70099a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
   background-size: cover;
   background-position: center;
+    height: 100%;
 
 
 
@@ -69,8 +70,8 @@ margin-bottom: 60px;
 .what-new-confirmation {
 padding-left: 40px;
 margin-right: 70px;
-padding-top: 200px;
-padding-bottom: 200px;
+padding-top: 300px;
+padding-bottom: 100px;
 text-align: center;
 color: #fffcf4;
 text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
@@ -92,9 +93,9 @@ text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
       color: #fffcf4;
       width: fit-content;
       text-align: center;
-      padding: 10px;
+      padding: 15px;
       margin: 20px;
-      font-weight: bold;
+      font-weight: 600;
       text-shadow: none;
       &:hover{
         background-color: #eeb303;

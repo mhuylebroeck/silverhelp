@@ -473,7 +473,7 @@ p "Creating user tasks for John"
 
 UserTask.create!(
   user: User.where(name: "Mateo Huylebroeck")[0],
-  task: Task.where(name: "Groceries")[0]
+  task: Task.where(name: "Grocery shopping")[0]
 )
 
 UserTask.create!(
@@ -510,7 +510,7 @@ UserTask.create!(
 
 UserTask.create!(
   user: User.where(name: "Lucy Pinker")[0],
-  task: Task.where(name: "Company for excursion")[0]
+  task: Task.where(name: "Social activities")[0]
 )
 
 p "Creating generic user tasks"
@@ -536,7 +536,7 @@ HelpRequest.create!(
   location: random_address,
   senior_id: User.where(name: "Maria Silva")[0].id,
   helper_id: User.where(name: "Mateo Huylebroeck")[0].id,
-  task_id: Task.where(name: "Groceries")[0].id
+  task_id: Task.where(name: "Grocery shopping")[0].id
 )
 
 p "Creating already accepted request between Lucy and Maria"
