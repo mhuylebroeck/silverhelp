@@ -1,5 +1,5 @@
 .dashboard-container{
-  background-color: #FFF2CE;
+  background-color: white;
   h1{
     text-align: center;
     padding: 40px 0px 10px 0px;
@@ -28,7 +28,6 @@
 }
 
 .dashboard-element{
-  background-color: #FFF2CE;
   height: fit-content;
   border-radius: 5px;
 
@@ -45,8 +44,12 @@
   }
 }
 
+.dashboard-element-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
 .dashboard-element-profile{
-  background-color: #FFF2CE;
   height: fit-content;
   border-radius: 5px;
   margin: 30px;
@@ -171,7 +174,7 @@
 
 .profile-avatar{
   border-radius: 50%;
-  width: 225px;
+  width: 250px;
   height: 250px;
   margin-bottom: 20px;
 }

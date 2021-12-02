@@ -1,12 +1,13 @@
 <div class="dashboard-element-item">
-  <%= cl_image_tag request.helper.avatar.key, id: "request-avatar" %>
-  <div class="d-flex justify-content-left ml-3 align-items-center">
-    <i class="far fa-user"></i>
-    <p><strong></strong><%= link_to request.helper.name, user_path(request.helper), method: :get,  class: "name-link" %></p>
+  <div class="dashboard-element-grid">
+    <%= cl_image_tag request.helper.avatar.key, id: "request-avatar" %>
+    <div class="d-flex justify-content-left ml-3 align-items-center">
+      <p><strong></strong><%= link_to request.helper.name, user_path(request.helper), method: :get,  class: "name-link" %></p>
 
+    </div>
+    <p><strong><i class="far fa-question-circle"></i></strong><%= Task.find(request.task_id).name  %></p>
+    <p><strong><i class="far fa-clock"></i></strong><%= request.start_time %></p>
+    <p><strong><i class="fas fa-hourglass-start"></i></strong><%= request.duration %>hr </p>
+    <p><strong><i class="fas fa-spinner"></i></strong><%= request.status %></p>
   </div>
-  <p><strong><i class="far fa-question-circle"></i></strong><%= Task.find(request.task_id).name  %></p>
-  <p><strong><i class="far fa-clock"></i></strong><%= request.start_time %></p>
-  <p><strong><i class="fas fa-hourglass-start"></i></strong><%= request.duration %>hr </p>
-  <p><strong><i class="fas fa-spinner"></i></strong><%= request.status %></p>
 </div>
