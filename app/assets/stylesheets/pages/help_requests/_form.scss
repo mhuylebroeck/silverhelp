@@ -134,6 +134,7 @@ form#new_review {
   height: 120px;
   min-width: 88px;
   background-position: 50% 90%; // 95% 90%
+  border-radius: 10px;
 }
 
 #review_punctuality_rating_1:checked + label, #review_efficiency_rating_1:checked + label,
@@ -141,6 +142,7 @@ form#new_review {
   background-color: #FFC65A;
   border-color: #FFC65A;
   background-image: url("https://cdn-icons-png.flaticon.com/512/983/983083.png");
+
 }
 
 
@@ -153,6 +155,7 @@ form#new_review {
   height: 120px;
   min-width: 88px;
   background-position: 50% 90%; // 95% 90%
+  border-radius: 10px;
 }
 
 #review_punctuality_rating_2:checked + label, #review_efficiency_rating_2:checked + label,
@@ -172,6 +175,7 @@ form#new_review {
   height: 120px;
   min-width: 88px;
   background-position: 50% 90%; // 95% 90%
+  border-radius: 10px;
 }
 
 #review_punctuality_rating_3:checked + label, #review_efficiency_rating_3:checked + label,
@@ -190,6 +194,7 @@ form#new_review {
   height: 120px;
   min-width: 88px;
   background-position: 50% 90%; // 95% 90%
+  border-radius: 10px;
 }
 
 #review_punctuality_rating_4:checked + label, #review_efficiency_rating_4:checked + label,
@@ -208,6 +213,7 @@ form#new_review {
   height: 120px;
   min-width: 88px;
   background-position: 50% 90%; // 95% 90%
+  border-radius: 10px;
 }
 
 #review_punctuality_rating_5:checked + label, #review_efficiency_rating_5:checked + label,

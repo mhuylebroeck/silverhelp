@@ -12,11 +12,18 @@ $placeholder: #FCC010; // Change this to whatever colour we are now using as the
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  text-align: center;
+  color: #20124D;
+
+  h2 {
+      margin-bottom: 30px;
+  }
 }
 
 .review-eyeline{
-  padding: 24px;
+  padding: 50px;
   text-align: center;
+
 }
 
 .review-form{

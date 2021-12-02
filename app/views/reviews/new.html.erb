@@ -1,8 +1,8 @@
 <div class="review-container">
   <div class="review-leftside">
-    <h1><b>Review <%= @help_request.helper.name %>'s Help</b></h1>
+    <h2><b>Review <br><%= @help_request.helper.name.split[0] %>'s Help</b></h2>
     <%= cl_image_tag @help_request.helper.avatar.key, height: 300, width: 400, crop: :fill, class: "avatar-mediumroundindex" %>
-    <p class= "review-eyeline">We hope that our people could successfully help you with your task. Can we ask for a few minutes of your time to review <%= @help_request.helper.name %>?</p>
+     <p class= "review-eyeline">We hope that our people could successfully <br> help you with your task. <br> Can we ask for a few minutes <br> of your time to review <%= @help_request.helper.name %> </p>
   </div>
 
   <div class="review-form" data-controller="wizard submit">
@@ -109,7 +109,7 @@
         </div>
       </div>
         <div class="submitbutton", data-submit-target="submit">
-          <%= f.button :submit, "Send your review", :class => "btn-rounded centered btn-review disabled", :style => "margin-left: 0px; margin-right: 0px",
+          <%= f.button :submit, "Send your review", :class => " centered btn-review disabled", :style => "margin-left: 0px; margin-right: 0px",
           collection_wrapper_tag: 'div',
           collection_wrapper_class: 'reviewreccategory-wrapper',
           item_wrapper_class: 'category-item' %>
