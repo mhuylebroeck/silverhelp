@@ -1,18 +1,25 @@
 <div class="dashboard-element-item">
-  <div class="dashboard-element-grid">
-    <%= cl_image_tag request.senior.avatar.key, id: "request-avatar" %>
-    <div class="d-flex justify-content-center">
+  <div class="dashboard-element-grid helper-completed">
+    <div class = "request-img">
+      <%= cl_image_tag request.senior.avatar.key, id: "request-avatar" %>
+    </div>
+    <div class="request-name">
       <p><strong></strong><%= request.senior.name %></p>
     </div>
-    <p><strong><i class="far fa-comment-dots"></i></strong><%= Task.find(request.task_id).name  %></p>
-    <p><strong><i class="fas fa-hourglass-start"></i></strong><%= request.duration %>hr </p>
-    <p><strong><i class="fas fa-spinner"></i></strong><%= request.status %></p>
-    <p><strong><i class="fas fa-quote-right"></i></strong><%= HelpRequest.find(request.id).review.description %></p>
-    <p><strong>
-      <% avg_review = (HelpRequest.find(request.id).review.friendliness_rating + HelpRequest.find(request.id).review.efficiency_rating + HelpRequest.find(request.id).review.punctuality_rating) / 3 %>
-      <% avg_review.times do %>
-        <i class="fas fa-star" id="rating-star"></i>
-      <% end %>
-    </strong></p>
+    <div class="request-column-element"><p><strong><i class="far fa-comment-dots"></i></strong><%= Task.find(request.task_id).name  %></p></div>
+    <div class="request-column-element"><p><strong><i class="fas fa-hourglass-start"></i></strong><%= request.duration %>hr </p></div>
+    <div class="request-column-element"><p><strong><i class="fas fa-spinner"></i></strong><%= request.status %></p></div>
+    <div class="request-description d-flex">
+      <i class="fas fa-quote-right"></i>
+      <p><%= request.review.description %></p>
+    </div>
+    <div class="request-column-element">
+      <p class="d-flex">
+        <% avg_review = (HelpRequest.find(request.id).review.friendliness_rating + HelpRequest.find(request.id).review.efficiency_rating + HelpRequest.find(request.id).review.punctuality_rating) / 3 %>
+        <% avg_review.times do %>
+          <i class="fas fa-star" id="rating-star"></i>
+        <% end %>
+      </p>
+    </div>
   </div>
 </div>

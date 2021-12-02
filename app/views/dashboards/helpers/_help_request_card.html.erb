@@ -1,14 +1,29 @@
 <div class="dashboard-element-item">
-  <div class="dashboard-element-grid">
+  <div class="dashboard-element-grid helper-active">
+  <div class="request-img">
     <%= cl_image_tag request.senior.avatar.key, id: "request-avatar" %>
-    <p><strong></strong><%= request.senior.name %> <%= link_to "view profile", user_path(request.senior), method: :get, class: "btn-view-profile" %></p>
-    <p><strong><i class="far fa-comment-dots"></i></strong><%= request.task_description  %></p>
-    <p><strong><i class="far fa-clock"></i></strong><%= request.start_time %></p>
-    <p><strong><i class="fas fa-hourglass-start"></i></strong><%= request.duration %>hr </p>
-    <p><strong><i class="fas fa-spinner"></i></strong><%= request.status %></p>
+  </div>
+  <div class="request-name">
+    <p><%= link_to request.senior.name, user_path(request.senior), method: :get,  class: "name-link" %></p>
+  </div>
+    <div class="request-column-element">
+      <p><strong><i class="far fa-comment-dots"></i></strong><%= request.task.name  %></p>
+    </div>
+    <div class="request-column-element">
+      <p><strong><i class="far fa-clock"></i></strong><%= request.start_time.strftime('%d/%m') %></p>
+    </div>
+    <div class="request-column-element">
+      <p><strong><i class="fas fa-hourglass-start"></i></strong><%= request.duration %>hr </p>
+    </div>
+    <div class="request-description d-flex">
+      <i class="fas fa-quote-right"></i>
+      <p><%= request.task_description %></p>
+    </div>
     <% if request.pending? %>
-    <%= link_to "Accept", help_request_path(request,{status: "accepted"}), method: :patch, class: "btn-status-change"  %>
-    <%= link_to "Decline", help_request_path(request,{status: "declined"}), method: :patch, data: { confirm: "Are you sure you want to decline this request? This cannot be reversed." }, class: "btn-status-change"  %>
+    <div class="request-action-buttons">
+      <%= link_to "Accept", help_request_path(request,{status: "accepted"}), method: :patch, class: "btn-status-change"  %>
+      <%= link_to "Decline", help_request_path(request,{status: "declined"}), method: :patch, data: { confirm: "Are you sure you want to decline this request? This cannot be reversed." }, class: "btn-status-change"  %>
+    </div>
     <% end %>
   </div>
 </div>
