@@ -4,9 +4,22 @@
   <% else %>
     <div class="coupon-container">
       <% @coupons.each do |coupon| %>
-        <div class="coupon-card">
-            <p><strong><%= coupon.name %></strong></p>
+        <div class="coupon-style-ds">
+      <div class="img-coupon">
+        <%= cl_image_tag coupon.picture.key, crop: :fill %>
+      </div>
+      <div class="card-coupon-ds">
+        <div class="ticket">
+
+          <div class="txt-couponname-ds">
+            <h3><b><%= coupon.name[11..-1] %></b></h3>
+          </div>
+          <div>
+          <img class="img-index-coupon" src="https://upload.wikimedia.org/wikipedia/commons/6/65/Code11_barcode.png">
+          </div>
         </div>
+      </div>
+    </div>
        <% end %>
     </div>
   <% end %>
