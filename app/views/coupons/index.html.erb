@@ -1,8 +1,12 @@
-<div class = "coupon-header text-center">
+<div class="coupon-header text-center">
+    <div>
       <h1><strong>Coupon Shop</strong></h1>
+      <h2> Trade here your Silverpoints for coupons <br> from our affiliated brands</h2>
       <br>
-      <h3>You have <strong><%=current_user.points_balance%></strong> Silverpoints</h3>
-      <h2> You can trade Silverpoints for coupons from our affiliated brands</h2>
+    </div>
+    <div class="balance-silverpoints-index">
+     <h4>You have <br> <strong><%=current_user.points_balance%></strong> <br> Silverpoints</h4>
+    </div>
 </div>
 
 <% restaurants_photos = ["https://source.unsplash.com/collection/1028299", "https://source.unsplash.com/collection/345703", "https://source.unsplash.com/collection/312299", "https://source.unsplash.com/collection/3398352"] %>
