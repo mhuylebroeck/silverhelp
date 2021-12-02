@@ -1,5 +1,5 @@
 <div class = "coupon-header">
-  <h1><b>Coupon Shop</b></h1>
+  <h1><strong>Coupon Shop</strong></h1>
   <h2>Trade your accumulated points for coupons from our affiliated brands!</h2>
 </div>
 
@@ -8,11 +8,12 @@
 <div class="container-coupons">
   <% @coupons.each do |coupon| %>
     <div class="coupon-style">
+      <div class="img-coupon">
+        <%= cl_image_tag coupon.picture.key, crop: :fill %>
+      </div>
       <div class="card-coupon">
         <div class="ticket">
-          <div class="img-coupon">
-            <%= cl_image_tag coupon.picture.key, crop: :fill %>
-          </div>
+
           <div class="txt-couponname">
             <h3><b><%= coupon.name[11..-1] %></b></h3>
           </div>
@@ -28,7 +29,7 @@
         <div class="takeout">
         </div>
         <div class="coupon-button">
-          <%= link_to "Buy this coupon", user_coupons_path(:coupon_id => coupon.id ), method: :post, class: "btn-coupon"  %>
+          <%= link_to "Get coupon", user_coupons_path(:coupon_id => coupon.id ), method: :post, class: "btn-coupon"  %>
         </div>
       </div>
     </div>
