@@ -1,12 +1,5 @@
 require "open-uri"
-# This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 p "Destroying the database"
 HelpRequest.destroy_all
 UserCoupon.destroy_all
@@ -39,7 +32,6 @@ def concordance(adjective)
     "a #{adjective}"
   end
 end
-
 
 classmates = [
   {
@@ -104,7 +96,7 @@ social and environmental issues. I got interested in helping seniors while worki
     photo: "https://avatars.githubusercontent.com/u/68341915?v=4"
   },
   {
-    name: "Piero Raúl Olivares Palomino",
+    name: "Piero Raúl O. Palomino",
     description: "I've been working in other areas but now i want to learn to help elders properly and this is the best way to do it. I'm interested in help elders because I think is a really improvement job that requires to keep stuying and learn more stuff.
 After this website I think I will try my skills and improve on them before to jump on job",
     photo: "https://avatars.githubusercontent.com/u/82328805?v=4"
@@ -145,7 +137,7 @@ After this website I think I will try my skills and improve on them before to ju
     photo: "https://avatars.githubusercontent.com/u/69385378?v=4"
   },
   {
-    name: "Mònica Suy Morcillo",
+    name: "Mònica Suy",
     description: "Hi there :) I'm an English graduate from Barcelona. I moved to London three years ago and I've been working in education and retail.
 
 During lockdown I did a five-day help elders challenge and found it so fascinating I decided to try and learn on my own until work started again and I didn't have time for it anymore.
@@ -156,7 +148,7 @@ Looking forward to meet every single senior in Barcelona!",
     photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1636529477/in0qcyx8eoafo6usv4gy.jpg"
   },
   {
-    name: "Lorenzo Del Castillo Detoeuf",
+    name: "Lorenzo Del Castillo",
     description: "French/Colombian, currently working as a freelancer and SA (senior assistant) in Barcelona. Love to build apps for seniors and learn new things",
     photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1515419894/zmehqga4ubiwfyu9iapa.jpg"
   },
@@ -213,27 +205,6 @@ john.save!
 
 p "Creating generic users."
 
-# 5.times do
-#   adjective = Faker::Adjective.positive
-#   user = User.new(
-#     email: Faker::Internet.email,
-#     password: "123456",
-#     name: Faker::FunnyName.name,
-#     phone_number: Faker::PhoneNumber.phone_number,
-#     gender: ["F", "M", "NA"].sample,
-#     location: random_address,
-#     user_type: "helper",
-#     vehicle: false,
-#     points_balance: Faker::Number.between(from: 0, to: 1000)
-#   )
-#   user.description = "Hi! I'm #{user.name}. I'm #{concordance(adjective)} person who wants
-#   to help the elderly in my area. Let me be your silver helper!"
-#   file = URI.open("https://source.unsplash.com/collection/9767985")
-#   user.avatar.attach(io: file, filename: 'john.png', content_type: 'image/png')
-#   user.save!
-#   p "Created #{user.name}, a #{user.user_type}"
-# end
-
 classmates.each do |classmate|
   user = User.new(
     email: Faker::Internet.email,
@@ -271,51 +242,6 @@ lucy = User.new(
 file = URI.open("https://avatars.githubusercontent.com/u/89781156?v=4")
 lucy.avatar.attach(io: file, filename: 'Lucy.png', content_type: 'image/png')
 lucy.save!
-
-# 5.times do
-#   adjective = Faker::Adjective.positive
-#   user = User.new(
-#     email: Faker::Internet.email,
-#     password: "123456",
-#     name: Faker::FunnyName.name,
-#     phone_number: Faker::PhoneNumber.phone_number,
-#     gender: ["F", "M", "NA"].sample,
-#     location: random_address,
-#     user_type: "helper",
-#     vehicle: false,
-#     points_balance: Faker::Number.between(from: 0, to: 1000)
-#   )
-#   user.description = "Hi! I'm #{user.name}. I'm #{concordance(adjective)} person who wants to help the elderly in my area."
-#   file = URI.open("https://source.unsplash.com/collection/9767985")
-#   user.avatar.attach(io: file, filename: 'john.png', content_type: 'image/png')
-#   user.save!
-#   p "Created #{user.name}, a #{user.user_type}"
-# end
-
-##########################
-# WARNING: BELOW IS THE BIG RESEED! ONLY TO MAKE IT PRETTIER TO THE PRESENTATION!
-# ONLY UNCOMMENT TO RUN FOR HEROKU AND FOR THE PRESENTATION! ALLOW PLENTY OF TIME!
-###########################
-
-# 20.times do
-#   adjective = Faker::Adjective.positive
-#   user = User.new(
-#     email: Faker::Internet.email,
-#     password: "123456",
-#     name: Faker::FunnyName.name,
-#     phone_number: Faker::PhoneNumber.phone_number,
-#     gender: ["F", "M", "NA"].sample,
-#     location: random_address,
-#     user_type: "helper",
-#     vehicle: false,
-#     points_balance: Faker::Number.between(from: 0, to: 1000)
-#   )
-#   user.description = "Hi! I'm #{user.name}. I'm #{concordance(adjective)} person who wants to help the elderly in my area."
-#   file = URI.open("https://source.unsplash.com/collection/9767985")
-#   user.avatar.attach(io: file, filename: 'john.png', content_type: 'image/png')
-#   user.save!
-#   p "Created #{user.name}, a #{user.user_type}"
-# end
 
 p "Creating the elderly"
 
@@ -435,8 +361,6 @@ p "Finished creating coupons."
 # CREATING THE TASKS
 
 p "Creating tasks..."
-# THE ABOVE WE SHOULD HOPEFULLY GET FROM THE MODEL IN THE FUTURE! with something like TASKS::names
-# Feel free to copy and paste it!
 
 UserTask::ALL_TASKS.each do |task|
   Task.create(name: task)
@@ -592,7 +516,7 @@ HelpRequest.create!(
   status: "completed",
   location: random_address,
   senior: User.where(user_type: "senior").sample,
-  helper:  User.where(user_type: "helper").sample,
+  helper: User.where(user_type: "helper").sample,
   task: Task.where(name: UserTask::ALL_TASKS.sample)[0]
 )
 
