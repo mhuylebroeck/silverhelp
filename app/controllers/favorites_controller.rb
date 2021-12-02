@@ -5,14 +5,16 @@ class FavoritesController < ApplicationController
     @favorite.senior = current_user
     @favorite.helper = User.find(params[:user_id])
     if @favorite.save!
-      redirect_to user_path(@favorite.helper)
+      redirect_to user_path(@favorite.helper, params.permit!)
     end
+
+
   end
 
   def destroy
     @favorite = Favorite.find(params[:id])
     if @favorite.destroy!
-      redirect_to user_path(@favorite.helper)
+      redirect_to user_path(@favorite.helper, params.permit!)
     end
   end
 
