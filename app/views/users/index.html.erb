@@ -89,15 +89,15 @@
                 <%= link_to "See more", user_path(helper, :help_request => {:task_id =>params["help_request"]["task_id"], :start_time => params["help_request"]["start_time"], :duration => params["help_request"]["duration"], :location => params["help_request"]["location"], :task_description => params["help_request"]["task_description"]}), class: "btn-brownish"  %>
                 <%# PUT THE SEE MORE BUTTON HERE %>
               <% else %>
-                <% link_to "See more", user_path(helper), class: "btn-brownish" %>
+                <%= link_to "See more", user_path(helper), class: "btn-brownish" %>
               <% end %>
               </div>
 
               <div class="helperindex-bottombtn">
                 <% if params[:help_request].present? %>
                       <%= render "users/placeholders/helpform", helper: helper %>
-                <% else %>
-                      <%= link_to "Request help", root_path(), class: "btn-brownishghost"  %>
+                <%# <% else %>
+                      <%# <%= link_to "Request help", root_path(), class: "btn-brownishghost"  %>
                       <%# Above is just a placeholder! It would be the form! %>
                 <% end %>
 
