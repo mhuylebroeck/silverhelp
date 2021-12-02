@@ -31,7 +31,7 @@
         <div class="takeout">
         </div>
         <div class="coupon-button">
-          <%= link_to "Get coupon", user_coupons_path(:coupon_id => coupon.id ), method: :post, class: "btn-coupon"  %>
+          <%= link_to "Get coupon", user_coupons_path(:coupon_id => coupon.id, anchor:"anchor"), method: :post, class: "btn-coupon"  %>
         </div>
       </div>
     </div>
