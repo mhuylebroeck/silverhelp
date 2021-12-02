@@ -199,7 +199,7 @@ I want to develop the strength to lift two elders at once to create a positive i
   vehicle: true,
   points_balance: 750
 )
-file = URI.open("https://media-exp1.licdn.com/dms/image/C5603AQG6tX2U0Tmkbw/profile-displayphoto-shrink_800_800/0/1614945879239?e=1642636800&v=beta&t=Vvt3x0Tuf51Rte299FRBC7PLjBvVPpZvrh_HkYynuRk")
+file = URI.open("https://i.ibb.co/wRNFJcm/Whats-App-Image-2021-12-02-at-17-57-31.jpg")
 john.avatar.attach(io: file, filename: 'john.png', content_type: 'image/png')
 john.save!
 
