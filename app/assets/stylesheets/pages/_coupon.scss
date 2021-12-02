@@ -123,3 +123,38 @@
   right: 70px
 
 }
+
+.coupon-style-ds {
+  width: 200px;
+  border-radius: 15px; /* Rounded border */
+  margin: 0 auto; /* Center the coupon */
+  max-width: 600px;
+  margin-bottom: 30px;
+  transition: 0.5s;
+  border: 2px dotted #20124D;
+
+     &:hover {
+    box-shadow:  0 0 15px rgba(0,0,0,0.4);
+    transform: translate(10px, -10px);
+    text-decoration: none;
+  }
+
+  h3 {
+    font-size: 15px;
+    text-align: center;
+  }
+}
+
+.img-index-coupon {
+  width: 195px;
+  display: flex;
+  border-bottom-left-radius: 10px ;
+  border-bottom-right-radius: 10px ;
+}
+
+.txt-couponname-ds {
+
+  h3 {
+    padding: 10px;
+  }
+}
