@@ -1,5 +1,9 @@
 .dashboard-container{
-  background-color: #FFF2CE;
+  background-image: url("https://i.ibb.co/NLXqywC/mega-creator-14.png");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  background-color: whitesmoke;
   h1{
     text-align: center;
     padding: 40px 0px 10px 0px;
@@ -17,7 +21,7 @@
   display: grid;
   grid-template-columns: 30% 70%;
   grid-template-rows: fit-content;
-  margin: 0px 20px 0px 20px;
+  padding: 0px 20px 0px 20px;
 }
 
 .dashboard-horizontal-elements{
@@ -30,13 +34,12 @@
 .dashboard-element{
   background-color: #FFF2CE;
   height: fit-content;
-  border-radius: 5px;
+  border-radius: 10px;
 
   margin-bottom: 40px;
   padding: 30px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   h3 {
-    padding: 20px;
     color: #20124D;
     font-family: "Montserrat", sans-serif;
     font-style: normal;
@@ -48,7 +51,7 @@
 .dashboard-element-profile{
   background-color: #FFF2CE;
   height: fit-content;
-  border-radius: 5px;
+  border-radius: 10px;
   margin: 30px;
   grid-column-start: 1;
   grid-column-end: 1;
@@ -63,14 +66,14 @@
       margin: 10px;
     }
     .profile-card-text{
-      margin: 0px 20px 20px 20px;
-      background-color: #FCC010;
+      margin: 0px 20px 10px 20px;
       border-radius: 5px;
       padding: 10px;
       height: fit-content;
       width: fit-content;
       #btn-edit-profile{
       margin: 25px;
+
     }
     }
 }
@@ -158,6 +161,7 @@
   opacity: 0.6;
   transition: opacity 0.3s ease;
   margin: 20px;
+
   &:hover{
   opacity: 1;
   color: black;
