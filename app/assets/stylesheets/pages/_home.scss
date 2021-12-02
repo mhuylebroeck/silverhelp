@@ -8,8 +8,12 @@ body {
   padding-left: 80px;
   padding-right: 80px;
   font-family: "Montserrat", sans-serif;
-  margin-left:20px;
-  margin-right:20px;
+
+  // margin-left:20px;
+  // margin-right:20px;
+  // border-radius: 10px;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  //  background-color:#FFF2CE;
 
   h2 {
     font-family: "Montserrat", sans-serif;
@@ -18,6 +22,8 @@ body {
     font-weight: bold;
     line-height: 59px;
     color: #FCC010;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
   p {
@@ -39,9 +45,12 @@ body {
   color: #20124D;
   padding-top: 30px;
   padding-bottom: 90px;
-  background: #FCC010;
+  background-image: url("https://i.ibb.co/XDBTSwg/mega-creator-9.png");
   border-bottom-left-radius: 130px;
   border-bottom-right-radius: 130px;
+  background-size: cover;
+  background-position: center;
+   height: 100%;
 
 
     h2 {
@@ -50,6 +59,7 @@ body {
     font-size: 32px;
     font-weight: bold;
     line-height: 59px;
+    padding-top: 20px;
   }
 
   p {
@@ -88,7 +98,13 @@ body {
   text-align: right;
   margin-left:20px;
   margin-right:20px;
-  margin-bottom: 30px ;
+  margin-bottom: 30px;
+
+  //padding-top: 10px;
+  //padding-bottom: 10px;
+  //border-radius: 10px;
+  //box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  //background-color:#FFF2CE;
 
   h2 {
     font-family: "Montserrat", sans-serif;
@@ -119,12 +135,9 @@ body {
   text-align: center;
   color: #20124D;
   padding-top: 30px;
+  margin-top: 20px;
 }
 
-// .container-containerhowitworks {
-//   display: flex;
-//   justify-content: center;
-// }
 
 .select2-container--default .select2-selection--multiple {
     background-color: white;
