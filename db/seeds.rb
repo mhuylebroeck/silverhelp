@@ -507,7 +507,7 @@ p "Created user tasks!"
 # CREATING THE TASKS REQUESTS
 
 
-p "Creating already accepted request between Lucy and Maria"
+p "Creating already accepted request between Mateo and Maria"
 
 HelpRequest.create!(
   start_time: Time.new,
@@ -516,11 +516,11 @@ HelpRequest.create!(
   status: "completed",
   location: random_address,
   senior_id: User.where(name: "Maria Silva")[0].id,
-  helper_id: User.where(name: "Lucy Pinker")[0].id,
+  helper_id: User.where(name: "Mateo Huylebroeck")[0].id,
   task_id: Task.where(name: "Home repairs")[0].id
 )
 
-p "Creating reviews for Lucy"
+p "Creating reviews for Mateo"
 
 Review.create!(
   description: "A wonderful soul that really helped me. She let me teach her catalan and she taught me english.",
@@ -533,7 +533,7 @@ Review.create!(
 
 # Creating more help requests and reviews for Lucy
 
-p "Creating already accepted requests for Lucy"
+p "Creating already accepted requests for Mateo"
 
 HelpRequest.create!(
   start_time: Time.new,
@@ -542,11 +542,11 @@ HelpRequest.create!(
   location: random_address,
   status: "completed",
   senior: User.where(user_type: "senior").sample,
-  helper_id: User.where(name: "Lucy Pinker")[0].id,
+  helper_id: User.where(name: "Mateo Huylebroeck")[0].id,
   task: Task.where(name: UserTask::ALL_TASKS.sample)[0]
 )
 
-p "Creating reviews for Lucy"
+p "Creating reviews for Mateo"
 
 Review.create!(
   description: "Very helpful woman, hope she achieves her dreams.",
@@ -556,9 +556,9 @@ Review.create!(
   recommend: true,
   help_request_id: HelpRequest.where(task_description: "I know it's late, but can someone help me with this?")[0].id
 )
-p "Finished creating review for Lucy"
+p "Finished creating review for Mateo"
 
-p "Creating already accepted requests for Lucy"
+p "Creating already accepted requests for Mateo"
 
 HelpRequest.create!(
   start_time: Time.new,
@@ -567,11 +567,11 @@ HelpRequest.create!(
   status: "completed",
   location: random_address,
   senior: User.where(user_type: "senior").sample,
-  helper_id: User.where(name: "Lucy Pinker")[0].id,
+  helper_id: User.where(name: "Mateo Huylebroeck")[0].id,
   task: Task.where(name: UserTask::ALL_TASKS.sample)[0]
 )
 
-p "Creating reviews for Lucy"
+p "Creating reviews for Mateo"
 
 Review.create!(
   description: "She brought me medicine! But she was late because of it. Very wonderful soul, nevertheless.",
@@ -581,7 +581,114 @@ Review.create!(
   recommend: true,
   help_request_id: HelpRequest.where(task_description: "Can someone help me with this? My arthritis is killing me.")[0].id
 )
-p "Finished creating review for Lucy"
+p "Finished creating review for Mateo"
+
+p "Making Reviews for random people"
+
+HelpRequest.create!(
+  start_time: Time.new,
+  duration: 1,
+  task_description: "Some help please?",
+  status: "completed",
+  location: random_address,
+  senior: User.where(user_type: "senior").sample,
+  helper:  User.where(user_type: "helper").sample,
+  task: Task.where(name: UserTask::ALL_TASKS.sample)[0]
+)
+
+Review.create!(
+  description: "Very wonderful soul.",
+  friendliness_rating: Faker::Number.between(from: 1, to: 5),
+  efficiency_rating: Faker::Number.between(from: 1, to: 5),
+  punctuality_rating: Faker::Number.between(from: 1, to: 5),
+  recommend: true,
+  help_request_id: HelpRequest.where(task_description: "Some help please?")[0].id
+)
+
+HelpRequest.create!(
+  start_time: Time.new,
+  duration: 1,
+  task_description: "Some more help please?",
+  status: "completed",
+  location: random_address,
+  senior: User.where(user_type: "senior").sample,
+  helper: User.where(user_type: "helper").sample,
+  task: Task.where(name: UserTask::ALL_TASKS.sample)[0]
+)
+
+Review.create!(
+  description: "Very great soul.",
+  friendliness_rating: Faker::Number.between(from: 1, to: 5),
+  efficiency_rating: Faker::Number.between(from: 1, to: 5),
+  punctuality_rating: Faker::Number.between(from: 1, to: 5),
+  recommend: true,
+  help_request_id: HelpRequest.where(task_description: "Some more help please?")[0].id
+)
+
+HelpRequest.create!(
+  start_time: Time.new,
+  duration: 1,
+  task_description: "Even more help please?",
+  status: "completed",
+  location: random_address,
+  senior: User.where(user_type: "senior").sample,
+  helper: User.where(user_type: "helper").sample,
+  task: Task.where(name: UserTask::ALL_TASKS.sample)[0]
+)
+
+Review.create!(
+  description: "Very grateful soul.",
+  friendliness_rating: Faker::Number.between(from: 1, to: 5),
+  efficiency_rating: Faker::Number.between(from: 1, to: 5),
+  punctuality_rating: Faker::Number.between(from: 1, to: 5),
+  recommend: true,
+  help_request_id: HelpRequest.where(task_description: "Even more help please?")[0].id
+)
+
+HelpRequest.create!(
+  start_time: Time.new,
+  duration: 1,
+  task_description: "A bit more help please?",
+  status: "completed",
+  location: random_address,
+  senior: User.where(user_type: "senior").sample,
+  helper: User.where(user_type: "helper").sample,
+  task: Task.where(name: UserTask::ALL_TASKS.sample)[0]
+)
+
+Review.create!(
+  description: "Very grateful soul.",
+  friendliness_rating: Faker::Number.between(from: 1, to: 5),
+  efficiency_rating: Faker::Number.between(from: 1, to: 5),
+  punctuality_rating: Faker::Number.between(from: 1, to: 5),
+  recommend: true,
+  help_request_id: HelpRequest.where(task_description: "A bit more help please?")[0].id
+)
+
+20.times do
+  helpr = HelpRequest.new(
+    start_time: Time.new,
+    duration: 1,
+    task_description: "A bit of a help please?",
+    status: "completed",
+    location: random_address,
+    senior: User.where(user_type: "senior").sample,
+    helper: User.where(user_type: "helper").sample,
+    task: Task.where(name: UserTask::ALL_TASKS.sample)[0]
+  )
+  helpr.save!
+
+  Review.create!(
+    description: "Very #{Faker::Adjective.positive} soul. Thank you very much.",
+    friendliness_rating: Faker::Number.between(from: 1, to: 5),
+    efficiency_rating: Faker::Number.between(from: 1, to: 5),
+    punctuality_rating: Faker::Number.between(from: 1, to: 5),
+    recommend: true,
+    help_request: helpr
+  )
+end
+
+
 
 p "Assigning coupons to different users"
 
