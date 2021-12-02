@@ -40,7 +40,7 @@
 
     <div class="container-cards-home" data-aos="fade-up">
 
-      <div class="container-cards-home-1">
+      <div class="container-cards-home-grid">
         <div class="whatever">
           <%= link_to(new_help_request_path(:help_request => {:task_id =>["",Task.find_by(name: "Grocery shopping").id]})) do%>
             <div class="card-task-home">
@@ -84,9 +84,6 @@
             </div>
           <% end %>
           </div>
-        </div>
-
-      <div class="container-cards-home-2">
         <div class="whatever">
         <%= link_to(new_help_request_path(:help_request => {:task_id =>["",Task.find_by(name: "Cooking").id]})) do%>
           <div class="card-task-home">
