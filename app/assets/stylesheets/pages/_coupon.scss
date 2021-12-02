@@ -1,9 +1,17 @@
 .coupon-style{
-  border: 5px dotted black; /* Dotted border */
+  border: 3px dotted #FCC010; /* Dotted border */
   width: 80%;
   border-radius: 15px; /* Rounded border */
   margin: 0 auto; /* Center the coupon */
   max-width: 600px;
+  margin-bottom: 30px;
+  transition: 0.5s;
+
+     &:hover {
+    box-shadow:  0 0 15px rgba(0,0,0,0.4);
+    transform: translate(10px, -10px);
+    text-decoration: none;
+  }
 }
 
 .container-coupons{
@@ -20,19 +28,26 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 2px 16px;
   background-color: #fef2ce;
-  height: 384px;
+  height: 244px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border-radius: 10px;
+  color: #20124D
+
+
 }
 
 .img-coupon{
   backdrop-filter: blur(60px);
   img{
     width: 100%;
-    height: 120px;
+    height: 140px;
     object-fit: cover;
-    border-bottom: 1px solid black;
+    border-top-left-radius: 15px;
+     border-top-right-radius: 15px;
+
+
   }
 }
 
@@ -53,7 +68,7 @@
 }
 
 .takeout{
-  border-bottom: 5px dotted black;
+  border-bottom: 3px dotted #FCC010;
   height: max-content;
 }
 
@@ -65,20 +80,35 @@
 .coupon-price{
   margin-left: 8px;
   text-align: right;
+  border-radius: 4px;
+  background-color: white;
+  text-align: center;
+  padding: 5px;
+  color: #FCC010;
+  border: 2px solid #FCC010
 }
 
 .coupon-header{
-  height: 106px;
-  background-color: #f7c033;
+  height: 135px;
+  background-color: #FCC010;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top:30px;
+
+  h1 {
+    color: #20124D
+  }
+
   h2{
     font-size: 24px;
+    color: #20124D
   }
 }
 
 .coupon-button {
   display: grid;
   text-align: center;
+  border-radius: 4px;
+
 }
