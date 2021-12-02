@@ -1,5 +1,5 @@
 .dashboard-container{
-background-color: #FFF2CE;
+  background-color: #FFF2CE;
   h1{
     text-align: center;
     padding: 40px 0px 10px 0px;
@@ -15,21 +15,23 @@ background-color: #FFF2CE;
 
 .dashboard-elements-container{
   display: grid;
-  grid-template-columns: 75% 25%;
+  grid-template-columns: 30% 70%;
   grid-template-rows: fit-content;
   margin: 0px 20px 0px 20px;
 }
 
 .dashboard-horizontal-elements{
-margin: 30px;
+  margin: 30px;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
 }
 
 .dashboard-element{
-  background-color: #FCC010;
+  background-color: #FFF2CE;
   height: fit-content;
   border-radius: 5px;
-  grid-column-start: 1;
-  grid-column-end: 1;
+
   margin-bottom: 40px;
   padding: 30px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
@@ -44,12 +46,12 @@ margin: 30px;
 }
 
 .dashboard-element-profile{
-  background-color: #FCC010;
+  background-color: #FFF2CE;
   height: fit-content;
   border-radius: 5px;
   margin: 30px;
-  grid-column-start: 2;
-  grid-column-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 1;
   padding: 20px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   text-align: center;
@@ -60,17 +62,25 @@ margin: 30px;
     p{
       margin: 10px;
     }
-    #btn-edit-profile{
+    .profile-card-text{
+      margin: 0px 20px 20px 20px;
+      background-color: #FCC010;
+      border-radius: 5px;
+      padding: 10px;
+      height: fit-content;
+      width: fit-content;
+      #btn-edit-profile{
       margin: 25px;
+    }
     }
 }
 
 .dashboard-element-reward{
   background-color: #FCC010;
-  grid-column-start: 2;
-  grid-column-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 1;
   border-radius: 5px;
-  margin: 30px;
+  margin: 10px 30px 30px 30px;
   padding: 20px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   text-align: center;
@@ -87,7 +97,7 @@ margin: 30px;
 .dashboard-element-item{
   display: flex;
   align-items: center;
-  background-color: #FFF2CE;
+  background-color: #FCC010;
   border-radius: 5px;
   margin: 20px;
   line-height: 15px;
@@ -99,6 +109,7 @@ margin: 30px;
     width: fit-content;
     padding: 10px;
     text-align: center;
+    position: relative;
   }
   #request-avatar{
       height: 120px;
@@ -159,10 +170,10 @@ margin: 30px;
 }
 
 .profile-avatar{
-  margin: 20px;
-  border-radius: 5px;
+  border-radius: 50%;
   width: 225px;
-  height: 250px
+  height: 250px;
+  margin-bottom: 20px;
 }
 
 .favorite-container{
@@ -173,7 +184,7 @@ margin: 30px;
 
 .favorite-card{
   display: inline-grid;
-  background-color: #FFF2CE;
+  background-color: #FCC010;
   text-align: center;
   overflow: hidden;
   position: relative;
@@ -197,7 +208,7 @@ margin: 30px;
 }
 
 .coupon-container{
-
+  display: flex;
 }
 
 .coupon-card{

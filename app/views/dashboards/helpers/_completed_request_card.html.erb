@@ -1,6 +1,9 @@
 <div class="dashboard-element-item">
   <%= cl_image_tag request.senior.avatar.key, id: "request-avatar" %>
-  <p><strong><i class="far fa-user"></i></strong><%= request.senior.name %></p>
+  <div class="d-flex justify-content-center">
+    <i class="far fa-user"></i>
+    <p><strong></strong><%= request.senior.name %></p>
+  </div>
   <p><strong><i class="far fa-comment-dots"></i></strong><%= Task.find(request.task_id).name  %></p>
   <p><strong><i class="fas fa-hourglass-start"></i></strong><%= request.duration %>hr </p>
   <p><strong><i class="fas fa-spinner"></i></strong><%= request.status %></p>
