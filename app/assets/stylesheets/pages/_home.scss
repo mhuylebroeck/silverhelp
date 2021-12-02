@@ -138,6 +138,12 @@ body {
   margin-top: 20px;
 }
 
+textarea.select2-search__field {
+  width: 300px !important;
+  height: 100% !important;
+  position: relative;
+  top: 13px;
+}
 
 .select2-container--default .select2-selection--multiple {
     background-color: white;
@@ -149,11 +155,19 @@ body {
     position: relative;
     height: 55px;
     width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
 }
 
 .select2-container--default.select2-container--focus .select2-selection--multiple {
     border: solid #fcc010  1px;
     outline: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
 }
 
 
