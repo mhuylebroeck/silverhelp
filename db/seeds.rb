@@ -332,7 +332,7 @@ maria = User.new(
   user_type: "senior"
 )
 
-file = URI.open("https://res.cloudinary.com/dbzm7zcr1/image/upload/v1637751302/maria.jpg")
+file = URI.open("https://images.unsplash.com/photo-1581579439002-e29ac578f8d4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80")
 maria.avatar.attach(io: file, filename: 'maria.png', content_type: 'image/png')
 maria.save!
 
