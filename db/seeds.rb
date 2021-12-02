@@ -199,7 +199,7 @@ I want to develop the strength to lift two elders at once to create a positive i
   vehicle: true,
   points_balance: 750
 )
-file = URI.open("https://avatars.githubusercontent.com/u/90754426?v=4")
+file = URI.open("https://media-exp1.licdn.com/dms/image/C5603AQG6tX2U0Tmkbw/profile-displayphoto-shrink_800_800/0/1614945879239?e=1642636800&v=beta&t=Vvt3x0Tuf51Rte299FRBC7PLjBvVPpZvrh_HkYynuRk")
 john.avatar.attach(io: file, filename: 'john.png', content_type: 'image/png')
 john.save!
 
@@ -258,7 +258,7 @@ maria = User.new(
   user_type: "senior"
 )
 
-file = URI.open("https://images.unsplash.com/photo-1581579439002-e29ac578f8d4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80")
+file = URI.open("https://images.unsplash.com/photo-1547212371-eb5e6a4b590c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80")
 maria.avatar.attach(io: file, filename: 'maria.png', content_type: 'image/png')
 maria.save!
 
@@ -447,7 +447,7 @@ HelpRequest.create!(
 p "Creating reviews for Mateo"
 
 Review.create!(
-  description: "A wonderful soul that really helped me. She let me teach her catalan and she taught me english.",
+  description: "A wonderful soul that really helped me. He let me teach her catalan and he taught me english.",
   friendliness_rating: 5,
   efficiency_rating: 4,
   punctuality_rating: 5,
@@ -473,7 +473,7 @@ HelpRequest.create!(
 p "Creating reviews for Mateo"
 
 Review.create!(
-  description: "Very helpful woman, hope she achieves her dreams.",
+  description: "Very helpful man, hope he achieves his dreams.",
   friendliness_rating: 5,
   efficiency_rating: 4,
   punctuality_rating: 4,
@@ -498,7 +498,7 @@ HelpRequest.create!(
 p "Creating reviews for Mateo"
 
 Review.create!(
-  description: "She brought me medicine! But she was late because of it. Very wonderful soul, nevertheless.",
+  description: "He brought me medicine! But he was late because of it. Very wonderful soul, nevertheless.",
   friendliness_rating: 5,
   efficiency_rating: 5,
   punctuality_rating: 3,
