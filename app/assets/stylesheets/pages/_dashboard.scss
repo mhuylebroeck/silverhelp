@@ -36,7 +36,8 @@
   height: fit-content;
   border-radius: 10px;
   margin-bottom: 40px;
-  padding: 30px;
+  padding: 0 30px 30px 30px ;
+
   h3 {
     color: #20124D;
     font-family: "Montserrat", sans-serif;
@@ -149,7 +150,7 @@
   display: flex;
   align-items: center;
   background-color: #FFF2CE;
-  border-radius: 5px;
+  border-radius: 10px;
   margin: 20px;
   line-height: 15px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
