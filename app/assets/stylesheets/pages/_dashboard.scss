@@ -35,10 +35,8 @@
 .dashboard-element{
   height: fit-content;
   border-radius: 10px;
-
   margin-bottom: 40px;
   padding: 30px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
   h3 {
     color: #20124D;
     font-family: "Montserrat", sans-serif;
@@ -50,10 +48,56 @@
 
 .dashboard-element-grid{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 0 10px;
+  grid-template-rows: 70% 30%;
+  width: 100%;
+
+  &.helper-active, &.helper-completed {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  &.senior-active, &.senior-completed {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  .request-img {
+  margin: 10px 0px 0px 10px;
+  }
+  .request-name{
+    grid-column-start: 1;
+    grid-row-start: 2;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 10px;
+  }
+  .request-column-element{
+    width: fix;
+    text-align: center;
+    padding: 10px;
+    text-overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  .request-description{
+    grid-column-start: 2;
+    grid-row-start: 2;
+    grid-column-end: 5;
+    text-align: center;
+    padding-left: 10px;
+  }
+}
+
+.dashboard-element-grid.helper-completed, .dashboard-element-grid.helper-active {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+}
+.dashboard-element-grid.senior-completed, .dashboard-element-grid.senior-active {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
 }
 
 .dashboard-element-profile{
+  background-color: #FFF2CE;
   height: fit-content;
   border-radius: 10px;
   margin: 30px;
@@ -83,7 +127,7 @@
 }
 
 .dashboard-element-reward{
-  background-color: #FCC010;
+  background-color: #FFF2CE;
   grid-column-start: 1;
   grid-column-end: 1;
   border-radius: 5px;
@@ -104,7 +148,7 @@
 .dashboard-element-item{
   display: flex;
   align-items: center;
-  background-color: #FCC010;
+  background-color: #FFF2CE;
   border-radius: 5px;
   margin: 20px;
   line-height: 15px;
@@ -140,11 +184,21 @@
   }
 }
 
+.request-action-buttons {
+  grid-column-start:-2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  padding-block: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .btn-status-change{
-  background-color: #20124D;
+  background-color: #FCC010;
   border-radius: 5px;
   align-items: center;
-  color: #e0ca8d;
+  color: white;
   width: fit-content;
   text-align: center;
   padding: 10px;
@@ -155,6 +209,7 @@
     text-decoration: none;
     color: #f1cb61;
   }
+
 }
 
 .btn-view-profile{
@@ -192,7 +247,7 @@
 
 .favorite-card{
   display: inline-grid;
-  background-color: #FCC010;
+  background-color: #FFF2CE;
   text-align: center;
   overflow: hidden;
   position: relative;

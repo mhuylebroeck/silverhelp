@@ -1,14 +1,29 @@
 <div class="dashboard-element-item">
-  <div class="dashboard-element-grid">
-    <%= cl_image_tag request.helper.avatar.key, id: "request-avatar" %>
-    <p><strong></i></strong><%= link_to request.helper.name, user_path(request.helper), method: :get,  class: "name-link" %></p>
-    <p><strong><i class="far fa-comment-dots"></i></strong><%= request.task_description%></p>
-    <p><strong><i class="far fa-clock"></i></strong><%= request.start_time %></p>
-    <p><strong><i class="fas fa-hourglass-start"></i></strong><%= request.duration %>hr </p>
-    <p><strong><i class="fas fa-spinner"></i></strong><%= request.status %></p>
-    <% if request.accepted? %>
-      <%= link_to "Mark as completed", new_help_request_review_path(request), class: "btn-status-change"  %>
-    <% end %>
-    <%= link_to "Withdraw request", help_request_path(request), method: :delete, data: { confirm: "Are you sure you want to withdraw this request? This cannot be undone." }, class: "btn-status-change"  %>
+  <div class="dashboard-element-grid senior-active">
+    <div class="request-img">
+      <%= cl_image_tag request.helper.avatar.key, id: "request-avatar" %>
+    </div>
+    <div class="request-name">
+      <p><strong></i></strong><%= link_to request.helper.name, user_path(request.helper), method: :get,  class: "name-link" %></p>
+    </div>
+    <div class="request-column-element">
+      <p><strong><i class="far fa-comment-dots"></i></strong><%= request.task_description%></p>
+    </div>
+    <div class="request-column-element">
+      <p><strong><i class="far fa-clock"></i></strong><%= request.start_time.strftime('%d/%m')  %></p>
+    </div>
+    <div class="request-column-element">
+      <p><strong><i class="fas fa-hourglass-start"></i></strong><%= request.duration %>hr </p>
+    </div>
+    <div class="request-column-element">
+      <p><strong><i class="fas fa-spinner"></i></strong><%= request.status %></p>
+    </div>
+
+    <div class="request-action-buttons">
+      <% if request.accepted? %>
+        <%= link_to "Mark as completed", new_help_request_review_path(request), class: "btn-status-change"  %>
+      <% end %>
+      <%= link_to "Withdraw request", help_request_path(request), method: :delete, data: { confirm: "Are you sure you want to withdraw this request? This cannot be undone." }, class: "btn-status-change"  %>
+    </div>
   </div>
 </div>
