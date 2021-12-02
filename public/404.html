@@ -10,6 +10,9 @@
     text-align: center;
     font-family: arial, sans-serif;
     margin: 0;
+    background-image: url("https://images.unsplash.com/photo-1526587307151-a4d47fc77ac4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=80");
+    background-size: cover;
+    height: 100vh;
   }
 
   .rails-default-error-page div.dialog {
@@ -32,9 +35,9 @@
   }
 
   .rails-default-error-page h1 {
-    font-size: 100%;
+    font-size: 200px;
     color: #730E15;
-    line-height: 1.5em;
+    /* line-height: 1.5em; */
   }
 
   .rails-default-error-page div.dialog > p {
@@ -51,17 +54,21 @@
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
+
+  .rails-default-error-page div.fourzerofourmessage{
+    background-color: white;
+    font-size: 24px;
+  }
+
+  .dialog{
+
+  }
   </style>
 </head>
 
 <body class="rails-default-error-page">
   <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
+  <div class="404"><h1>404</h1></div>
+  <div class="fourzerofourmessage">This page does not exist. Did you mistype something?</div>
 </body>
 </html>
