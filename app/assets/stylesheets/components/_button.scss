@@ -89,23 +89,24 @@
 
 .btn-next{
   padding: 8px 48px 8px 8px;
-  background: url("https://cdn-icons-png.flaticon.com/512/467/467282.png");
+  background: url("https://i.ibb.co/Q67rjpy/right-arrow.png");
   background-position: 100% 50%;
 
 }
 
 .btn-previous{
   padding: 8px 8px 8px 32px;
-  background: url("https://cdn-icons-png.flaticon.com/512/467/467274.png");
+  background: url("https://i.ibb.co/T2nd4M9/right-arrow-1.png");
   background-position: 0% 50%;
 }
 
 .btn-next, .btn-previous{
- border: 1px solid #20124D;
+ border: 1px solid;
  border-radius: 8px;
  background-size: 24px 24px;
  background-repeat: no-repeat;
- background-color: white ;
+ background-color: #FCC010 ;
+ color:#fffcf4
 }
 
 .disabled{
