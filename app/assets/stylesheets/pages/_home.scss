@@ -82,7 +82,8 @@ body {
     max-width: 1000px;
     margin-right: auto;
     justify-content: center;
-    margin-bottom: 60px;
+    padding-bottom: 60px;
+
 }
 
 .img-info-home {
@@ -204,3 +205,10 @@ textarea.select2-search__field {
 .select2-dropdown {
   border: 1px solid #fcc010;
 }
+
+.container-containerhowitworks {
+  background-image: url("https://i.ibb.co/kmtVKpT/mega-creator-17.png");
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+  }
