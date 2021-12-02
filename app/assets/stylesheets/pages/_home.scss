@@ -145,6 +145,10 @@ textarea.select2-search__field {
   top: 13px;
 }
 
+.select2-container .select2-selection--multiple .select2-selection__rendered{
+  margin: 0px;
+}
+
 .select2-container--default .select2-selection--multiple {
     background-color: white;
     border: 0.5px solid #fffcf4;
