@@ -3,8 +3,13 @@ import * as select2 from "select2" ;
 const initSelect2 = () => {
   console.log("init select2")
   $(document).ready(function () {
-    $('.select-2-suggestions').select2({ placeholder: "Type a task to get help with..."});
-    // $('.select-2-suggestions').select2('open');
+    const selectElem = $('.select-2-suggestions')
+    const searchButton = document.querySelector('.search-btn-home');
+    selectElem.select2({ placeholder: "Type a task to get help with..."});
+    selectElem.on('select2:select', function(e) {
+      searchButton.focus();
+    })
+
   });
 };
 
