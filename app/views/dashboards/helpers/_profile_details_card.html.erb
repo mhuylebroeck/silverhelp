@@ -1,17 +1,11 @@
 
-    <p><strong><%= @user.name %></strong></p>
-    <p><strong><%= @user.email %></strong></p>
-    <p><strong>Phone: </strong><%= @user.phone_number %></p>
-    <p><strong>My location: <br></strong><%= @user.location %></p>
-    <p><strong>About me: <br></strong><%= @user.description %></p>
-    <p><strong>Availability: <br></strong>
+    <h3><%= @user.name %></h3>
+    <%# <p><strong><%= @user.email %></strong></p>
+    <p><strong>Phone number </strong> <br><%= @user.phone_number %></p>
+    <p><strong>My location <br></strong><%= @user.location %></p>
+    <%# <p><strong>About me: <br></strong><%= @user.description %></p>
+    <p><strong>My Availability <br></strong>
     <% @user.availabilities.each do |availability| %>
-      <%= availability.weekday %>
+      <%= availability.weekday.capitalize %>
       <% end %>
     </p>
-    <p><strong>Vehicle?</strong>
-    <% if !@user.vehicle %>
-      <p>Yes</p>
-    <% else %>
-      <p>No</p>
-    <% end %>
