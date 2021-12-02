@@ -15,9 +15,6 @@
     </div>
       <%= link_to "Edit profile", edit_user_registration_path, class: "btn-status-change", id: "btn-edit-profile"  %>
   </div>
-  <% if current_user.helper? %>
-  <%= render "dashboards/helpers/rewards_counter_card" %>
-  <% end %>
 
   <div class="dashboard-horizontal-elements">
 
