@@ -32,10 +32,10 @@
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "How it works", root_path, class: "nav-link" %>
+            <%= link_to "How it works", "#{root_path}#howitworks", class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Tasks", "#", class: "nav-link" %>
+            <%= link_to "Tasks", "#{root_path}#tasks", class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "About", "#", class: "nav-link" %>

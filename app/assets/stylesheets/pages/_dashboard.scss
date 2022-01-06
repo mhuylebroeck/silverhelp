@@ -275,6 +275,7 @@
 }
 
 .coupon-card{
+  display: inline-grid;
   height: 140px;
   width: 160px;
   border: 3px dotted black;
@@ -282,6 +283,6 @@
   background-color: #FFF2CE;
   text-align: center;
   margin: 20px;
-
-
+  overflow: hidden;
+  position: relative;
 }
