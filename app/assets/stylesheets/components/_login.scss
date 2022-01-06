@@ -13,9 +13,11 @@ $strongyellow: #FCC010;
 }
 
 .form-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 15px;
+
 }
 
 .centered {
@@ -25,9 +27,14 @@ $strongyellow: #FCC010;
 }
 
 .form-actions {
-    display: grid;
+  display: grid;
+  font-size: 5px;
 }
 
 .btn-login:hover{
   background-color: #b18604;
+}
+
+.login-options{
+  color: #20124D;
 }
