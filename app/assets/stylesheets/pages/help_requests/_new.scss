@@ -2,16 +2,22 @@
   width:50%;
   height: 100%;
   background-color: #fcc010;
+  h1{
   padding-top: 350px;
   padding-bottom: 380px;
-  color: #20124D ;
-
-
+  color: #20124D;
+  }
  .you-mother-fucker{
    //margin-top: 30%;
    margin-left: 100px;
    align-content: center;
  }
+ .return-home{
+   color: #20124D;
+   text-decoration: none;
+   position: static;
+ }
+
 }
 
 .right-text{
@@ -19,7 +25,7 @@
 }
 
 .form-right-container {
-   color: #20124D ;
+  color: #20124D ;
   margin-top: 0%;
   padding-left: 100px ;
   padding-right: 100px;
